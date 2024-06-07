@@ -16,6 +16,7 @@
 	 - [桥接模式](./structural/Bridge.md)
 	 - [组合模式](./structural/Composite.md)
 	 - [享元模式](./structural/Flyweight.md)
+	 - [依赖注入模式](./structural/DependencyInjection.md)
  - [行为型模式](./chapter_3.md)
 	 - [策略模式](./behavioral/Strategy.md)
 	 - [观察者模式](./behavioral/Observer.md)
