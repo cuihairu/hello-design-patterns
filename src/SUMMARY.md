@@ -30,4 +30,6 @@
 	 - [解释器模式](./behavioral/Interpreter.md)
 	 - [访问者模式](./behavioral/Visitor.md)
 	 - [生产者消费者模式](./behavioral/ProducerConsumer.md)
+	 - [反应堆模式](./behavioral/Reactor.md)
+	 - [主动器模式](./behavioral/Proactor.md)
  - [参考](reference.md)
