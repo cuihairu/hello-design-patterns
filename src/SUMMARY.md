@@ -7,6 +7,7 @@
 	- [抽象工厂模式](./creational/AbstractFactory.md)
 	- [建造者模式](./creational/Builder.md)
 	- [原型模式](./creational/Prototype.md)
+	- [对象池模式](./creational/ObjectPool.md)
  - [结构型模式](./chapter_2.md) 
 	 - [适配器模式](./structural/Adapter.md)
 	 - [装饰模式](./structural/Decorator.md)
