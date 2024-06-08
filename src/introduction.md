@@ -2,8 +2,8 @@
 
 设计模式通常可以归类为三大类：
 - **创建型模式（Creational Patterns）**
-- **结构型模式（Structural Patterns）
-- ** **行为型模式（Behavioral Patterns）**
+- **结构型模式（Structural Patterns）**
+- **行为型模式（Behavioral Patterns）**
 
 这些类别帮助开发人员理解模式的目的和使用场景。以下是这些类别及其主要模式的简单说明：
 
