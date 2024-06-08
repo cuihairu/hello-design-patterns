@@ -19,6 +19,7 @@
 	 - [组合模式](./structural/Composite.md)
 	 - [享元模式](./structural/Flyweight.md)
 	 - [保护代理模式](./structural/ProtectionProxy.md)
+	 - [动态代理模式](./structural/DynamicProxy.md)
 	 - [依赖注入模式](./structural/DependencyInjection.md)
  - [行为型模式](./chapter_3.md)
 	 - [策略模式](./behavioral/Strategy.md)
