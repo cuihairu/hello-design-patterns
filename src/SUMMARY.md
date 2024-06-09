@@ -17,6 +17,7 @@
 		 - [动态代理模式](./structural/DynamicProxy.md)
 		 - [保护代理模式](./structural/ProtectionProxy.md)
 		 - [远程代理模式](./structural/RemoteProxy.md)
+		 - [智能指引模式](./structural/SmartPointer.md)
 	 - [外观模式](./structural/Facade.md)
 	 - [桥接模式](./structural/Bridge.md)
 		 - [双向桥接模式](./structural/BidirectionalBridge.md)
