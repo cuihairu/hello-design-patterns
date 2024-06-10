@@ -15,21 +15,7 @@
 ### 示例代码
 
 #### C++
-```cpp
-#include <iostream>
-#include <memory>
-
-// Handler Interface
-class Handler {
-public:
-    virtual ~Handler() = default;
-    void setNext(std::shared_ptr<Handler> nextHandler) {
-        next = nextHandler;
-    }
-    virtual void handleRequest(int request) {
-        if (next
-
-```cpp
+```cpp		
 #include <iostream>
 #include <memory>
 
