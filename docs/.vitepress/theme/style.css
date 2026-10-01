@@ -1,0 +1,266 @@
+:root {
+  --vp-c-brand-1: #6366f1;
+  --vp-c-brand-2: #4f46e5;
+  --vp-c-brand-3: #4338ca;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4,
+.vp-doc h5,
+.vp-doc h6 {
+  text-decoration: none;
+}
+
+.vp-doc h1::before,
+.vp-doc h2::before,
+.vp-doc h3::before,
+.vp-doc h4::before,
+.vp-doc h5::before,
+.vp-doc h6::before {
+  content: none;
+}
+
+.vp-doc h1::after,
+.vp-doc h2::after,
+.vp-doc h3::after,
+.vp-doc h4::after,
+.vp-doc h5::after,
+.vp-doc h6::after {
+  content: none;
+}
+
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+  font-size: 0.95rem;
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 0.75em 1em;
+  text-align: left;
+}
+
+.vp-doc th {
+  background-color: var(--vp-c-bg-soft);
+  font-weight: 600;
+}
+
+.vp-doc tr:nth-child(even) td {
+  background-color: var(--vp-c-bg-alt);
+}
+
+.vp-doc p {
+  text-indent: 2em;
+  line-height: 1.75;
+  margin: 1.2em 0;
+}
+
+.vp-doc p:first-child {
+  margin-top: 0;
+}
+
+.vp-doc p:last-child {
+  margin-bottom: 0;
+}
+
+.vp-doc ul,
+.vp-doc ol {
+  margin: 1.2em 0;
+  padding-left: 1.5em;
+  line-height: 1.8;
+}
+
+.vp-doc li {
+  margin: 0.4em 0;
+}
+
+.vp-doc li > p {
+  text-indent: 0;
+  margin: 0.3em 0;
+}
+
+.vp-doc blockquote {
+  margin: 1.5em 0;
+  padding: 0.8em 1.2em;
+  border-left: 4px solid var(--vp-c-brand-1);
+  background-color: var(--vp-c-bg-soft);
+  border-radius: 0 8px 8px 0;
+}
+
+.vp-doc blockquote p {
+  text-indent: 0;
+  margin: 0.5em 0;
+}
+
+.vp-doc code {
+  font-size: 0.9em;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.vp-doc pre {
+  margin: 1.5em 0;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.vp-doc pre code {
+  padding: 0;
+  background: none;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.vp-doc hr {
+  margin: 2.5em 0;
+  border: none;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.vp-doc a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.vp-doc a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.VPNavBar {
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.VPSidebarItem .text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.VPHome .vp-hero {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.VPHome .vp-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.VPHome .vp-hero .vp-hero-image {
+  display: none;
+}
+
+.VPHome .vp-hero .vp-hero-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.VPHome .vp-hero .vp-hero-name img {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.VPHome .vp-hero .vp-hero-tagline {
+  font-size: 1.25rem;
+  color: var(--vp-c-text-2);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.VPHome .vp-hero .vp-hero-action {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.VPHome .vp-hero .vp-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.VPHome .vp-features {
+  padding: 3rem 2rem;
+}
+
+.VPHome .vp-features .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.VPHome .vp-feature {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.VPHome .vp-feature:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.VPHome .vp-feature h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.VPHome .vp-feature p {
+  text-indent: 0;
+  font-size: 0.95rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.dark {
+  --vp-c-brand-1: #818cf8;
+  --vp-c-brand-2: #6366f1;
+  --vp-c-brand-3: #4f46e5;
+}
+
+@media (max-width: 640px) {
+  .VPHome .vp-hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .VPHome .vp-hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .VPHome .vp-hero .vp-hero-name img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .VPHome .vp-features {
+    padding: 2rem 1rem;
+  }
+}
