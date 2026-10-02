@@ -5,8 +5,19 @@ export default defineConfig({
   title: '设计模式指南',
   description: '系统梳理创建型、结构型、行为型、并发等设计模式，涵盖 C++、Java、Go 多语言实现',
 
+  // GitHub Pages 项目页部署在仓库子路径下，缺 base 会导致全部静态资源 404
+  base: '/hello-design-patterns/',
+  cleanUrls: true,
+  ignoreDeadLinks: true,
+
+  head: [
+    // 品牌资产空位：favicon.svg 到位后启用
+    // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/hello-design-patterns/favicon.svg' }]
+  ],
+
   themeConfig: {
-    logo: '/logo.svg',
+    // 品牌资产空位：logo.svg 到位后启用
+    // logo: '/hello-design-patterns/logo.svg',
     siteTitle: '设计模式指南',
 
     nav: [

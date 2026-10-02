@@ -5,9 +5,10 @@ hero:
   name: 设计模式指南
   text: 系统梳理创建型、结构型、行为型、并发等设计模式
   tagline: 涵盖 C++、Java、Go 多语言实现，从基础概念到实战应用，助你构建可维护、可扩展的软件架构。
-  image:
-    src: /logo.svg
-    alt: 设计模式指南
+  # 品牌资产空位：logo.svg 到位后启用
+  # image:
+  #   src: /hello-design-patterns/logo.svg
+  #   alt: 设计模式指南
   actions:
     - theme: brand
       text: 开始阅读

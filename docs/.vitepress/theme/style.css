@@ -1,7 +1,35 @@
+/* ============================================================
+   Hello Design Patterns · 主题样式
+   品牌色：靛紫（无官方品牌色，方向经用户选定）。品牌资产文件（logo.svg / favicon.svg）仍待用户提供，
+   配置中的 logo / favicon 槽位保持注释，不生成代餐。
+   覆写 VitePress 品牌变量（对比度按 WCAG AA 校验：
+   正文链接 ≥4.5:1，实心按钮白字 ≥3:1，明暗两态）：
+     --vp-c-brand-1  品牌主色（正文链接/图标）
+     --vp-c-brand-2  悬停态
+     --vp-c-brand-3  实心按钮底色（白字）
+     --vp-c-brand-soft  半透明底色（高亮块、选中项）
+   ============================================================ */
+
 :root {
-  --vp-c-brand-1: #6366f1;
-  --vp-c-brand-2: #4f46e5;
-  --vp-c-brand-3: #4338ca;
+  --vp-c-brand-1: #5B4FC4;
+  --vp-c-brand-2: #7068B9;
+  --vp-c-brand-3: #5247B0;
+  --vp-c-brand-soft: #5B4FC424;
+}
+
+.dark {
+  --vp-c-brand-1: #847BD3;
+  --vp-c-brand-2: #958DD9;
+  --vp-c-brand-3: #6358C7;
+  --vp-c-brand-soft: #5B4FC429;
+}
+
+/* 浏览器表面随品牌着色：选区与输入光标 */
+::selection {
+  background-color: #5B4FC43D;
+}
+body {
+  caret-color: var(--vp-c-brand-1);
 }
 
 .vp-doc h1,
@@ -87,9 +115,9 @@
 .vp-doc blockquote {
   margin: 1.5em 0;
   padding: 0.8em 1.2em;
-  border-left: 4px solid var(--vp-c-brand-1);
   background-color: var(--vp-c-bg-soft);
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px;
+  color: var(--vp-c-text-2);
 }
 
 .vp-doc blockquote p {
@@ -160,10 +188,7 @@
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-3));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--vp-c-brand-1);
 }
 
 .VPHome .vp-hero .vp-hero-image {
