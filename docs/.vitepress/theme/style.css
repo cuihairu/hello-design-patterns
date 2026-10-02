@@ -265,12 +265,6 @@ body {
   margin: 0;
 }
 
-.dark {
-  --vp-c-brand-1: #818cf8;
-  --vp-c-brand-2: #6366f1;
-  --vp-c-brand-3: #4f46e5;
-}
-
 @media (max-width: 640px) {
   .VPHome .vp-hero {
     padding: 3rem 1.5rem;
