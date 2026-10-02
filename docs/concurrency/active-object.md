@@ -48,6 +48,7 @@
 
 class MethodRequest {
 public:
+    virtual ~MethodRequest() = default;
     virtual void call() = 0;
 };
 
@@ -59,12 +60,24 @@ public:
         cv_.notify_one();
     }
 
+    // 通知调度线程退出，保证程序能够正常结束
+    void stop() {
+        {
+            std::lock_guard<std::mutex> lock(mtx_);
+            stopping_ = true;
+        }
+        cv_.notify_all();
+    }
+
     void run() {
         while (true) {
             std::unique_ptr<MethodRequest> request;
             {
                 std::unique_lock<std::mutex> lock(mtx_);
-                cv_.wait(lock, [this] { return !requestQueue_.empty(); });
+                cv_.wait(lock, [this] { return !requestQueue_.empty() || stopping_; });
+                if (requestQueue_.empty()) {
+                    return; // 已收到停止信号且队列已清空
+                }
                 request = std::move(requestQueue_.front());
                 requestQueue_.pop();
             }
@@ -76,6 +89,7 @@ private:
     std::queue<std::unique_ptr<MethodRequest>> requestQueue_;
     std::mutex mtx_;
     std::condition_variable cv_;
+    bool stopping_ = false;
 };
 
 class Servant {
@@ -129,7 +143,8 @@ int main() {
     auto future = proxy.do_work(3, 4);
     std::cout << "Result: " << future.get() << std::endl;
 
-    schedulerThread.join();
+    scheduler.stop();       // 通知调度线程退出
+    schedulerThread.join(); // 等待其结束后再销毁 mutex/condition_variable
     return 0;
 }
 ```
@@ -141,12 +156,11 @@ package main
 
 import (
 	"fmt"
-	"sync"
 )
 
 type MethodRequest struct {
-	method func() interface{}
-	result chan interface{}
+	method func() int
+	result chan int
 }
 
 type Scheduler struct {
@@ -193,7 +207,7 @@ func NewProxy(scheduler *Scheduler, servant *Servant) *Proxy {
 func (p *Proxy) DoWork(x, y int) <-chan int {
 	result := make(chan int)
 	methodRequest := MethodRequest{
-		method: func() interface{} {
+		method: func() int {
 			return p.servant.DoWork(x, y)
 		},
 		result: result,

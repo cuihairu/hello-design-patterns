@@ -66,6 +66,7 @@ libuv 是一个跨平台的异步 I/O 库，提供了事件循环的支持。
 
 ```cpp
 #include <uv.h>
+#include <cstdlib> // malloc
 #include <iostream>
 
 void on_new_connection(uv_stream_t* server, int status) {

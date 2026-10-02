@@ -45,7 +45,15 @@ public class Product {
     private String name;
     private double price;
 
-    // Getters and setters
+    public Product(int id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public double getPrice() { return price; }
 }
 ```
 
@@ -118,6 +126,8 @@ class Product(models.Model):
 ```
 
 3. **控制器（Controller）**
+
+> 说明：Django 本身采用的是 MTV（Model-Template-View）结构，其中的 `view` 视图函数承担的是传统 MVC 中控制器的职责（接收请求、调用模型、选择模板渲染），而模板（Template）才对应 MVC 中的视图。
 
 ```python
 from django.shortcuts import render

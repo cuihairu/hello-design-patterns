@@ -15,6 +15,7 @@
 
 #### C++
 ```cpp
+#include <algorithm>
 #include <iostream>
 #include <vector>
 

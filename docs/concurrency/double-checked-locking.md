@@ -46,6 +46,7 @@ public class Singleton {
 
 ```cpp
 #include <iostream>
+#include <atomic>
 #include <mutex>
 #include <memory>
 

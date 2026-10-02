@@ -174,6 +174,9 @@ func main() {
 
 #### Java
 ```java
+import java.util.ArrayList;
+import java.util.List;
+
 // Mediator Interface
 interface Mediator {
     void notify(String message, Colleague colleague);

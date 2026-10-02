@@ -23,10 +23,12 @@
 ```cpp
 #include <iostream>
 #include <mutex>
+#include <atomic>
 
 class Singleton {
 private:
-    static Singleton* instance;
+    // 使用 atomic 保证第一次无锁读取不会构成数据竞争（C++11 内存模型）
+    static std::atomic<Singleton*> instance;
     static std::mutex mtx;
 
     // 私有构造函数，防止外部实例化
@@ -39,13 +41,16 @@ public:
 
     // 静态方法，返回单例实例
     static Singleton* getInstance() {
-        if (instance == nullptr) {
+        Singleton* tmp = instance.load(std::memory_order_acquire);
+        if (tmp == nullptr) {
             std::lock_guard<std::mutex> lock(mtx);
-            if (instance == nullptr) {
-                instance = new Singleton();
+            tmp = instance.load(std::memory_order_relaxed);
+            if (tmp == nullptr) {
+                tmp = new Singleton();
+                instance.store(tmp, std::memory_order_release);
             }
         }
-        return instance;
+        return tmp;
     }
 
     void showMessage() {
@@ -54,7 +59,7 @@ public:
 };
 
 // 初始化静态成员变量
-Singleton* Singleton::instance = nullptr;
+std::atomic<Singleton*> Singleton::instance{nullptr};
 std::mutex Singleton::mtx;
 
 int main() {

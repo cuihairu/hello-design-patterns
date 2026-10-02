@@ -49,7 +49,8 @@ public:
 class ConcreteBuilder : public Builder {
 public:
     ConcreteBuilder() { product = new Product(); }
-    ~ConcreteBuilder() { delete product; }
+    // Builder 拥有 Product 的所有权，析构时统一释放，客户端不要再 delete getResult() 返回的指针
+    ~ConcreteBuilder() override { delete product; }
     void buildPartA() override { product->setPartA("PartA1"); }
     void buildPartB() override { product->setPartB("PartB1"); }
     void buildPartC() override { product->setPartC("PartC1"); }
@@ -78,9 +79,8 @@ int main() {
     ConcreteBuilder builder;
     director.setBuilder(&builder);
     director.construct();
-    Product* product = builder.getResult();
+    Product* product = builder.getResult(); // 所有权仍归 builder，由其析构函数释放
     product->showProduct();
-    delete product;
     return 0;
 }
 ```

@@ -243,6 +243,9 @@ func main() {
     conn3 := pool.Acquire() // Reuses conn1
 
     fmt.Println("Connection conn3 is active:", conn3.active) // Should be true
+
+    pool.Release(conn2) // conn2 使用完毕后归还池中
+    fmt.Println("Connection conn2 released back to pool")
 }
 ```
 

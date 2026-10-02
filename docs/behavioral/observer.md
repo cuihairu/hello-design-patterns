@@ -166,6 +166,9 @@ func main() {
 
 #### Java
 ```java
+import java.util.ArrayList;
+import java.util.List;
+
 // Observer Interface
 interface Observer {
     void update(int state);

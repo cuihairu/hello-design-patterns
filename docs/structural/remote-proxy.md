@@ -99,8 +99,11 @@ public class Client {
 1. **代理接口（Subject）**
 
 ```cpp
+#include <iostream>
+
 class Subject {
 public:
+    virtual ~Subject() = default;
     virtual void request() = 0;
 };
 ```
@@ -133,7 +136,7 @@ public:
         realSubject->request();
     }
 
-    ~Proxy() {
+    ~Proxy() override {
         delete realSubject;
     }
 };

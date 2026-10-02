@@ -42,8 +42,11 @@ Proactor设计模式是一种事件驱动的并发设计模式，主要用于处
 #### C++ 示例（基于Windows IOCP）
 
 ```cpp
+#include <winsock2.h> // 必须在 windows.h 之前包含
 #include <windows.h>
 #include <iostream>
+#include <thread>
+#include <chrono>
 
 class CompletionHandler {
 public:

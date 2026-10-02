@@ -90,6 +90,9 @@ public class BridgePatternDemo {
 #### Java实现
 
 ```java
+import java.util.ArrayList;
+import java.util.List;
+
 // 抽象部分
 abstract class NetworkDevice {
     protected NetworkBridge networkBridge;
@@ -106,22 +109,25 @@ abstract class NetworkDevice {
 // 实现部分接口
 interface NetworkBridge {
     void setNetworkDevice(NetworkDevice networkDevice);
-    void transmitData(String data);
+    // 需要携带发送方，桥才能把数据路由到另一侧，而不是回发给发送者自己
+    void transmitData(NetworkDevice sender, String data);
 }
 
 // 实现部分具体类
 class NetworkBridgeImpl implements NetworkBridge {
-    private NetworkDevice networkDevice;
+    private final List<NetworkDevice> devices = new ArrayList<>();
 
     @Override
     public void setNetworkDevice(NetworkDevice networkDevice) {
-        this.networkDevice = networkDevice;
+        devices.add(networkDevice);
     }
 
     @Override
-    public void transmitData(String data) {
-        if (networkDevice != null) {
-            networkDevice.receiveData(data);
+    public void transmitData(NetworkDevice sender, String data) {
+        for (NetworkDevice device : devices) {
+            if (device != sender) {
+                device.receiveData(data);
+            }
         }
     }
 }
@@ -131,7 +137,7 @@ class Client extends NetworkDevice {
     @Override
     void sendData(String data) {
         System.out.println("Client sending data: " + data);
-        networkBridge.transmitData(data);
+        networkBridge.transmitData(this, data);
     }
 
     @Override
@@ -144,7 +150,7 @@ class Server extends NetworkDevice {
     @Override
     void sendData(String data) {
         System.out.println("Server sending data: " + data);
-        networkBridge.transmitData(data);
+        networkBridge.transmitData(this, data);
     }
 
     @Override
@@ -169,9 +175,18 @@ public class BidirectionalBridgeDemo {
 }
 ```
 
+运行输出：
+
+```text
+Client sending data: Hello from Client
+Server received data: Hello from Client
+Server sending data: Hello from Server
+Client received data: Hello from Server
+```
+
 在这个示例中：
 
 - `NetworkDevice` 是抽象部分，包含对 `NetworkBridge` 的引用。
-- `NetworkBridge` 接口包含对 `NetworkDevice` 的引用。
-- `NetworkBridgeImpl` 是 `NetworkBridge` 的具体实现，通过它们实现双向通信。
+- `NetworkBridge` 接口也持有对 `NetworkDevice` 的引用（双向关联），并按发送方把数据路由到另一侧。
+- `NetworkBridgeImpl` 是 `NetworkBridge` 的具体实现，负责维护已接入的设备并转发数据。
 - `Client` 和 `Server` 是 `NetworkDevice` 的具体实现，通过桥接接口实现双向数据传输。

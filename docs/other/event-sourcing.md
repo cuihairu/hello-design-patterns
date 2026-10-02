@@ -58,7 +58,8 @@ public class AccountCreatedEvent {
         this.initialBalance = initialBalance;
     }
 
-    // Getters
+    public String getAccountId() { return accountId; }
+    public double getInitialBalance() { return initialBalance; }
 }
 ```
 
@@ -74,13 +75,17 @@ public class CreateAccountCommand {
         this.initialBalance = initialBalance;
     }
 
-    // Getters
+    public String getAccountId() { return accountId; }
+    public double getInitialBalance() { return initialBalance; }
 }
 ```
 
 3. **聚合（Aggregate）**
 
 ```java
+import java.util.ArrayList;
+import java.util.List;
+
 public class AccountAggregate {
     private String accountId;
     private double balance;
@@ -101,6 +106,12 @@ public class AccountAggregate {
 4. **事件存储（Event Store）**
 
 ```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class EventStore {
     private final Map<String, List<Object>> store = new HashMap<>();
 
@@ -118,6 +129,9 @@ public class EventStore {
 5. **读取模型（Read Model）**
 
 ```java
+import java.util.HashMap;
+import java.util.Map;
+
 public class AccountReadModel {
     private final Map<String, Double> accounts = new HashMap<>();
 
@@ -143,6 +157,36 @@ public class EventProcessor {
                 readModel.apply((AccountCreatedEvent) event);
             }
         }
+    }
+
+    public AccountReadModel getReadModel() { return readModel; }
+}
+```
+
+7. **客户端演示**
+
+```java
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        AccountAggregate aggregate = new AccountAggregate();
+        EventStore store = new EventStore();
+
+        // 命令 -> 事件，并持久化事件
+        List<Object> events = aggregate.handle(new CreateAccountCommand("acc-1", 100.0));
+        store.saveEvents("acc-1", events);
+        // 按事件流重建聚合
+        for (Object event : store.getEvents("acc-1")) {
+            if (event instanceof AccountCreatedEvent) {
+                aggregate.apply((AccountCreatedEvent) event);
+            }
+        }
+
+        // 通过读取模型（投影）查询
+        EventProcessor processor = new EventProcessor();
+        processor.process(store.getEvents("acc-1"));
+        System.out.println("balance = " + processor.getReadModel().getBalance("acc-1"));
     }
 }
 ```

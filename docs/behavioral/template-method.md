@@ -105,24 +105,25 @@ package main
 
 import "fmt"
 
-type AbstractClass interface {
-	templateMethod()
+// Template 定义算法骨架所需的各个步骤，由具体类（通过嵌入 BaseClass）实现
+type Template interface {
 	baseOperation1()
-	baseOperation2()
 	requiredOperation1()
+	baseOperation2()
 	requiredOperation2()
 	hook()
 }
 
-type BaseClass struct{}
-
-func (b *BaseClass) templateMethod() {
-	b.baseOperation1()
-	b.requiredOperation1()
-	b.baseOperation2()
-	b.requiredOperation2()
-	b.hook()
+// templateMethod 是算法骨架，步骤的真正实现延迟到具体类
+func templateMethod(t Template) {
+	t.baseOperation1()
+	t.requiredOperation1()
+	t.baseOperation2()
+	t.requiredOperation2()
+	t.hook()
 }
+
+type BaseClass struct{}
 
 func (b *BaseClass) baseOperation1() {
 	fmt.Println("AbstractClass: Base Operation 1")
@@ -167,10 +168,10 @@ func main() {
 	class2 := &ConcreteClass2{}
 
 	fmt.Println("Template Method in ConcreteClass1:")
-	class1.templateMethod()
+	templateMethod(class1)
 
 	fmt.Println("\nTemplate Method in ConcreteClass2:")
-	class2.templateMethod()
+	templateMethod(class2)
 }
 ```
 

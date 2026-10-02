@@ -58,21 +58,27 @@ public:
     }
 };
 
+// 两个具体状态类的 handle 实现相互引用，必须定义在两个类声明完成之后，
+// 因此这里先只声明，再在类外定义
 class ConcreteStateA : public State {
 public:
-    void handle(Context* context) override {
-        std::cout << "ConcreteStateA handles request. Switching to ConcreteStateB.\n";
-        context->setState(new ConcreteStateB());
-    }
+    void handle(Context* context) override;
 };
 
 class ConcreteStateB : public State {
 public:
-    void handle(Context* context) override {
-        std::cout << "ConcreteStateB handles request. Switching to ConcreteStateA.\n";
-        context->setState(new ConcreteStateA());
-    }
+    void handle(Context* context) override;
 };
+
+void ConcreteStateA::handle(Context* context) {
+    std::cout << "ConcreteStateA handles request. Switching to ConcreteStateB.\n";
+    context->setState(new ConcreteStateB());
+}
+
+void ConcreteStateB::handle(Context* context) {
+    std::cout << "ConcreteStateB handles request. Switching to ConcreteStateA.\n";
+    context->setState(new ConcreteStateA());
+}
 
 int main() {
     Context* context = new Context(new ConcreteStateA());

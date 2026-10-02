@@ -42,13 +42,16 @@
 #### Java 示例
 
 ```java
+import java.util.HashMap;
+import java.util.Map;
+
 // 服务接口
-public interface Service {
+interface Service {
     void execute();
 }
 
 // 具体服务A
-public class ServiceA implements Service {
+class ServiceA implements Service {
     @Override
     public void execute() {
         System.out.println("Executing Service A");
@@ -56,7 +59,7 @@ public class ServiceA implements Service {
 }
 
 // 具体服务B
-public class ServiceB implements Service {
+class ServiceB implements Service {
     @Override
     public void execute() {
         System.out.println("Executing Service B");
@@ -64,10 +67,7 @@ public class ServiceB implements Service {
 }
 
 // 服务定位器
-import java.util.HashMap;
-import java.util.Map;
-
-public class ServiceLocator {
+class ServiceLocator {
     private static Map<String, Service> services = new HashMap<>();
 
     public static void registerService(String name, Service service) {

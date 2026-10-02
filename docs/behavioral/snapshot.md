@@ -25,6 +25,9 @@
 #### Java实现
 
 ```java
+import java.util.ArrayList;
+import java.util.List;
+
 // Originator
 class TextEditor {
     private StringBuilder text;
