@@ -1,215 +1,356 @@
-### 远程代理模式（Remote Proxy Pattern）
+# 远程代理模式（Remote Proxy Pattern）
 
-#### 概述
+## 概述
 
-远程代理模式是一种结构型设计模式，它为其他对象提供一种代理以控制对这个对象的访问。在分布式系统中，远程代理用于访问远程对象，使本地对象可以像访问本地对象一样透明地访问远程对象。
+远程代理模式是一种结构型设计模式，它为其他对象提供一种代理以控制对这个对象的访问。在分布式系统中，远程代理用于访问远程对象，使本地对象可以像访问本地对象一样透明地访问远程对象。代理负责处理网络通信细节（序列化、连接管理、超时重试等），客户端无感知。
 
-#### 使用场景
+## 使用场景
 
-远程代理模式在以下情况下非常有用：
+- **分布式系统**：对象位于不同物理机器，通过网络通信
+- **微服务架构**：服务间 RPC 调用，代理屏蔽网络细节
+- **延迟初始化**：首次调用时才建立连接
+- **访问控制**：在代理层做鉴权、限流、熔断
+- **故障隔离**：超时、重试、熔断逻辑集中在代理，不污染业务代码
 
-1. **分布式系统**：当对象位于不同的物理机器上时，通过远程代理进行通信。
-2. **延迟初始化**：在需要时才创建和初始化远程对象。
-3. **访问控制**：通过代理控制对远程对象的访问，提供安全性。
-4. **网络通信**：隐藏网络通信的细节，使客户端代码更简单。
+## 核心组件
 
-#### 核心组件
+1. **代理接口（Subject）**：定义客户端调用的方法签名，本地/远程实现同接口
+2. **远程实现（RealSubject）**：运行在服务端的实际业务逻辑
+3. **代理对象（Proxy）**：客户端持有的存根，负责序列化参数、发起网络请求、反序列化结果
+4. **通信层**：gRPC / RMI / HTTP+JSON / 自定义协议
 
-1. **代理接口（Proxy Interface）**：定义客户端可以调用的方法。
-2. **实际对象（Real Subject）**：实际处理请求的远程对象。
-3. **代理对象（Proxy Object）**：在客户端和实际对象之间提供中介，负责将请求转发给远程对象。
+## 示例代码
 
-#### UML 类图
+以下展示三种主流技术栈的最小化远程代理实现：**Java gRPC**、**Go gRPC**、**C++ gRPC**。gRPC 基于 Protobuf 定义接口，自动生成存根/骨架，是现代微服务的标准选择。
 
-```
-+-----------------+       +-----------------+
-|    Client       |       | Proxy Interface |
-|                 |       |                 |
-| +request()      |       | +request()      |
-+-----------------+       +-------+---------+
-                                  |
-                                  |
-                           +------v------+
-                           |   Proxy     |
-                           |             |
-                           | +request()  |
-                           +------+------+
-                                  |
-                                  |
-                           +------v------+
-                           | Real Subject |
-                           |              |
-                           | +request()   |
-                           +--------------+
-```
+### 共享 Protobuf 定义 (`service.proto`)
 
-#### 示例代码
+```protobuf
+syntax = "proto3";
 
-以下是 Java、C++ 和 Go 语言的远程代理模式实现示例。
+package hellopattern;
 
-##### Java 示例
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
 
-1. **代理接口（Subject）**
+message HelloRequest {
+  string name = 1;
+}
 
-```java
-public interface Subject {
-    void request();
+message HelloReply {
+  string message = 1;
 }
 ```
 
-2. **实际对象（RealSubject）**
+---
+
+### Java 实现（gRPC + Netty）
+
+**依赖**（Maven/Gradle 自行添加 `grpc-stub`、`grpc-protobuf`、`grpc-netty-shaded`、`protobuf-java`）
+
+#### 服务端实现
 
 ```java
-public class RealSubject implements Subject {
-    public void request() {
-        System.out.println("RealSubject: Handling request.");
+// GreeterServiceImpl.java
+package com.example.remotepattern;
+
+import hellopattern.GreeterGrpc;
+import hellopattern.HelloReply;
+import hellopattern.HelloRequest;
+import io.grpc.stub.StreamObserver;
+
+public class GreeterServiceImpl extends GreeterGrpc.GreeterImplBase {
+    @Override
+    public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
+        String reply = "Hello, " + req.getName() + " (from Java gRPC server)";
+        HelloReply response = HelloReply.newBuilder().setMessage(reply).build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+}
+
+// Server.java
+package com.example.remotepattern;
+
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import java.io.IOException;
+
+public class Server {
+    public static void main(String[] args) throws IOException, InterruptedException {
+        Server server = ServerBuilder.forPort(50051)
+                .addService(new GreeterServiceImpl())
+                .build()
+                .start();
+        System.out.println("Java gRPC server started on port 50051");
+        server.awaitTermination();
     }
 }
 ```
 
-3. **代理对象（Proxy）**
+#### 客户端代理（远程代理）
 
 ```java
-public class Proxy implements Subject {
-    private RealSubject realSubject;
+// GreeterProxy.java
+package com.example.remotepattern;
 
-    public void request() {
-        if (realSubject == null) {
-            realSubject = new RealSubject();
-        }
-        System.out.println("Proxy: Forwarding request to RealSubject.");
-        realSubject.request();
+import hellopattern.GreeterGrpc;
+import hellopattern.HelloReply;
+import hellopattern.HelloRequest;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+
+public class GreeterProxy implements AutoCloseable {
+    private final ManagedChannel channel;
+    private final GreeterGrpc.GreeterBlockingStub stub;
+
+    public GreeterProxy(String host, int port) {
+        this.channel = ManagedChannelBuilder.forAddress(host, port)
+                .usePlaintext()  // 生产环境请用 TLS
+                .build();
+        this.stub = GreeterGrpc.newBlockingStub(channel);
+    }
+
+    // 代理方法：本地调用 → 远程 RPC
+    public String sayHello(String name) {
+        HelloRequest request = HelloRequest.newBuilder().setName(name).build();
+        HelloReply reply = stub.sayHello(request);  // 阻塞式调用
+        return reply.getMessage();
+    }
+
+    @Override
+    public void close() {
+        channel.shutdown();
     }
 }
-```
 
-4. **客户端（Client）**
+// Client.java
+package com.example.remotepattern;
 
-```java
 public class Client {
     public static void main(String[] args) {
-        Subject proxy = new Proxy();
-        proxy.request();
+        try (GreeterProxy proxy = new GreeterProxy("localhost", 50051)) {
+            String resp = proxy.sayHello("DesignPattern");
+            System.out.println("Response: " + resp);
+        }
     }
 }
 ```
 
-##### C++ 示例
+---
 
-1. **代理接口（Subject）**
+### Go 实现（gRPC）
 
-```cpp
-#include <iostream>
+**依赖**：`google.golang.org/grpc`、`google.golang.org/protobuf`，`protoc --go-grpc_out=. --go_out=. service.proto` 生成代码
 
-class Subject {
-public:
-    virtual ~Subject() = default;
-    virtual void request() = 0;
-};
+#### 服务端
+
+```go
+// server/main.go
+package main
+
+import (
+	"context"
+	"log"
+	"net"
+
+	"google.golang.org/grpc"
+	pb "hellopattern"
+)
+
+type greeterServer struct {
+	pb.UnimplementedGreeterServer
+}
+
+func (s *greeterServer) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloReply, error) {
+	return &pb.HelloReply{Message: "Hello, " + req.Name + " (from Go gRPC server)"}, nil
+}
+
+func main() {
+	lis, err := net.Listen("tcp", ":50051")
+	if err != nil {
+		log.Fatalf("failed to listen: %v", err)
+	}
+	s := grpc.NewServer()
+	pb.RegisterGreeterServer(s, &greeterServer{})
+	log.Println("Go gRPC server started on port 50051")
+	if err := s.Serve(lis); err != nil {
+		log.Fatalf("failed to serve: %v", err)
+	}
+}
 ```
 
-2. **实际对象（RealSubject）**
+#### 客户端代理
 
-```cpp
-class RealSubject : public Subject {
-public:
-    void request() override {
-        std::cout << "RealSubject: Handling request." << std::endl;
-    }
-};
+```go
+// client/main.go
+package main
+
+import (
+	"context"
+	"log"
+	"time"
+
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
+	pb "hellopattern"
+)
+
+// GreeterProxy 远程代理：封装 gRPC 存根，暴露业务接口
+type GreeterProxy struct {
+	client pb.GreeterClient
+	conn   *grpc.ClientConn
+}
+
+func NewGreeterProxy(addr string) (*GreeterProxy, error) {
+	conn, err := grpc.Dial(addr,
+		grpc.WithTransportCredentials(insecure.NewCredentials()),
+		grpc.WithBlock(),
+		grpc.WithTimeout(5*time.Second),
+	)
+	if err != nil {
+		return nil, err
+	}
+	return &GreeterProxy{
+		client: pb.NewGreeterClient(conn),
+		conn:   conn,
+	}, nil
+}
+
+func (p *GreeterProxy) SayHello(name string) (string, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+	reply, err := p.client.SayHello(ctx, &pb.HelloRequest{Name: name})
+	if err != nil {
+		return "", err
+	}
+	return reply.Message, nil
+}
+
+func (p *GreeterProxy) Close() error {
+	return p.conn.Close()
+}
+
+func main() {
+	proxy, err := NewGreeterProxy("localhost:50051")
+	if err != nil {
+		log.Fatalf("dial failed: %v", err)
+	}
+	defer proxy.Close()
+
+	resp, err := proxy.SayHello("DesignPattern")
+	if err != nil {
+		log.Fatalf("RPC failed: %v", err)
+	}
+	log.Printf("Response: %s", resp)
+}
 ```
 
-3. **代理对象（Proxy）**
+---
+
+### C++ 实现（gRPC）
+
+**依赖**：`grpc++`、`grpc++_reflection`、`protobuf`，`protoc --grpc_out=. --cpp_out=. service.proto` 生成 `service.grpc.pb.h/cc`、`service.pb.h/cc`
+
+#### 服务端
 
 ```cpp
-class Proxy : public Subject {
-private:
-    RealSubject* realSubject;
-public:
-    Proxy() : realSubject(nullptr) {}
+// server.cc
+#include <grpcpp/grpcpp.h>
+#include "service.grpc.pb.h"
 
-    void request() override {
-        if (realSubject == nullptr) {
-            realSubject = new RealSubject();
-        }
-        std::cout << "Proxy: Forwarding request to RealSubject." << std::endl;
-        realSubject->request();
-    }
+using grpc::Server;
+using grpc::ServerBuilder;
+using grpc::ServerContext;
+using grpc::Status;
+using hellopattern::Greeter;
+using hellopattern::HelloReply;
+using hellopattern::HelloRequest;
 
-    ~Proxy() override {
-        delete realSubject;
+class GreeterServiceImpl final : public Greeter::Service {
+    Status SayHello(ServerContext* context, const HelloRequest* request, HelloReply* reply) override {
+        std::string prefix("Hello, ");
+        reply->set_message(prefix + request->name() + " (from C++ gRPC server)");
+        return Status::OK;
     }
 };
-```
 
-4. **客户端（Client）**
-
-```cpp
 int main() {
-    Subject* proxy = new Proxy();
-    proxy->request();
-    delete proxy;
+    std::string server_address("0.0.0.0:50051");
+    GreeterServiceImpl service;
+    ServerBuilder builder;
+    builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
+    builder.RegisterService(&service);
+    std::unique_ptr<Server> server(builder.BuildAndStart());
+    std::cout << "C++ gRPC server listening on " << server_address << std::endl;
+    server->Wait();
     return 0;
 }
 ```
 
-##### Go 示例
+#### 客户端代理
 
-1. **代理接口（Subject）**
+```cpp
+// client.cc
+#include <grpcpp/grpcpp.h>
+#include "service.grpc.pb.h"
+#include <iostream>
+#include <memory>
+#include <string>
 
-```go
-package main
+using grpc::Channel;
+using grpc::ClientContext;
+using grpc::Status;
+using hellopattern::Greeter;
+using hellopattern::HelloReply;
+using hellopattern::HelloRequest;
 
-type Subject interface {
-    Request()
-}
-```
+class GreeterProxy {
+public:
+    explicit GreeterProxy(std::shared_ptr<Channel> channel)
+        : stub_(Greeter::NewStub(channel)) {}
 
-2. **实际对象（RealSubject）**
+    std::string SayHello(const std::string& name) {
+        HelloRequest request;
+        request.set_name(name);
+        HelloReply reply;
+        ClientContext context;
+        context.set_deadline(std::chrono::system_clock::now() + std::chrono::seconds(3));
 
-```go
-package main
-
-import "fmt"
-
-type RealSubject struct{}
-
-func (rs *RealSubject) Request() {
-    fmt.Println("RealSubject: Handling request.")
-}
-```
-
-3. **代理对象（Proxy）**
-
-```go
-package main
-
-import "fmt"
-
-type Proxy struct {
-    realSubject *RealSubject
-}
-
-func (p *Proxy) Request() {
-    if p.realSubject == nil {
-        p.realSubject = &RealSubject{}
+        Status status = stub_->SayHello(&context, request, &reply);
+        if (status.ok()) {
+            return reply.message();
+        }
+        std::cerr << "RPC failed: " << status.error_message() << std::endl;
+        return "RPC failed";
     }
-    fmt.Println("Proxy: Forwarding request to RealSubject.")
-    p.realSubject.Request()
+
+private:
+    std::unique_ptr<Greeter::Stub> stub_;
+};
+
+int main() {
+    auto channel = grpc::CreateChannel("localhost:50051", grpc::InsecureChannelCredentials());
+    GreeterProxy proxy(channel);
+    std::string reply = proxy.SayHello("DesignPattern");
+    std::cout << "Response: " << reply << std::endl;
+    return 0;
 }
 ```
 
-4. **客户端（Client）**
+---
 
-```go
-package main
+## 关键点总结
 
-func main() {
-    var subject Subject = &Proxy{}
-    subject.Request()
-}
-```
+| 维度 | 说明 |
+|---|---|
+| **透明性** | 客户端通过 `Subject` 接口调用，无感知网络细节 |
+| **序列化** | Protobuf 二进制，跨语言、版本兼容、体积小 |
+| **错误处理** | 代理层统一处理超时、重试、熔断、降级（示例为简洁省略） |
+| **生命周期** | `Channel`/`ManagedChannel` 需显式关闭，避免连接泄漏 |
+| **安全** | 生产环境必须启用 TLS（`grpc.WithTransportCredentials` / `SslServerCredentials`） |
 
-#### 总结
+## 总结
 
-远程代理模式通过在客户端和实际对象之间引入代理，简化了客户端与远程对象的交互。代理对象负责处理网络通信和请求转发，使得客户端代码可以像操作本地对象一样操作远程对象。这种模式特别适用于分布式系统和需要延迟初始化的场景。
+远程代理模式通过在客户端引入代理对象，将网络通信、序列化、错误处理等基础设施逻辑封装起来，使业务代码像调用本地函数一样调用远程服务。现代工程实践中，**gRPC + Protobuf** 是跨语言远程代理的首选方案，配合服务治理框架（服务发现、负载均衡、可观测性）可构建生产级分布式系统。

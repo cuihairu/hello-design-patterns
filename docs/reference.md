@@ -70,7 +70,6 @@
 - [模板方法模式](/behavioral/template-method)
 - [状态模式](/behavioral/state)
 - [备忘录模式](/behavioral/memento)
-- [快照模式](/behavioral/snapshot)
 - [解释器模式](/behavioral/interpreter)
 - [访问者模式](/behavioral/visitor)
 - [回调模式](/behavioral/callback)

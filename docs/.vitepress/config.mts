@@ -8,7 +8,6 @@ export default defineConfig({
   // GitHub Pages 项目页部署在仓库子路径下，缺 base 会导致全部静态资源 404
   base: '/hello-design-patterns/',
   cleanUrls: true,
-  ignoreDeadLinks: true,
 
   head: [
     // 品牌资产空位：favicon.svg 到位后启用
@@ -79,7 +78,6 @@ export default defineConfig({
           { text: '模板方法模式', link: '/behavioral/template-method' },
           { text: '状态模式', link: '/behavioral/state' },
           { text: '备忘录模式', link: '/behavioral/memento' },
-          { text: '快照模式', link: '/behavioral/snapshot' },
           { text: '解释器模式', link: '/behavioral/interpreter' },
           { text: '访问者模式', link: '/behavioral/visitor' },
           { text: '回调模式', link: '/behavioral/callback' },

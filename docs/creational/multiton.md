@@ -1,4 +1,4 @@
-### 多例模式（Multiton Pattern）
+# 多例模式（Multiton Pattern）
 
 #### 简介
 
