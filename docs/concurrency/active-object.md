@@ -257,7 +257,9 @@ class Scheduler {
     private BlockingQueue<MethodRequest> requestQueue = new LinkedBlockingQueue<>();
 
     public Scheduler() {
-        new Thread(this::run).start();
+        Thread schedulerThread = new Thread(this::run, "active-object-scheduler");
+        schedulerThread.setDaemon(true); // 守护线程：调度线程阻塞在 take() 上时 JVM 仍可退出
+        schedulerThread.start();
     }
 
     public void enqueue(MethodRequest request) {
@@ -301,13 +303,14 @@ class Proxy {
 }
 
 public class ActiveObjectPattern {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Servant servant = new Servant();
         Scheduler scheduler = new Scheduler();
         Proxy proxy = new Proxy(scheduler, servant);
 
         CompletableFuture<Integer> future = proxy.doWork(3, 4);
-        future.thenAccept(result -> System.out.println("Result: " + result));
+        // 阻塞等待结果，保证主线程结束前一定完成打印
+        System.out.println("Result: " + future.get());
     }
 }
 ```

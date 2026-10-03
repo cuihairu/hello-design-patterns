@@ -36,15 +36,20 @@ public class SemaphoreExample {
 
         for (int i = 0; i < 10; i++) {
             executor.submit(() -> {
+                boolean acquired = false;
                 try {
                     semaphore.acquire();
+                    acquired = true;
                     System.out.println(Thread.currentThread().getName() + " acquired a permit.");
                     Thread.sleep(2000); // 模拟任务执行
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 } finally {
-                    System.out.println(Thread.currentThread().getName() + " released a permit.");
-                    semaphore.release();
+                    // 只有成功 acquire 过才 release，否则中断路径会凭空增加许可数
+                    if (acquired) {
+                        System.out.println(Thread.currentThread().getName() + " released a permit.");
+                        semaphore.release();
+                    }
                 }
             });
         }
@@ -80,7 +85,7 @@ for thread in threads:
 ```
 
 ##### C++ 示例
-C++11 及以上标准提供了 `std::counting_semaphore` 支持信号量。
+C++20 起的标准库提供了 `std::counting_semaphore` 支持信号量。
 
 ```cpp
 #include <iostream>
@@ -111,7 +116,7 @@ int main() {
 ```
 
 ##### Go 示例
-Go 的 `sync` 包提供了 `sync.WaitGroup` 和 `sync.Mutex`，可以用来实现信号量功能。
+Go 标准库没有现成的信号量类型，惯用做法是用带缓冲的 channel 实现（下方示例即采用此法）；`sync.WaitGroup` 则用于等待一组任务完成。
 
 ```go
 package main

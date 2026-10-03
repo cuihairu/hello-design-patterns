@@ -1,4 +1,4 @@
-### 智能指针模式（Smart Pointer Pattern）
+# 智能指针模式（Smart Pointer Pattern）
 
 智能指针模式是一个典型的资源管理模式，主要用于管理动态分配的内存或其他资源，避免内存泄漏和未定义行为。在C++中，智能指针模式通过RAII（Resource Acquisition Is Initialization）原则，实现了对资源的自动管理。
 

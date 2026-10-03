@@ -1,6 +1,6 @@
-生产者-消费者模式（Producer-Consumer Pattern）确实是一个常见的并发设计模式。它属于并发模式，解决了在多线程环境中协调生产者和消费者之间的关系。以下是生产者-消费者模式的详细说明：
+# 生产者-消费者模式
 
-### 生产者-消费者模式
+生产者-消费者模式（Producer-Consumer Pattern）确实是一个常见的并发设计模式。它属于并发模式，解决了在多线程环境中协调生产者和消费者之间的关系。以下是生产者-消费者模式的详细说明：
 
 #### 使用场景
 - **多线程环境**：需要在多个线程之间共享有限的资源。
@@ -54,7 +54,6 @@ func consumer(id int, wg *sync.WaitGroup) {
 }
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
 	var wg sync.WaitGroup
 
 	// 启动生产者

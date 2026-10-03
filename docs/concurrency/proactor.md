@@ -108,7 +108,11 @@ public:
         while (true) {
             SOCKET clientSocket = accept(listenSocket, NULL, NULL);
             if (clientSocket != INVALID_SOCKET) {
-                CreateIoCompletionPort((HANDLE)clientSocket, iocp_, (ULONG_PTR)new Session(iocp_), 0);
+                auto* session = new Session(iocp_);
+                // 将 session 作为完成键关联到 IOCP，再投递首个异步 WSARecv，
+                // 否则该连接永远不会有完成事件进入队列
+                CreateIoCompletionPort((HANDLE)clientSocket, iocp_, (ULONG_PTR)session, 0);
+                session->start(clientSocket);
             }
         }
     }

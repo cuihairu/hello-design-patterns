@@ -158,6 +158,8 @@ class Handler implements Runnable {
 
 #### C++ 示例（基于Boost.Asio）
 
+> 注：Boost.Asio 底层实现采用的是 Proactor 模型（见[主动器模式](/concurrency/proactor)），其 `async_*` 系列接口是「投递异步操作、完成后回调」的完成通知风格。此处借用它展示 Reactor 风格的「注册—等待—分发—回调」事件处理结构，两者的区别详见 Proactor 一文。
+
 ```cpp
 #include <boost/asio.hpp>
 #include <iostream>

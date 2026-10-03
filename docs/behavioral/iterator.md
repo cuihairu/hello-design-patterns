@@ -36,6 +36,7 @@
 
 class Iterator {
 public:
+    virtual ~Iterator() = default; // 虚析构，保证经基类指针删除派生类对象是良定义的
     virtual int next() = 0;
     virtual bool hasNext() = 0;
 };

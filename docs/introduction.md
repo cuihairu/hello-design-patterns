@@ -5,6 +5,11 @@
 - **结构型模式（Structural Patterns）**
 - **行为型模式（Behavioral Patterns）**
 
+除这三大经典类别外，并发编程与特定领域实践也各自形成了成熟的模式目录，本指南一并收录：
+
+- **并发模式（Concurrency Patterns）**
+- **特定领域模式（Domain-Specific Patterns）**
+
 这些类别帮助开发人员理解模式的目的和使用场景。以下是这些类别及其主要模式的简单说明：
 
 ## 创建型模式（Creational Patterns）

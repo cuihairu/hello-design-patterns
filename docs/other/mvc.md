@@ -1,4 +1,4 @@
-### 模型-视图-控制器（MVC）模式
+# 模型-视图-控制器（MVC）模式
 
 #### 概述
 模型-视图-控制器（Model-View-Controller, MVC）模式是一种软件设计模式，常用于开发用户界面。它将应用程序分为三部分：模型（Model）、视图（View）和控制器（Controller），以实现关注点分离（Separation of Concerns），从而使代码更加模块化、可维护和可扩展。

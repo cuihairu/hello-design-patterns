@@ -55,7 +55,7 @@ export default defineConfig({
           { text: '动态代理模式', link: '/structural/dynamic-proxy' },
           { text: '保护代理模式', link: '/structural/protection-proxy' },
           { text: '远程代理模式', link: '/structural/remote-proxy' },
-          { text: '智能指引模式', link: '/structural/smart-pointer' },
+          { text: '智能指针模式', link: '/structural/smart-pointer' },
           { text: '虚拟代理模式', link: '/structural/virtual-proxy' },
           { text: '外观模式', link: '/structural/facade' },
           { text: '桥接模式', link: '/structural/bridge' },
