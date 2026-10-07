@@ -13,6 +13,8 @@
 
 系统梳理创建型、结构型、行为型、并发等设计模式，涵盖 C++、Java、Go 多语言实现。
 
+<p align="center"><img src="docs/public/badges/topic.svg" alt="topic" /> <img src="docs/public/badges/docs.svg" alt="docs" /></p>
+
 ## 开发
 
 依赖 [VitePress](https://vitepress.dev/)
