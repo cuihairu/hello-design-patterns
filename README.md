@@ -11,17 +11,20 @@
   <img src="docs/public/badges/langs.svg" alt="langs" />
 </p>
 
-设计模式指南 · [在线阅读](https://cuihairu.github.io/hello-design-patterns/)
+Design Patterns Guide · [Read online](https://cuihairu.github.io/hello-design-patterns/) · [简体中文](./README.zh.md)
 
 </div>
 
 ---
 
-系统梳理创建型、结构型、行为型、并发等设计模式，涵盖 C++、Java、Go 多语言实现。
+A systematic guide to creational, structural, behavioral, and concurrency design patterns, with implementations in C++, Java, and Go.
 
-## 开发
+> 📖 中文说明见 [README.zh.md](./README.zh.md)
 
-依赖 [VitePress](https://vitepress.dev/)
+## Development
+
+Built with [VitePress](https://vitepress.dev/)
+
 ## License
 
-本作品采用 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) 许可协议发布。
+This work is licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license.
