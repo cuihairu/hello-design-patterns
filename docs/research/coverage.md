@@ -12,7 +12,7 @@
 | 结构型 7 | [适配器](/structural/adapter)、[桥接](/structural/bridge)、[组合](/structural/composite)、[装饰](/structural/decorator)、[外观](/structural/facade)、[享元](/structural/flyweight)、[代理](/structural/proxy) | 7/7 |
 | 行为型 11 | [责任链](/behavioral/chain-of-responsibility)、[命令](/behavioral/command)、[解释器](/behavioral/interpreter)、[迭代器](/behavioral/iterator)、[中介者](/behavioral/mediator)、[备忘录](/behavioral/memento)、[观察者](/behavioral/observer)、[状态](/behavioral/state)、[策略](/behavioral/strategy)、[模板方法](/behavioral/template-method)、[访问者](/behavioral/visitor) | 11/11 |
 
-GoF 之外站内另有的 24 个条目（多例、对象池、服务定位器、动态/保护/远程/虚拟代理、智能指针、双向桥接、依赖注入、回调、DSL、快照、并发 8 条、其他 4 条）不在本表，它们的取舍见表 2。
+GoF 之外站内另有的 24 个条目（多例、对象池、服务定位器、动态/保护/远程/虚拟代理、智能指针、双向桥接、依赖注入、回调、DSL、快照、并发 8 条、其他 4 条）不在本表，它们的取舍见表 2。2026-10-10 增量又收稳定性三条与仓储一条，取舍见表 2c。
 
 ## 表 2：调研条目 × 站内缺口
 

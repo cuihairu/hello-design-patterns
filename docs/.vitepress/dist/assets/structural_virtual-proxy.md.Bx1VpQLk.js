@@ -4,7 +4,7 @@ import{G as e,W as t,n,rt as r}from"./chunks/framework.OKfwtFe7.js";var i=JSON.p
 <span class="line"><span style="color:#818e99;">// 抽象主题</span></span>
 <span class="line"><span style="color:#F97583;">class</span><span style="color:#B392F0;"> Subject</span><span style="color:#E1E4E8;"> {</span></span>
 <span class="line"><span style="color:#F97583;">public:</span></span>
-<span class="line"><span style="color:#F97583;">    virtual</span><span style="color:#F97583;"> void</span><span style="color:#B392F0;"> request</span><span style="color:#E1E4E8;">() </span><span style="color:#F97583;">=</span><span style="color:#79B8FF;"> 0</span><span style="color:#E1E4E8;">;</span></span>
+<span class="line"><span style="color:#F97583;">    virtual</span><span style="color:#F97583;"> void</span><span style="color:#B392F0;"> request</span><span style="color:#E1E4E8;">() </span><span style="color:#F97583;">= 0;</span></span>
 <span class="line"><span style="color:#E1E4E8;">};</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#818e99;">// 真实主题</span></span>
