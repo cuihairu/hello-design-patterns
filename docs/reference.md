@@ -136,3 +136,4 @@
 - [工厂方法](/creational/factory-method)与[抽象工厂](/creational/abstract-factory)解决对象创建的解耦问题，[建造者模式](/creational/builder)则面向复杂对象的分步构建。
 - [事件循环](/concurrency/event-loop)、[反应器](/concurrency/reactor)与[主动器](/concurrency/proactor)共同构成事件驱动 I/O 的核心模式族。
 - [熔断器](/evolution/circuit-breaker)、[隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)与[重试](/evolution/retry)同出《Release It!》，分别管失败率、资源上限、单次时长与瞬时故障恢复，跨进程调用常四件一起配。
+- [策略模式](/behavioral/strategy)的空对象一节："空行为"也是可替换的策略，返回空实现代替 `null`，调用方不必判空。

@@ -66,7 +66,7 @@ Go 没有继承，复用靠结构体嵌入加小接口；Vue 组合式 API 把�
 | .NET 设计指南 [S24] | [learn.microsoft.com](https://learn.microsoft.com/) | 依赖走构造函数注入，扩展点用接口不用虚方法基类 |
 | Spring 文档 [S27] | [docs.spring.io](https://docs.spring.io/) | 控制反转是容器负责组装；与[服务定位器](/creational/service-locator)的区别在谁发起装配 |
 | MDN [S28] | [developer.mozilla.org](https://developer.mozilla.org/) | `Proxy`、迭代器协议、`EventTarget` 是前端三个语言内置的模式落点 |
-| Refactoring.Guru [S16] | [refactoring.guru](https://refactoring.guru/) | 三分法与代理四变体的命名一致；空对象它收、本仓暂不收 |
+| Refactoring.Guru [S16] | [refactoring.guru](https://refactoring.guru/) | 三分法与代理四变体的命名一致；空对象它单列、本仓并入策略篇一节 |
 | SourceMaking [S17] | [sourcemaking.com](https://sourcemaking.com/) | 反模式四段式骨架的出处 |
 | iluwatar/java-design-patterns [S18] | [github.com](https://github.com/iluwatar/java-design-patterns) | 收录取舍以「有没有书籍出处」为准：熔断有（Release It!），类别对象、环境对象这类纯社区条目不收 |
 
@@ -97,6 +97,7 @@ Go 没有继承，复用靠结构体嵌入加小接口；Vue 组合式 API 把�
 | 前端示例写旧范式 | Vue 2 选项式与 React class 组件不写，统一组合式 API 与函数组件 | [组合式设计](/evolution/composition-over-inheritance) |
 | 非幂等操作直接重试 | 扣款重试一次就是两笔扣款，先加幂等键或先查结果再重试 | [重试模式](/evolution/retry) |
 | 超时设得比下游 P99 还短 | 正常慢请求被杀，下游副作用却已发生，读超时按下游 P99 的 1.5–2 倍设 | [超时模式](/evolution/timeout) |
+| 空对象当 Optional 用 | 空对象是"有但什么都不做"，调用方无感；Optional 是"可能没有"，调用方仍要处理缺失分支，两者解决的问题不同 | [策略模式](/behavioral/strategy) |
 
 ## 覆盖核对结论
 

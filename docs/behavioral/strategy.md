@@ -162,6 +162,86 @@ public class Main {
 }
 ```
 
+### 空对象：不用判空的那一档策略
+
+空对象（Null Object）是策略的一个特例：定义一个"什么都不做"的策略实现，代替 `null` 返回给调用方。调用方拿到的永远是非空对象，判空分支从代码里消失——"空行为"也是一组可替换算法中的一个，所以它归入策略篇而不是单开一篇（Refactoring.Guru 收它为独立条目，站内口径见[覆盖核对差异表](/research/coverage)）。
+
+#### Go
+```go
+package main
+
+import "fmt"
+
+type Logger interface {
+    Log(msg string)
+}
+
+type ConsoleLogger struct{}
+
+func (ConsoleLogger) Log(msg string) {
+    fmt.Println(msg)
+}
+
+// NullLogger 是空对象：实现接口，但什么都不做
+type NullLogger struct{}
+
+func (NullLogger) Log(msg string) {}
+
+func main() {
+    var l Logger = ConsoleLogger{}
+    l.Log("hello")
+
+    l = NullLogger{}
+    l.Log("silenced") // 无输出，调用方不用判空
+}
+```
+
+#### Java
+```java
+interface Logger {
+    void log(String msg);
+}
+
+class ConsoleLogger implements Logger {
+    public void log(String msg) {
+        System.out.println(msg);
+    }
+}
+
+// 空对象：实现接口，方法体为空
+class NullLogger implements Logger {
+    public void log(String msg) {
+    }
+}
+```
+
+#### C++
+```cpp
+#include <iostream>
+#include <string>
+
+class Logger {
+public:
+    virtual ~Logger() = default;
+    virtual void log(const std::string& msg) const = 0;
+};
+
+class ConsoleLogger : public Logger {
+public:
+    void log(const std::string& msg) const override {
+        std::cout << msg << std::endl;
+    }
+};
+
+// 空对象：实现接口，方法体为空
+class NullLogger : public Logger {
+public:
+    void log(const std::string& msg) const override {}
+};
+```
+
+空对象与 `Optional` 解决的问题不同：`Optional` 把"可能没有"显式写进类型，调用方仍然要处理缺失分支；空对象表示"有，但它什么都不做"，调用方无感。需要调用方感知缺失时用 `Optional`，需要调用方无感跳过时用空对象。
+
 ### 策略模式的优点和缺点
 
 #### 优点
