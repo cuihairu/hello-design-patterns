@@ -135,3 +135,49 @@ public class Multiton {
 ### 总结
 
 多例模式是一种灵活的单例模式变体，允许在一个类中创建多个受控的实例，每个实例由一个唯一的键值标识。通过这种方式，可以有效地管理和控制多个相关实例的创建和访问。在实际应用中，可以根据具体需求选择实现方式，并注意线程安全问题。
+
+#### C++ 完整实现（含 `std::make_shared` 优化）
+
+```cpp
+#include <iostream>
+#include <map>
+#include <memory>
+#include <string>
+#include <mutex>
+
+class Multiton {
+public:
+    static std::shared_ptr<Multiton> getInstance(const std::string& key) {
+        std::lock_guard<std::mutex> guard(mutex_);
+        auto it = instances_.find(key);
+        if (it == instances_.end()) {
+            auto ptr = std::make_shared<Multiton>();
+            instances_[key] = ptr;
+            return ptr;
+        }
+        return it->second;
+    }
+
+    void doSomething() {
+        std::cout << "Multiton instance at work!" << std::endl;
+    }
+
+private:
+    Multiton() = default;
+    static std::map<std::string, std::shared_ptr<Multiton>> instances_;
+    static std::mutex mutex_;
+};
+
+std::map<std::string, std::shared_ptr<Multiton>> Multiton::instances_;
+std::mutex Multiton::mutex_;
+
+int main() {
+    auto instance1 = Multiton::getInstance("Database1");
+    auto instance2 = Multiton::getInstance("Database2");
+    
+    instance1->doSomething();
+    instance2->doSomething();
+
+    return 0;
+}
+```

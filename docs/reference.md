@@ -12,6 +12,10 @@
 - 《重构与模式》（Refactoring to Patterns），Joshua Kerievsky。给出从常见坏味道到设计模式的演进路径。
 - 《面向模式的软件架构》（Pattern-Oriented Software Architecture），Frank Buschmann 等（POSA 系列）。系统化讲解通信、并发、结构等架构层模式。
 - 《企业集成模式》（Enterprise Integration Patterns），Gregor Hohpe、Bobby Woolf。消息、路由、转换等企业应用集成（EAI）中消息传递模式的经典目录。
+- 《架构整洁之道》（Clean Architecture），Robert C. Martin。SOLID 五原则、依赖规则与组件级设计原则，对应站内[现代演进](/evolution/overview)分区。
+- 《反模式》（AntiPatterns: Refactoring Software, Architectures, and Projects in Crisis），William J. Brown 等。反模式目录，对应站内[反模式](/anti-patterns/overview)分区。
+- 《领域驱动设计》（Domain-Driven Design），Eric Evans。限界上下文、聚合、仓储等战略设计词汇。
+- 《Release It!》（第 2 版），Michael T. Nygard。生产环境稳定性模式，熔断器一文出自此书，对应[熔断器](/evolution/circuit-breaker)。
 
 ## 在线资源
 
@@ -50,13 +54,13 @@
 - [保护代理模式](/structural/protection-proxy)
 - [远程代理模式](/structural/remote-proxy)
 - [动态代理模式](/structural/dynamic-proxy)
-- [智能指引模式](/structural/smart-pointer)
 - [外观模式](/structural/facade)
 - [桥接模式](/structural/bridge)
 - [双向桥接模式](/structural/bidirectional-bridge)
 - [组合模式](/structural/composite)
 - [享元模式](/structural/flyweight)
 - [依赖注入](/structural/dependency-injection)
+- [智能指针模式](/structural/smart-pointer)
 
 ### 行为型模式
 
@@ -94,6 +98,31 @@
 - [MVVM 模式](/other/mvvm)
 - [对象-关系映射（ORM）](/other/orm)
 - [事件溯源（Event Sourcing）](/other/event-sourcing)
+- [事务脚本模式](/other/transaction-script)
+
+### 反模式
+
+- [反模式导读](/anti-patterns/overview)
+- [神对象](/anti-patterns/god-object)
+- [大泥球](/anti-patterns/big-ball-of-mud)
+- [金锤子](/anti-patterns/golden-hammer)
+- [意面代码](/anti-patterns/spaghetti-code)
+- [贫血模型](/anti-patterns/anemic-domain-model)
+
+### 现代演进
+
+- [现代演进导读](/evolution/overview)
+- [组合式设计](/evolution/composition-over-inheritance)
+- [SOLID 与依赖规则](/evolution/solid)
+- [熔断器模式](/evolution/circuit-breaker)
+
+### 调研
+
+- [调研总览](/research/overview)（含 28 条来源清单）
+- [权威书籍与标准目录](/research/books)
+- [官方与社区文档](/research/official-docs)
+- [应用场景与语言落地](/research/applications)
+- [覆盖核对与差异表](/research/coverage)
 
 ## 模式之间的关联
 

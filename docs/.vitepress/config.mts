@@ -95,7 +95,10 @@ export default defineConfig({
           { text: '信号量模式', link: '/concurrency/semaphore' },
           { text: '事件循环模式', link: '/concurrency/event-loop' },
           { text: '双重检查锁定模式', link: '/concurrency/double-checked-locking' },
-          { text: '主动对象模式', link: '/concurrency/active-object' }
+          { text: '主动对象模式', link: '/concurrency/active-object' },
+          { text: '线程池模式', link: '/concurrency/thread-pool' },
+          { text: '读写锁模式', link: '/concurrency/read-write-lock' },
+          { text: '工作窃取模式', link: '/concurrency/work-stealing' }
         ]
       },
       {
@@ -105,7 +108,38 @@ export default defineConfig({
           { text: 'ORM 模式', link: '/other/orm' },
           { text: 'MVC 模式', link: '/other/mvc' },
           { text: 'MVVM 模式', link: '/other/mvvm' },
-          { text: '事件溯源模式', link: '/other/event-sourcing' }
+          { text: '事件溯源模式', link: '/other/event-sourcing' },
+          { text: '事务脚本模式', link: '/other/transaction-script' }
+        ]
+      },
+      {
+        text: '反模式',
+        items: [
+          { text: '反模式导读', link: '/anti-patterns/overview' },
+          { text: '神对象', link: '/anti-patterns/god-object' },
+          { text: '大泥球', link: '/anti-patterns/big-ball-of-mud' },
+          { text: '金锤子', link: '/anti-patterns/golden-hammer' },
+          { text: '意面代码', link: '/anti-patterns/spaghetti-code' },
+          { text: '贫血模型', link: '/anti-patterns/anemic-domain-model' }
+        ]
+      },
+      {
+        text: '现代演进',
+        items: [
+          { text: '现代演进导读', link: '/evolution/overview' },
+          { text: '组合式设计', link: '/evolution/composition-over-inheritance' },
+          { text: 'SOLID 与依赖规则', link: '/evolution/solid' },
+          { text: '熔断器模式', link: '/evolution/circuit-breaker' }
+        ]
+      },
+      {
+        text: '调研',
+        items: [
+          { text: '调研总览', link: '/research/overview' },
+          { text: '权威书籍与标准目录', link: '/research/books' },
+          { text: '官方与社区文档', link: '/research/official-docs' },
+          { text: '应用场景与语言落地', link: '/research/applications' },
+          { text: '覆盖核对与差异表', link: '/research/coverage' }
         ]
       },
       {

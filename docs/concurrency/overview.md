@@ -18,10 +18,14 @@
 - [事件循环模式](/concurrency/event-loop)：单线程循环地等待并处理事件，避免多线程上下文切换开销。
 - [反应器模式](/concurrency/reactor)：用同步事件多路复用器分发 I/O 事件，把分发与处理解耦。
 - [主动器模式](/concurrency/proactor)：基于异步 I/O 的完成通知触发处理回调，与反应器相对应。
+- [线程池模式](/concurrency/thread-pool)：固定一组工作线程从队列取任务，把创建开销与并发度一起管住。
+- [读写锁模式](/concurrency/read-write-lock)：读锁共享、写锁独占，读多写少时把吞吐拉起来。
+- [工作窃取模式](/concurrency/work-stealing)：每个线程一个本地队列，空闲线程去别人的队尾偷任务。
 
 ### 选用建议
 
-- 多个线程读写同一有限资源时，按资源数选择信号量或阻塞队列（生产者-消费者）。
+- 多个线程写共享状态时，按读写比例选互斥锁或[读写锁](/concurrency/read-write-lock)；只有计数与标志位用原子变量更划算。
+- 任务多且到达快时用[线程池](/concurrency/thread-pool)，记得队列要有界；CPU 密集分片交给[工作窃取](/concurrency/work-stealing)。
 - 只需要延迟保存创建结果时用 Future；需要把整个方法调用异步化时用主动对象。
 - 单线程事件驱动的服务端用事件循环或反应器；底层支持异步完成通知时用主动器。
 - 惰性初始化务必配合正确的同步原语（volatile/atomic、互斥锁、sync.Once）避免数据竞争。

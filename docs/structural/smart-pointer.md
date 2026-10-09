@@ -27,6 +27,7 @@ C++11引入了标准库中的几种智能指针，包括`std::unique_ptr`、`std
 
 ```cpp
 #include <iostream>
+#include <utility> // std::swap
 
 template<typename T>
 class SharedPtr {
@@ -41,19 +42,9 @@ public:
         ++(*ref_count_);
     }
 
-    // 赋值运算符
-    SharedPtr& operator=(const SharedPtr& other) {
-        if (this != &other) {
-            // 先递减当前引用计数
-            if (--(*ref_count_) == 0) {
-                delete ptr_;
-                delete ref_count_;
-            }
-            // 复制其他对象的指针和引用计数
-            ptr_ = other.ptr_;
-            ref_count_ = other.ref_count_;
-            ++(*ref_count_);
-        }
+    // 赋值运算符（copy-and-swap 惯用法，避免自赋值与共享控制块时的 use-after-free）
+    SharedPtr& operator=(SharedPtr other) {
+        swap(other);
         return *this;
     }
 
@@ -63,6 +54,12 @@ public:
             delete ptr_;
             delete ref_count_;
         }
+    }
+
+    // 交换
+    void swap(SharedPtr& other) noexcept {
+        std::swap(ptr_, other.ptr_);
+        std::swap(ref_count_, other.ref_count_);
     }
 
     // 获取原始指针
@@ -95,7 +92,7 @@ int main() {
 
 1. **构造函数**：初始化原始指针和引用计数。
 2. **拷贝构造函数**：增加引用计数，实现共享所有权。
-3. **赋值运算符**：处理自我赋值，更新引用计数。
+3. **赋值运算符**：采用 copy-and-swap 惯用法，先按值传参构造临时对象（增加引用计数），再交换内部状态，最后临时对象析构时释放旧资源。此法天然处理自赋值、异常安全、共享控制块时的 use-after-free 等问题。
 4. **析构函数**：减少引用计数，当引用计数为0时，释放资源。
 5. **操作符重载**：重载`*`和`->`操作符，方便访问和操作智能指针管理的对象。
 
