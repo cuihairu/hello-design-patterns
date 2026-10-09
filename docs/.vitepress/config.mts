@@ -114,6 +114,16 @@ export default defineConfig({
         ]
       },
       {
+        text: '集成模式',
+        items: [
+          { text: '集成模式导读', link: '/integration/overview' },
+          { text: '消息通道模式', link: '/integration/message-channel' },
+          { text: '消息路由模式', link: '/integration/message-router' },
+          { text: '消息转换模式', link: '/integration/message-translator' },
+          { text: '发布订阅模式', link: '/integration/publish-subscribe' }
+        ]
+      },
+      {
         text: '反模式',
         items: [
           { text: '反模式导读', link: '/anti-patterns/overview' },

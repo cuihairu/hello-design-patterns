@@ -11,7 +11,7 @@
 - 《重构：改善既有代码的设计》（Refactoring: Improving the Design of Existing Code），Martin Fowler。说明如何通过重构手法把代码逐步整理为引入模式的形态。
 - 《重构与模式》（Refactoring to Patterns），Joshua Kerievsky。给出从常见坏味道到设计模式的演进路径。
 - 《面向模式的软件架构》（Pattern-Oriented Software Architecture），Frank Buschmann 等（POSA 系列）。系统化讲解通信、并发、结构等架构层模式。
-- 《企业集成模式》（Enterprise Integration Patterns），Gregor Hohpe、Bobby Woolf。消息、路由、转换等企业应用集成（EAI）中消息传递模式的经典目录。
+- 《企业集成模式》（Enterprise Integration Patterns），Gregor Hohpe、Bobby Woolf。消息、路由、转换等企业应用集成（EAI）中消息传递模式的经典目录，对应站内[集成模式](/integration/overview)分区。
 - 《架构整洁之道》（Clean Architecture），Robert C. Martin。SOLID 五原则、依赖规则与组件级设计原则，对应站内[现代演进](/evolution/overview)分区。
 - 《反模式》（AntiPatterns: Refactoring Software, Architectures, and Projects in Crisis），William J. Brown 等。反模式目录，对应站内[反模式](/anti-patterns/overview)分区。
 - 《领域驱动设计》（Domain-Driven Design），Eric Evans。限界上下文、聚合等战略设计词汇；仓储按领域层接口口径成篇，对应[仓储与单元工作](/other/repository)。
@@ -101,6 +101,14 @@
 - [事务脚本模式](/other/transaction-script)
 - [仓储与单元工作](/other/repository)
 
+### 集成模式
+
+- [集成模式导读](/integration/overview)
+- [消息通道模式](/integration/message-channel)
+- [消息路由模式](/integration/message-router)
+- [消息转换模式](/integration/message-translator)
+- [发布订阅模式](/integration/publish-subscribe)
+
 ### 反模式
 
 - [反模式导读](/anti-patterns/overview)
@@ -137,3 +145,4 @@
 - [事件循环](/concurrency/event-loop)、[反应器](/concurrency/reactor)与[主动器](/concurrency/proactor)共同构成事件驱动 I/O 的核心模式族。
 - [熔断器](/evolution/circuit-breaker)、[隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)与[重试](/evolution/retry)同出《Release It!》，分别管失败率、资源上限、单次时长与瞬时故障恢复，跨进程调用常四件一起配。
 - [策略模式](/behavioral/strategy)的空对象一节："空行为"也是可替换的策略，返回空实现代替 `null`，调用方不必判空。
+- [发布订阅](/integration/publish-subscribe)与[观察者](/behavioral/observer)是同一意图在跨进程与进程内两个域的实现：异步消息与同步回调，失败模型不同。
