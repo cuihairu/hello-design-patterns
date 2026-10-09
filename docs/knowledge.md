@@ -54,21 +54,21 @@ Go 没有继承，复用靠结构体嵌入加小接口；Vue 组合式 API 把�
 
 ## 官方文档要点
 
-8 个官方文档与 3 个社区站点的核对在[官方与社区文档调研](/research/official-docs)，口径要点收拢如下：
+8 个官方文档与 3 个社区站点的核对在[官方与社区文档调研](/research/official-docs)，口径要点收拢如下，入口链接按调研清单登记的官方域名挂出：
 
-| 来源 | 要点 |
-| --- | --- |
-| Java SE `java.util.concurrent` [S19] | 并发篇术语基准；`Future.get()` 是阻塞取值，组合与回调要 `CompletableFuture`；`Semaphore` 的 `acquire` 可被中断，拿到许可后才 `release` |
-| C++ Core Guidelines [S20] | 资源用 RAII 表达；`unique_ptr`/`shared_ptr` 参数传递按 R.30/R.31；站内示例按「值传递 + 移动」写 |
-| Go 官方文档 [S21] | 无继承，接口隐式实现加结构体嵌入；`context.Context` 当第一参数传超时与取消；pipeline 的 `close`、`range`、`select` 写法以官方博客为准 |
-| Vue.js 文档 [S22] | 组合式 API：逻辑复用靠函数返回值组合，不靠 mixin |
-| React 文档 [S23] | 组件嵌套 + props 组合，状态提升，重复逻辑用自定义 Hook 收口 |
-| .NET 设计指南 [S24] | 依赖走构造函数注入，扩展点用接口不用虚方法基类 |
-| Spring 文档 [S27] | 控制反转是容器负责组装；与[服务定位器](/creational/service-locator)的区别在谁发起装配 |
-| MDN [S28] | `Proxy`、迭代器协议、`EventTarget` 是前端三个语言内置的模式落点 |
-| Refactoring.Guru [S16] | 三分法与代理四变体的命名一致；空对象它收、本仓暂不收 |
-| SourceMaking [S17] | 反模式四段式骨架的出处 |
-| iluwatar/java-design-patterns [S18] | 收录取舍以「有没有书籍出处」为准：熔断有（Release It!），类别对象、环境对象这类纯社区条目不收 |
+| 来源 | 入口 | 要点 |
+| --- | --- | --- |
+| Java SE `java.util.concurrent` [S19] | [docs.oracle.com](https://docs.oracle.com/) | 并发篇术语基准；`Future.get()` 是阻塞取值，组合与回调要 `CompletableFuture`；`Semaphore` 的 `acquire` 可被中断，拿到许可后才 `release` |
+| C++ Core Guidelines [S20] | [isocpp.github.io](https://isocpp.github.io/CppCoreGuidelines/) | 资源用 RAII 表达；`unique_ptr`/`shared_ptr` 参数传递按 R.30/R.31；站内示例按「值传递 + 移动」写 |
+| Go 官方文档 [S21] | [go.dev](https://go.dev/) | 无继承，接口隐式实现加结构体嵌入；`context.Context` 当第一参数传超时与取消；pipeline 的 `close`、`range`、`select` 写法以官方博客为准 |
+| Vue.js 文档 [S22] | [vuejs.org](https://vuejs.org/) | 组合式 API：逻辑复用靠函数返回值组合，不靠 mixin |
+| React 文档 [S23] | [react.dev](https://react.dev/) | 组件嵌套 + props 组合，状态提升，重复逻辑用自定义 Hook 收口 |
+| .NET 设计指南 [S24] | [learn.microsoft.com](https://learn.microsoft.com/) | 依赖走构造函数注入，扩展点用接口不用虚方法基类 |
+| Spring 文档 [S27] | [docs.spring.io](https://docs.spring.io/) | 控制反转是容器负责组装；与[服务定位器](/creational/service-locator)的区别在谁发起装配 |
+| MDN [S28] | [developer.mozilla.org](https://developer.mozilla.org/) | `Proxy`、迭代器协议、`EventTarget` 是前端三个语言内置的模式落点 |
+| Refactoring.Guru [S16] | [refactoring.guru](https://refactoring.guru/) | 三分法与代理四变体的命名一致；空对象它收、本仓暂不收 |
+| SourceMaking [S17] | [sourcemaking.com](https://sourcemaking.com/) | 反模式四段式骨架的出处 |
+| iluwatar/java-design-patterns [S18] | [github.com](https://github.com/iluwatar/java-design-patterns) | 收录取舍以「有没有书籍出处」为准：熔断有（Release It!），类别对象、环境对象这类纯社区条目不收 |
 
 ## 应用场景
 
