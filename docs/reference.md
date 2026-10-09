@@ -7,14 +7,14 @@
 - 《设计模式：可复用面向对象软件的基础》（Design Patterns: Elements of Reusable Object-Oriented Software），Erich Gamma、Richard Helm、Ralph Johnson、John Vlissides（"四人帮"/GoF）。设计模式领域的开山之作，定义了 23 种经典模式及其意图、适用性与结构。
 - 《Head First 设计模式》（Head First Design Patterns），Eric Freeman 等。以图形化、案例化的方式讲解经典模式，适合入门。
 - 《面向对象分析与设计》（Object-Oriented Analysis and Design with Applications），Grady Booch 等。讲解面向对象基础与模式在软件生命周期中的应用。
-- 《企业应用架构模式》（Patterns of Enterprise Application Architecture），Martin Fowler。覆盖企业级应用中的领域逻辑、数据映射、Web 表现层等模式。
+- 《企业应用架构模式》（Patterns of Enterprise Application Architecture），Martin Fowler。覆盖企业级应用中的领域逻辑、数据映射、Web 表现层等模式；仓储与单元工作出自此书，对应[仓储与单元工作](/other/repository)。
 - 《重构：改善既有代码的设计》（Refactoring: Improving the Design of Existing Code），Martin Fowler。说明如何通过重构手法把代码逐步整理为引入模式的形态。
 - 《重构与模式》（Refactoring to Patterns），Joshua Kerievsky。给出从常见坏味道到设计模式的演进路径。
 - 《面向模式的软件架构》（Pattern-Oriented Software Architecture），Frank Buschmann 等（POSA 系列）。系统化讲解通信、并发、结构等架构层模式。
 - 《企业集成模式》（Enterprise Integration Patterns），Gregor Hohpe、Bobby Woolf。消息、路由、转换等企业应用集成（EAI）中消息传递模式的经典目录。
 - 《架构整洁之道》（Clean Architecture），Robert C. Martin。SOLID 五原则、依赖规则与组件级设计原则，对应站内[现代演进](/evolution/overview)分区。
 - 《反模式》（AntiPatterns: Refactoring Software, Architectures, and Projects in Crisis），William J. Brown 等。反模式目录，对应站内[反模式](/anti-patterns/overview)分区。
-- 《领域驱动设计》（Domain-Driven Design），Eric Evans。限界上下文、聚合、仓储等战略设计词汇。
+- 《领域驱动设计》（Domain-Driven Design），Eric Evans。限界上下文、聚合等战略设计词汇；仓储按领域层接口口径成篇，对应[仓储与单元工作](/other/repository)。
 - 《Release It!》（第 2 版），Michael T. Nygard。生产环境稳定性模式，[熔断器](/evolution/circuit-breaker)、[隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)、[重试](/evolution/retry)四篇出自此书。
 
 ## 在线资源
@@ -99,6 +99,7 @@
 - [对象-关系映射（ORM）](/other/orm)
 - [事件溯源（Event Sourcing）](/other/event-sourcing)
 - [事务脚本模式](/other/transaction-script)
+- [仓储与单元工作](/other/repository)
 
 ### 反模式
 

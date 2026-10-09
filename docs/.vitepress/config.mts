@@ -109,7 +109,8 @@ export default defineConfig({
           { text: 'MVC 模式', link: '/other/mvc' },
           { text: 'MVVM 模式', link: '/other/mvvm' },
           { text: '事件溯源模式', link: '/other/event-sourcing' },
-          { text: '事务脚本模式', link: '/other/transaction-script' }
+          { text: '事务脚本模式', link: '/other/transaction-script' },
+          { text: '仓储与单元工作', link: '/other/repository' }
         ]
       },
       {
