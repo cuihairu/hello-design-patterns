@@ -28,7 +28,7 @@
 
 不适用的三种：
 
-1. 调用必须成功才继续（转账落库）：该用重试加幂等，熔断只会把错误提前。
+1. 调用必须成功才继续（转账落库）：该用[重试](/evolution/retry)加幂等，熔断只会把错误提前。
 2. 本地函数调用：进程内没有连接耗尽问题，用[代理](/structural/proxy)或条件判断就够。
 3. 没有降级方案：断开后无事可做，熔断只是把错误换个地方抛，价值有限。
 
@@ -37,7 +37,7 @@
 - 外形是[代理](/structural/proxy)或[装饰](/structural/decorator)：调用方仍拿着原来的接口，多出来的只是包一层。
 - 降级分支的写法与[策略](/behavioral/strategy)一致：正常实现和兜底实现是两个可替换的策略。
 - 窗口统计与通知可以复用[观察者](/behavioral/observer)：状态变化事件（开、合）对监控暴露。
-- 与隔舱的区别：隔舱按资源分池、限制同时在飞的数量，熔断按失败率决定要不要发。生产上两者常一起用，差异表把隔舱列为下一批 [S12]。
+- 与隔舱的区别：隔舱按资源分池、限制同时在飞的数量，熔断按失败率决定要不要发。生产上两者常一起用，见[隔舱](/evolution/bulkhead) [S12]。
 
 ## 关键参数
 
@@ -160,6 +160,7 @@ Java 侧不必自己写：Resilience4j 的 `CircuitBreaker`、Hystrix 的熔断�
 ## 相关篇目
 
 - [代理模式](/structural/proxy)、[装饰模式](/structural/decorator)：熔断器的挂载方式。
+- [隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)、[重试](/evolution/retry)：同出 Release It! 的稳定性三模式。
 - [策略模式](/behavioral/strategy)：正常实现与降级实现的切换。
 - [观察者模式](/behavioral/observer)：状态转换事件的分发。
 - [现代演进导读](/evolution/overview)：本篇为什么放在 GoF 之后。

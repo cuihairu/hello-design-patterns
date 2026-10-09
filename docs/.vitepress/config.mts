@@ -129,7 +129,10 @@ export default defineConfig({
           { text: '现代演进导读', link: '/evolution/overview' },
           { text: '组合式设计', link: '/evolution/composition-over-inheritance' },
           { text: 'SOLID 与依赖规则', link: '/evolution/solid' },
-          { text: '熔断器模式', link: '/evolution/circuit-breaker' }
+          { text: '熔断器模式', link: '/evolution/circuit-breaker' },
+          { text: '隔舱模式', link: '/evolution/bulkhead' },
+          { text: '超时模式', link: '/evolution/timeout' },
+          { text: '重试模式', link: '/evolution/retry' }
         ]
       },
       {

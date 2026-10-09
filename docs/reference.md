@@ -15,7 +15,7 @@
 - 《架构整洁之道》（Clean Architecture），Robert C. Martin。SOLID 五原则、依赖规则与组件级设计原则，对应站内[现代演进](/evolution/overview)分区。
 - 《反模式》（AntiPatterns: Refactoring Software, Architectures, and Projects in Crisis），William J. Brown 等。反模式目录，对应站内[反模式](/anti-patterns/overview)分区。
 - 《领域驱动设计》（Domain-Driven Design），Eric Evans。限界上下文、聚合、仓储等战略设计词汇。
-- 《Release It!》（第 2 版），Michael T. Nygard。生产环境稳定性模式，熔断器一文出自此书，对应[熔断器](/evolution/circuit-breaker)。
+- 《Release It!》（第 2 版），Michael T. Nygard。生产环境稳定性模式，[熔断器](/evolution/circuit-breaker)、[隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)、[重试](/evolution/retry)四篇出自此书。
 
 ## 在线资源
 
@@ -115,6 +115,9 @@
 - [组合式设计](/evolution/composition-over-inheritance)
 - [SOLID 与依赖规则](/evolution/solid)
 - [熔断器模式](/evolution/circuit-breaker)
+- [隔舱模式](/evolution/bulkhead)
+- [超时模式](/evolution/timeout)
+- [重试模式](/evolution/retry)
 
 ### 调研
 
@@ -131,3 +134,4 @@
 - [备忘录模式](/behavioral/memento)与[快照模式](/behavioral/snapshot)是同一类模式的不同叫法，通常用于撤销/重做。
 - [工厂方法](/creational/factory-method)与[抽象工厂](/creational/abstract-factory)解决对象创建的解耦问题，[建造者模式](/creational/builder)则面向复杂对象的分步构建。
 - [事件循环](/concurrency/event-loop)、[反应器](/concurrency/reactor)与[主动器](/concurrency/proactor)共同构成事件驱动 I/O 的核心模式族。
+- [熔断器](/evolution/circuit-breaker)、[隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)与[重试](/evolution/retry)同出《Release It!》，分别管失败率、资源上限、单次时长与瞬时故障恢复，跨进程调用常四件一起配。
