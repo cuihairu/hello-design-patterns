@@ -21,6 +21,8 @@
 
 > 📖 English version see [README.md](./README.md)
 
+调研产出收拢：[知识点整理](https://cuihairu.github.io/hello-design-patterns/knowledge.html) —— 核心概念、书籍与官方文档要点、应用场景与常见坑。
+
 ## 开发
 
 依赖 [VitePress](https://vitepress.dev/)

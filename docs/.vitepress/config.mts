@@ -133,6 +133,10 @@ export default defineConfig({
         ]
       },
       {
+        text: '知识点整理',
+        link: '/knowledge'
+      },
+      {
         text: '调研',
         items: [
           { text: '调研总览', link: '/research/overview' },

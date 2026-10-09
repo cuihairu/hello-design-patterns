@@ -21,6 +21,8 @@ A systematic guide to creational, structural, behavioral, and concurrency design
 
 > 📖 中文说明见 [README.zh.md](./README.zh.md)
 
+Survey output consolidated: [Knowledge Notes](https://cuihairu.github.io/hello-design-patterns/knowledge.html) — core concepts, key points from books and official docs, application scenarios, and common pitfalls.
+
 ## Development
 
 Built with [VitePress](https://vitepress.dev/)

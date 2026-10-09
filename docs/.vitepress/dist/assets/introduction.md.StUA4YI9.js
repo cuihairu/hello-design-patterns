@@ -1,0 +1,87 @@
+import{G as e,W as t,n,rt as r}from"./chunks/framework.OKfwtFe7.js";var i=JSON.parse(`{"title":"简介","description":"","frontmatter":{},"headers":[],"relativePath":"introduction.md","filePath":"introduction.md","lastUpdated":1791561689000}`),a={name:`introduction.md`};function o(n,i,a,o,s,c){return r(),t(`div`,null,[...i[0]||=[e(`<h1 id="简介" tabindex="-1">简介 <a class="header-anchor" href="#简介" aria-label="Permalink to “简介”">​</a></h1><p>设计模式通常可以归类为三大类：</p><ul><li><strong>创建型模式（Creational Patterns）</strong></li><li><strong>结构型模式（Structural Patterns）</strong></li><li><strong>行为型模式（Behavioral Patterns）</strong></li></ul><p>除这三大经典类别外，并发编程与特定领域实践也各自形成了成熟的模式目录，本指南一并收录：</p><ul><li><strong>并发模式（Concurrency Patterns）</strong></li><li><strong>特定领域模式（Domain-Specific Patterns）</strong></li></ul><p>这些类别帮助开发人员理解模式的目的和使用场景。以下是这些类别及其主要模式的简单说明：</p><h2 id="创建型模式-creational-patterns" tabindex="-1">创建型模式（Creational Patterns） <a class="header-anchor" href="#创建型模式-creational-patterns" aria-label="Permalink to “创建型模式（Creational Patterns）”">​</a></h2><p>这些模式主要涉及对象的创建，旨在将对象的创建与使用分离。</p><h4 id="_1-单例模式-singleton-pattern" tabindex="-1">1. <strong>单例模式（Singleton Pattern）</strong> <a class="header-anchor" href="#_1-单例模式-singleton-pattern" aria-label="Permalink to “1. 单例模式（Singleton Pattern）”">​</a></h4><pre><code>- **用途**：确保一个类只有一个实例，并提供一个全局访问点。
+- **示例**：数据库连接池。
+</code></pre><h4 id="_2-工厂方法模式-factory-method-pattern" tabindex="-1">2. <strong>工厂方法模式（Factory Method Pattern）</strong> <a class="header-anchor" href="#_2-工厂方法模式-factory-method-pattern" aria-label="Permalink to “2. 工厂方法模式（Factory Method Pattern）”">​</a></h4><pre><code>- **用途**：定义一个创建对象的接口，但让子类决定实例化哪个类。
+- **示例**：日志记录器，可以创建不同的日志记录方法。
+</code></pre><h4 id="_3-抽象工厂模式-abstract-factory-pattern" tabindex="-1">3. <strong>抽象工厂模式（Abstract Factory Pattern）</strong> <a class="header-anchor" href="#_3-抽象工厂模式-abstract-factory-pattern" aria-label="Permalink to “3. 抽象工厂模式（Abstract Factory Pattern）”">​</a></h4><pre><code>- **用途**：提供一个接口，用于创建相关或依赖对象的家族，而无需指定具体类。
+- **示例**：跨平台UI组件库。
+</code></pre><h4 id="_4-建造者模式-builder-pattern" tabindex="-1">4. <strong>建造者模式（Builder Pattern）</strong> <a class="header-anchor" href="#_4-建造者模式-builder-pattern" aria-label="Permalink to “4. 建造者模式（Builder Pattern）”">​</a></h4><pre><code>- **用途**：将复杂对象的构建过程分离，使同样的构建过程可以创建不同的表示。
+- **示例**：创建复杂的文档格式（如PDF、HTML）。
+</code></pre><h4 id="_5-原型模式-prototype-pattern" tabindex="-1">5. <strong>原型模式（Prototype Pattern）</strong> <a class="header-anchor" href="#_5-原型模式-prototype-pattern" aria-label="Permalink to “5. 原型模式（Prototype Pattern）”">​</a></h4><pre><code>- **用途**：使用原型实例指定创建对象的种类，并通过复制这些原型创建新的对象。
+- **示例**：剪贴板中的复制粘贴功能。
+</code></pre><h4 id="_6-对象池模式-object-pool-pattern" tabindex="-1">6. <strong>对象池模式（Object Pool Pattern）</strong> <a class="header-anchor" href="#_6-对象池模式-object-pool-pattern" aria-label="Permalink to “6. 对象池模式（Object Pool Pattern）”">​</a></h4><pre><code>- **用途**：管理和复用一组预先创建的对象，避免频繁创建和销毁对象带来的开销。
+- **典型场景**：
+    - **数据库连接池**：在数据库驱动程序中使用对象池来管理数据库连接，可以减少频繁的连接创建和销毁，提高性能。
+    - **线程池**：在多线程编程中，线程池用于管理和重用线程，避免频繁的线程创建和销毁，提高系统响应速度。
+    - **对象缓存**：在内存中缓存频繁使用的对象，如字符串缓存、对象实例缓存等，减少对象的创建和销毁，提高性能。
+    - **资源管理**：管理有限资源，如文件句柄、网络连接等，确保资源不被耗尽。
+- **示例**：数据库连接池。
+</code></pre><h4 id="_7-服务定位器模式-service-locator-pattern" tabindex="-1">7. <strong>服务定位器模式（Service Locator Pattern）</strong> <a class="header-anchor" href="#_7-服务定位器模式-service-locator-pattern" aria-label="Permalink to “7. 服务定位器模式（Service Locator Pattern）”">​</a></h4><pre><code>- **用途**：通过一个集中式的注册表封装服务的查找与获取逻辑，客户端按名称或类型向定位器请求服务实例，从而与具体实现解耦。
+- **示例**：分布式系统的服务发现。
+</code></pre><h4 id="_8-多例模式-multiton-pattern" tabindex="-1">8. <strong>多例模式（Multiton Pattern）</strong> <a class="header-anchor" href="#_8-多例模式-multiton-pattern" aria-label="Permalink to “8. 多例模式（Multiton Pattern）”">​</a></h4><pre><code>- **用途**：确保某个类在每个给定的关键字上最多只有一个实例。
+- **示例**：数据库连接池，但不同的数据库实例。
+</code></pre><h2 id="结构型模式-structural-patterns" tabindex="-1">结构型模式（Structural Patterns） <a class="header-anchor" href="#结构型模式-structural-patterns" aria-label="Permalink to “结构型模式（Structural Patterns）”">​</a></h2><p>这些模式主要涉及对象或类的组合，旨在使用继承和组合来获得更大的结构。</p><h4 id="_1-适配器模式-adapter-pattern" tabindex="-1">1. <strong>适配器模式（Adapter Pattern）</strong> <a class="header-anchor" href="#_1-适配器模式-adapter-pattern" aria-label="Permalink to “1. 适配器模式（Adapter Pattern）”">​</a></h4><pre><code>- **用途**：将一个类的接口转换成客户期望的另一个接口，使原本接口不兼容的类可以协同工作。
+- **示例**：电源适配器。
+</code></pre><h4 id="_2-装饰模式-decorator-pattern" tabindex="-1">2. <strong>装饰模式（Decorator Pattern）</strong> <a class="header-anchor" href="#_2-装饰模式-decorator-pattern" aria-label="Permalink to “2. 装饰模式（Decorator Pattern）”">​</a></h4><pre><code>- **用途**：动态地给对象添加一些职责，而不改变其接口。
+- **示例**：为一个文本编辑器添加不同的功能（如加粗、斜体）。
+</code></pre><h4 id="_3-代理模式-proxy-pattern" tabindex="-1">3. <strong>代理模式（Proxy Pattern）</strong> <a class="header-anchor" href="#_3-代理模式-proxy-pattern" aria-label="Permalink to “3. 代理模式（Proxy Pattern）”">​</a></h4><pre><code>- **用途**：为其他对象提供一种代理以控制对这个对象的访问。
+- **示例**：远程代理（远程调用）、虚拟代理（懒加载）。
+</code></pre><h4 id="_4-外观模式-facade-pattern" tabindex="-1">4. <strong>外观模式（Facade Pattern）</strong> <a class="header-anchor" href="#_4-外观模式-facade-pattern" aria-label="Permalink to “4. 外观模式（Facade Pattern）”">​</a></h4><pre><code>- **用途**：为子系统中的一组接口提供一个统一的高层接口，简化子系统的使用。
+- **示例**：简化复杂的API调用。
+</code></pre><h4 id="_5-桥接模式-bridge-pattern" tabindex="-1">5. <strong>桥接模式（Bridge Pattern）</strong> <a class="header-anchor" href="#_5-桥接模式-bridge-pattern" aria-label="Permalink to “5. 桥接模式（Bridge Pattern）”">​</a></h4><pre><code>- **用途**：将抽象部分与它的实现部分分离，使它们都可以独立地变化。
+- **示例**：图形绘制系统中的形状和颜色分离。
+</code></pre><h4 id="_6-组合模式-composite-pattern" tabindex="-1">6. <strong>组合模式（Composite Pattern）</strong> <a class="header-anchor" href="#_6-组合模式-composite-pattern" aria-label="Permalink to “6. 组合模式（Composite Pattern）”">​</a></h4><pre><code>- **用途**：将对象组合成树形结构以表示“部分-整体”的层次结构。
+- **示例**：文件系统中的文件和文件夹。
+</code></pre><h4 id="_7-享元模式-flyweight-pattern" tabindex="-1">7. <strong>享元模式（Flyweight Pattern）</strong> <a class="header-anchor" href="#_7-享元模式-flyweight-pattern" aria-label="Permalink to “7. 享元模式（Flyweight Pattern）”">​</a></h4><pre><code>- **用途**：运用共享技术有效地支持大量细粒度对象。
+- **示例**：文本编辑器中字符的对象池。
+</code></pre><h4 id="_8-依赖注入-dependency-injection" tabindex="-1">8. <strong>依赖注入 (Dependency Injection)</strong> <a class="header-anchor" href="#_8-依赖注入-dependency-injection" aria-label="Permalink to “8. 依赖注入 (Dependency Injection)”">​</a></h4><pre><code>- **用途**：模式的主要用途是管理对象之间的依赖关系。
+- **示例**：Java Spring 框架。
+</code></pre><h4 id="_9-双向桥接-bidirectional-bridge" tabindex="-1">9. <strong>双向桥接（Bidirectional Bridge）</strong> <a class="header-anchor" href="#_9-双向桥接-bidirectional-bridge" aria-label="Permalink to “9. 双向桥接（Bidirectional Bridge）”">​</a></h4><pre><code>- **用途**：主要用于需要双向通信和交互的场景中，它提供了一种灵活且解耦的方式来实现这一目标。
+- **示例**：复杂UI框架,分布式系统,实时系统。
+</code></pre><h2 id="行为型模式-behavioral-patterns" tabindex="-1">行为型模式（Behavioral Patterns） <a class="header-anchor" href="#行为型模式-behavioral-patterns" aria-label="Permalink to “行为型模式（Behavioral Patterns）”">​</a></h2><p>这些模式主要涉及类和对象之间的职责分配，旨在使这些职责的分配更加明确。</p><h4 id="_1-策略模式-strategy-pattern" tabindex="-1">1. <strong>策略模式（Strategy Pattern）</strong> <a class="header-anchor" href="#_1-策略模式-strategy-pattern" aria-label="Permalink to “1. 策略模式（Strategy Pattern）”">​</a></h4><pre><code>- **用途**：定义一系列算法，将每个算法封装起来，并使它们可以互换。
+- **示例**：排序算法的策略（如快排、归并排序）。
+</code></pre><h4 id="_2-观察者模式-observer-pattern" tabindex="-1">2. <strong>观察者模式（Observer Pattern）</strong> <a class="header-anchor" href="#_2-观察者模式-observer-pattern" aria-label="Permalink to “2. 观察者模式（Observer Pattern）”">​</a></h4><pre><code>- **用途**：定义对象间的一对多依赖关系，当一个对象的状态改变时，所有依赖于它的对象都会得到通知并自动更新。
+- **示例**：事件监听器。
+</code></pre><h4 id="_3-命令模式-command-pattern" tabindex="-1">3. <strong>命令模式（Command Pattern）</strong> <a class="header-anchor" href="#_3-命令模式-command-pattern" aria-label="Permalink to “3. 命令模式（Command Pattern）”">​</a></h4><pre><code>- **用途**：将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化。
+- **示例**：GUI按钮的命令模式。
+</code></pre><h4 id="_4-责任链模式-chain-of-responsibility-pattern" tabindex="-1">4. <strong>责任链模式（Chain of Responsibility Pattern）</strong> <a class="header-anchor" href="#_4-责任链模式-chain-of-responsibility-pattern" aria-label="Permalink to “4. 责任链模式（Chain of Responsibility Pattern）”">​</a></h4><pre><code>- **用途**：为请求创建一个接收者对象的链，使多个对象都有机会处理请求，避免请求的发送者与接收者耦合。
+- **示例**：审批流程。
+</code></pre><h4 id="_5-中介者模式-mediator-pattern" tabindex="-1">5. <strong>中介者模式（Mediator Pattern）</strong> <a class="header-anchor" href="#_5-中介者模式-mediator-pattern" aria-label="Permalink to “5. 中介者模式（Mediator Pattern）”">​</a></h4><pre><code>- **用途**：用一个中介对象来封装一系列对象之间的交互，使对象之间不需要直接相互引用。
+- **示例**：聊天室中的消息转发器。
+</code></pre><h4 id="_6-迭代器模式-iterator-pattern" tabindex="-1">6. <strong>迭代器模式（Iterator Pattern）</strong> <a class="header-anchor" href="#_6-迭代器模式-iterator-pattern" aria-label="Permalink to “6. 迭代器模式（Iterator Pattern）”">​</a></h4><pre><code>- **用途**：提供一种方法顺序访问一个聚合对象中的各个元素，而不暴露其内部的表示。
+- **示例**：集合框架中的迭代器。
+</code></pre><h4 id="_7-模板方法模式-template-method-pattern" tabindex="-1">7. <strong>模板方法模式（Template Method Pattern）</strong> <a class="header-anchor" href="#_7-模板方法模式-template-method-pattern" aria-label="Permalink to “7. 模板方法模式（Template Method Pattern）”">​</a></h4><pre><code>- **用途**：定义一个操作中的算法骨架，而将一些步骤延迟到子类中。
+- **示例**：游戏开发中的主循环框架。
+</code></pre><h4 id="_8-状态模式-state-pattern" tabindex="-1">8. <strong>状态模式（State Pattern）</strong> <a class="header-anchor" href="#_8-状态模式-state-pattern" aria-label="Permalink to “8. 状态模式（State Pattern）”">​</a></h4><pre><code>- **用途**：允许一个对象在其内部状态改变时改变它的行为，使对象看起来似乎修改了它的类。
+- **示例**：TCP连接状态机。
+</code></pre><h4 id="_9-备忘录模式-memento-pattern" tabindex="-1">9. <strong>备忘录模式（Memento Pattern）</strong> <a class="header-anchor" href="#_9-备忘录模式-memento-pattern" aria-label="Permalink to “9. 备忘录模式（Memento Pattern）”">​</a></h4><pre><code>- **用途**：在不破坏封装性的前提下，捕获并外部化一个对象的内部状态，从而使对象能恢复到原先的状态（又称快照模式 Snapshot Pattern）。
+- **示例**：撤销功能。
+</code></pre><h4 id="_10-解释器模式-interpreter-pattern" tabindex="-1">10. <strong>解释器模式（Interpreter Pattern）</strong> <a class="header-anchor" href="#_10-解释器模式-interpreter-pattern" aria-label="Permalink to “10. 解释器模式（Interpreter Pattern）”">​</a></h4><pre><code>- **用途**：给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。
+- **示例**：编译器或脚本解释器。
+</code></pre><h4 id="_11-访问者模式-visitor-pattern" tabindex="-1">11. <strong>访问者模式（Visitor Pattern）</strong> <a class="header-anchor" href="#_11-访问者模式-visitor-pattern" aria-label="Permalink to “11. 访问者模式（Visitor Pattern）”">​</a></h4><pre><code>- **用途**：表示一个作用于某对象结构中的各元素的操作，使你可以在不改变各元素类的前提下定义作用于这些元素的新操作。
+- **示例**：对象结构中的元素处理，如编译器中的语法树遍历。
+</code></pre><h4 id="_12-回调模式-callback-pattern" tabindex="-1">12. <strong>回调模式（Callback Pattern）</strong> <a class="header-anchor" href="#_12-回调模式-callback-pattern" aria-label="Permalink to “12. 回调模式（Callback Pattern）”">​</a></h4><pre><code>- **用途**：处理异步操作和事件驱动的任务。
+- **示例**：Node.js 编程。
+</code></pre><h4 id="_13-领域特定语言模式-dsl-pattern" tabindex="-1">13. <strong>领域特定语言模式（DSL Pattern）</strong> <a class="header-anchor" href="#_13-领域特定语言模式-dsl-pattern" aria-label="Permalink to “13. 领域特定语言模式（DSL Pattern）”">​</a></h4><pre><code>- **用途**：为特定问题域设计一套语法，让非程序员也能表达逻辑。
+- **示例**：构建工具的配置文件（Gradle、Webpack 的 DSL）。
+</code></pre><h2 id="并发模式-concurrency-patterns" tabindex="-1">并发模式（Concurrency Patterns） <a class="header-anchor" href="#并发模式-concurrency-patterns" aria-label="Permalink to “并发模式（Concurrency Patterns）”">​</a></h2><p>这些模式主要解决多线程环境中的问题，旨在协调多个线程或进程的协作。</p><h4 id="_1-生产者消费者模式-producer-consumer-pattern" tabindex="-1">1. <strong>生产者消费者模式（Producer-Consumer Pattern）</strong> <a class="header-anchor" href="#_1-生产者消费者模式-producer-consumer-pattern" aria-label="Permalink to “1. 生产者消费者模式（Producer-Consumer Pattern）”">​</a></h4><pre><code>- **用途**：解决在多线程环境中协调生产者和消费者之间的关系。
+</code></pre><h4 id="_2-工作窃取模式-work-stealing-pattern" tabindex="-1">2. <strong>工作窃取模式（Work Stealing Pattern）</strong> <a class="header-anchor" href="#_2-工作窃取模式-work-stealing-pattern" aria-label="Permalink to “2. 工作窃取模式（Work Stealing Pattern）”">​</a></h4><pre><code>- **用途**：处理线程池中任务的动态负载均衡，线程在完成手头任务后可以从其他线程的任务队列中窃取任务。
+</code></pre><h4 id="_3-读写锁模式-read-write-lock-pattern" tabindex="-1">3. <strong>读写锁模式（Read-Write Lock Pattern）</strong> <a class="header-anchor" href="#_3-读写锁模式-read-write-lock-pattern" aria-label="Permalink to “3. 读写锁模式（Read-Write Lock Pattern）”">​</a></h4><pre><code>- **用途**：允许多个线程同时读取一个共享资源，但只允许一个线程写入共享资源。
+</code></pre><h4 id="_4-线程池模式-thread-pool-pattern" tabindex="-1">4. <strong>线程池模式（Thread Pool Pattern）</strong> <a class="header-anchor" href="#_4-线程池模式-thread-pool-pattern" aria-label="Permalink to “4. 线程池模式（Thread Pool Pattern）”">​</a></h4><pre><code>- **用途**：通过提前创建一组线程来处理任务，减少了频繁创建和销毁线程的开销。
+</code></pre><h4 id="_5-反应器模式-reactor-pattern" tabindex="-1">5. <strong>反应器模式（Reactor Pattern）</strong> <a class="header-anchor" href="#_5-反应器模式-reactor-pattern" aria-label="Permalink to “5. 反应器模式（Reactor Pattern）”">​</a></h4><pre><code>- **用途**：通过将事件处理逻辑与事件分发机制分离，实现高性能的事件驱动处理。
+</code></pre><h4 id="_6-主动器模式-proactor-pattern" tabindex="-1">6. <strong>主动器模式（Proactor Pattern）</strong> <a class="header-anchor" href="#_6-主动器模式-proactor-pattern" aria-label="Permalink to “6. 主动器模式（Proactor Pattern）”">​</a></h4><pre><code>- **用途**：基于操作系统的异步 I/O 机制，在异步操作完成后由完成事件触发回调处理，适合高并发 I/O 场景。
+</code></pre><h4 id="_7-主动对象模式-active-object-pattern" tabindex="-1">7. <strong>主动对象模式（Active Object Pattern）</strong> <a class="header-anchor" href="#_7-主动对象模式-active-object-pattern" aria-label="Permalink to “7. 主动对象模式（Active Object Pattern）”">​</a></h4><pre><code>- **用途**：通过将方法调用封装为任务对象并排队执行，避免了直接的同步调用。
+</code></pre><h4 id="_8-future-模式" tabindex="-1">8. <strong>Future 模式</strong> <a class="header-anchor" href="#_8-future-模式" aria-label="Permalink to “8. Future 模式”">​</a></h4><pre><code>- **用途**：代表一个未来可能完成的异步任务的结果。
+- **示例**：异步编程中的回调或 Promise。
+</code></pre><h4 id="_9-信号量模式-semaphore-pattern" tabindex="-1">9. <strong>信号量模式（Semaphore Pattern）</strong> <a class="header-anchor" href="#_9-信号量模式-semaphore-pattern" aria-label="Permalink to “9. 信号量模式（Semaphore Pattern）”">​</a></h4><pre><code>- **用途**：控制对多个资源的访问，用于资源数有限的场景。
+- **示例**：数据库连接池。
+</code></pre><h4 id="_10-事件循环模式-event-loop-pattern" tabindex="-1">10. <strong>事件循环模式（Event Loop Pattern）</strong> <a class="header-anchor" href="#_10-事件循环模式-event-loop-pattern" aria-label="Permalink to “10. 事件循环模式（Event Loop Pattern）”">​</a></h4><pre><code>- **用途**：用于处理和分发事件或消息，常见于异步编程模型。
+- **示例**：Node.js 事件循环。
+</code></pre><h4 id="_11-双重检查锁定模式-double-checked-locking-pattern" tabindex="-1">11. <strong>双重检查锁定模式（Double-checked Locking Pattern）</strong> <a class="header-anchor" href="#_11-双重检查锁定模式-double-checked-locking-pattern" aria-label="Permalink to “11. 双重检查锁定模式（Double-checked Locking Pattern）”">​</a></h4><pre><code>- **用途**：减少锁的开销，确保在多线程环境下安全的初始化。
+- **示例**：单例模式的线程安全实现。
+</code></pre><h2 id="特定领域模式-domain-specific-patterns" tabindex="-1">特定领域模式（Domain-Specific Patterns） <a class="header-anchor" href="#特定领域模式-domain-specific-patterns" aria-label="Permalink to “特定领域模式（Domain-Specific Patterns）”">​</a></h2><p>这些模式专门用于特定的应用领域或技术领域。</p><h4 id="_1-mvc-模式-model-view-controller-pattern" tabindex="-1">1. <strong>MVC 模式（Model-View-Controller Pattern）</strong> <a class="header-anchor" href="#_1-mvc-模式-model-view-controller-pattern" aria-label="Permalink to “1. MVC 模式（Model-View-Controller Pattern）”">​</a></h4><pre><code>- **用途**：用于分离应用的内部表示、用户界面和控制逻辑。
+</code></pre><h4 id="_2-mvvm-模式-model-view-viewmodel-pattern" tabindex="-1">2. <strong>MVVM 模式（Model-View-ViewModel Pattern）</strong> <a class="header-anchor" href="#_2-mvvm-模式-model-view-viewmodel-pattern" aria-label="Permalink to “2. MVVM 模式（Model-View-ViewModel Pattern）”">​</a></h4><pre><code>- **用途**：主要用于 WPF 和 Silverlight 应用程序中，分离视图和业务逻辑。
+</code></pre><h4 id="_3-对象-关系映射-orm-模式" tabindex="-1">3. <strong>对象-关系映射（ORM）模式</strong> <a class="header-anchor" href="#_3-对象-关系映射-orm-模式" aria-label="Permalink to “3. 对象-关系映射（ORM）模式”">​</a></h4><pre><code>- **用途**：在面向对象编程与关系数据库系统之间创建一个映射，使对象可以映射到数据库表。
+- **示例**：Hibernate, Entity Framework。
+</code></pre><h4 id="_4-事务脚本模式-transaction-script-pattern" tabindex="-1">4. <strong>事务脚本模式（Transaction Script Pattern）</strong> <a class="header-anchor" href="#_4-事务脚本模式-transaction-script-pattern" aria-label="Permalink to “4. 事务脚本模式（Transaction Script Pattern）”">​</a></h4><pre><code>- **用途**：用于实现简单的业务逻辑，通过一系列命令和脚本处理事务。
+</code></pre><h4 id="_5-事件溯源-event-sourcing" tabindex="-1">5. <strong>事件溯源（Event Sourcing）</strong> <a class="header-anchor" href="#_5-事件溯源-event-sourcing" aria-label="Permalink to “5. 事件溯源（Event Sourcing）”">​</a></h4><pre><code>- **用途**：通过记录对应用状态的所有更改事件来确保应用状态的可追溯性和一致性。
+</code></pre><hr><h2 id="反模式与现代演进" tabindex="-1">反模式与现代演进 <a class="header-anchor" href="#反模式与现代演进" aria-label="Permalink to “反模式与现代演进”">​</a></h2><p>除上面这些模式，站内另设两个分区：</p><ul><li><strong>反模式</strong>（<a href="/hello-design-patterns/anti-patterns/overview">导读</a>）：记录写歪了会长成什么样子，收录神对象、大泥球、金锤子、意面代码、贫血模型五篇。</li><li><strong>现代演进</strong>（<a href="/hello-design-patterns/evolution/overview">导读</a>）：GoF 之后仍在演化、工程上已有共识的内容，收录组合式设计、SOLID 与依赖规则、熔断器三篇。</li></ul><p>以上分类与站内篇目的核对过程、来源与差异表，记在<a href="/hello-design-patterns/research/overview">调研总览</a>与<a href="/hello-design-patterns/research/coverage">覆盖核对与差异表</a>里。</p>`,113)]])}var s=n(a,[[`render`,o]]);export{i as __pageData,s as default};
