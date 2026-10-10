@@ -9,14 +9,14 @@ export default defineConfig({
   base: '/hello-design-patterns/',
   cleanUrls: true,
 
+  // head 里的图标是裸 HTML，不会走 withBase，需自带 base 前缀
   head: [
-    // 品牌资产空位：favicon.svg 到位后启用
-    // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/hello-design-patterns/favicon.svg' }]
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/hello-design-patterns/favicon.svg' }]
   ],
 
   themeConfig: {
-    // 品牌资产空位：logo.svg 到位后启用
-    // logo: '/hello-design-patterns/logo.svg',
+    // 主题组件会自动加 base 前缀，这里写根路径即可
+    logo: '/logo.svg',
     siteTitle: '设计模式指南',
 
     nav: [

@@ -5,10 +5,9 @@ hero:
   name: 设计模式指南
   text: 系统梳理创建型、结构型、行为型、并发等设计模式
   tagline: 涵盖 C++、Java、Go 多语言实现，从基础概念到实战应用，助你构建可维护、可扩展的软件架构。
-  # 品牌资产空位：logo.svg 到位后启用
-  # image:
-  #   src: /hello-design-patterns/logo.svg
-  #   alt: 设计模式指南
+  image:
+    src: /logo.svg
+    alt: 设计模式指南
   actions:
     - theme: brand
       text: 开始阅读
@@ -23,9 +22,9 @@ features:
   - title: 结构型模式
     details: 适配器、装饰、代理、动态代理、外观、桥接、组合、享元、依赖注入
   - title: 行为型模式
-    details: 策略、观察者、命令、责任链、中介者、迭代器、模板方法、状态、访问者
+    details: 策略、观察者、命令、责任链、中介者、迭代器、模板方法、状态、访问者、回调、DSL
   - title: 并发模式
-    details: 生产者消费者、反应堆、主动器、Future、信号量、事件循环、双重检查锁定
+    details: 生产者消费者、反应堆、主动器、Future、信号量、事件循环、线程池、读写锁、工作窃取、双重检查锁定
   - title: 其他模式
     details: ORM、MVC、MVVM、事件溯源等特定领域模式
   - title: 多语言实现

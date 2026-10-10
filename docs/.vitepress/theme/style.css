@@ -1,7 +1,7 @@
 /* ============================================================
    Hello Design Patterns · 主题样式
-   品牌色：靛紫（无官方品牌色，方向经用户选定）。品牌资产文件（logo.svg / favicon.svg）仍待用户提供，
-   配置中的 logo / favicon 槽位保持注释，不生成代餐。
+   品牌色：靛紫（无官方品牌色，方向经用户选定）。品牌资产已就位（docs/public/logo.svg、favicon.svg），
+   配置中的 favicon、主题 logo 与首页 hero image 均已接线。
    覆写 VitePress 品牌变量（对比度按 WCAG AA 校验：
    正文链接 ≥4.5:1，实心按钮白字 ≥3:1，明暗两态）：
      --vp-c-brand-1  品牌主色（正文链接/图标）
