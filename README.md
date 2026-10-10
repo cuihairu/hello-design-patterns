@@ -17,7 +17,7 @@ Design Patterns Guide · [Read online](https://cuihairu.github.io/hello-design-p
 
 ---
 
-A systematic guide to creational, structural, behavioral, and concurrency design patterns, with implementations in C++, Java, and Go.
+A systematic guide to creational, structural, behavioral, and concurrency design patterns, plus integration patterns, anti-patterns, and post-GoF resilience patterns, with implementations in C++, Java, and Go.
 
 > 📖 中文说明见 [README.zh.md](./README.zh.md)
 
