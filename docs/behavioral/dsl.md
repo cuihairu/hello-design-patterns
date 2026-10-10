@@ -1,4 +1,4 @@
-### 领域特定语言（DSL）模式
+# 领域特定语言模式（DSL）
 
 领域特定语言（Domain-Specific Language，DSL）是一种专门针对特定应用领域设计的编程语言或语言扩展，旨在解决特定领域内的问题。相对于通用编程语言（General-Purpose Language，GPL），DSL 更加专注于特定领域，使得在该领域内的开发更加高效和简洁。
 
