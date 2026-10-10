@@ -12,7 +12,7 @@
 - [保护代理模式](/structural/protection-proxy)：根据访问权限控制对真实对象的访问。
 - [远程代理模式](/structural/remote-proxy)：为不同地址空间中的对象提供本地代表，隐藏远程通信细节。
 - [动态代理模式](/structural/dynamic-proxy)：在运行时生成代理类，统一处理日志、事务等横切关注点。
-- [智能指引模式](/structural/smart-pointer)：以智能指针的形式在访问对象时附加额外操作，并自动管理资源。
+- [智能指针模式](/structural/smart-pointer)：以智能指针的形式在访问对象时附加额外操作，并自动管理资源。
 - [外观模式](/structural/facade)：为子系统中的一组接口提供一个统一的高层接口，简化子系统的使用。
 - [远程外观与数据传输对象](/structural/remote-facade)：跨进程边界不放领域对象，放按用例切分的粗粒度接口与专用传输对象。
 - [桥接模式](/structural/bridge)：将抽象部分与实现部分分离，使二者可以独立变化。
