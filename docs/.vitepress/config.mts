@@ -58,6 +58,7 @@ export default defineConfig({
           { text: '智能指针模式', link: '/structural/smart-pointer' },
           { text: '虚拟代理模式', link: '/structural/virtual-proxy' },
           { text: '外观模式', link: '/structural/facade' },
+          { text: '远程外观与数据传输对象', link: '/structural/remote-facade' },
           { text: '桥接模式', link: '/structural/bridge' },
           { text: '双向桥接模式', link: '/structural/bidirectional-bridge' },
           { text: '组合模式', link: '/structural/composite' },

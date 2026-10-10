@@ -7,7 +7,7 @@
 - 《设计模式：可复用面向对象软件的基础》（Design Patterns: Elements of Reusable Object-Oriented Software），Erich Gamma、Richard Helm、Ralph Johnson、John Vlissides（"四人帮"/GoF）。设计模式领域的开山之作，定义了 23 种经典模式及其意图、适用性与结构。
 - 《Head First 设计模式》（Head First Design Patterns），Eric Freeman 等。以图形化、案例化的方式讲解经典模式，适合入门。
 - 《面向对象分析与设计》（Object-Oriented Analysis and Design with Applications），Grady Booch 等。讲解面向对象基础与模式在软件生命周期中的应用。
-- 《企业应用架构模式》（Patterns of Enterprise Application Architecture），Martin Fowler。覆盖企业级应用中的领域逻辑、数据映射、Web 表现层等模式；仓储与单元工作出自此书，对应[仓储与单元工作](/other/repository)。
+- 《企业应用架构模式》（Patterns of Enterprise Application Architecture），Martin Fowler。覆盖企业级应用中的领域逻辑、数据映射、Web 表现层等模式；仓储与单元工作出自此书，对应[仓储与单元工作](/other/repository)；远程外观与数据传输对象出自"分布"一组，对应[远程外观与数据传输对象](/structural/remote-facade)。
 - 《重构：改善既有代码的设计》（Refactoring: Improving the Design of Existing Code），Martin Fowler。说明如何通过重构手法把代码逐步整理为引入模式的形态。
 - 《重构与模式》（Refactoring to Patterns），Joshua Kerievsky。给出从常见坏味道到设计模式的演进路径。
 - 《面向模式的软件架构》（Pattern-Oriented Software Architecture），Frank Buschmann 等（POSA 系列）。系统化讲解通信、并发、结构等架构层模式。
@@ -55,6 +55,7 @@
 - [远程代理模式](/structural/remote-proxy)
 - [动态代理模式](/structural/dynamic-proxy)
 - [外观模式](/structural/facade)
+- [远程外观与数据传输对象](/structural/remote-facade)
 - [桥接模式](/structural/bridge)
 - [双向桥接模式](/structural/bidirectional-bridge)
 - [组合模式](/structural/composite)
@@ -140,6 +141,7 @@
 
 - 单例模式与[双重检查锁定模式](/concurrency/double-checked-locking)常结合用于实现线程安全的延迟初始化。
 - 代理模式的不同变体（[虚拟代理](/structural/virtual-proxy)、[保护代理](/structural/protection-proxy)、[远程代理](/structural/remote-proxy)、[动态代理](/structural/dynamic-proxy)）都围绕"控制对对象的访问"展开。
+- [远程代理](/structural/remote-proxy)与[远程外观与数据传输对象](/structural/remote-facade)是跨进程边界的两种取向：前者保透明、粒度跟对象，后者弃透明、粒度跟用例，实际系统常按接口成对出现。
 - [备忘录模式](/behavioral/memento)与[快照模式](/behavioral/snapshot)是同一类模式的不同叫法，通常用于撤销/重做。
 - [工厂方法](/creational/factory-method)与[抽象工厂](/creational/abstract-factory)解决对象创建的解耦问题，[建造者模式](/creational/builder)则面向复杂对象的分步构建。
 - [事件循环](/concurrency/event-loop)、[反应器](/concurrency/reactor)与[主动器](/concurrency/proactor)共同构成事件驱动 I/O 的核心模式族。

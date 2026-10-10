@@ -7,7 +7,7 @@ import{G as e,W as t,n,rt as r}from"./chunks/framework.OKfwtFe7.js";var i=JSON.p
 <span class="line"><span style="color:#818e99;">// 异步操作的发起者</span></span>
 <span class="line"><span style="color:#F97583;">void</span><span style="color:#B392F0;"> asyncOperation</span><span style="color:#E1E4E8;">(</span><span style="color:#B392F0;">Callback</span><span style="color:#FFAB70;"> callback</span><span style="color:#E1E4E8;">) {</span></span>
 <span class="line"><span style="color:#818e99;">    // 模拟异步操作</span></span>
-<span class="line"><span style="color:#F97583;">    int</span><span style="color:#E1E4E8;"> result </span><span style="color:#F97583;">=</span><span style="color:#79B8FF;"> 42; // 假设这是异步操作的结果</span></span>
+<span class="line"><span style="color:#F97583;">    int</span><span style="color:#E1E4E8;"> result </span><span style="color:#F97583;">=</span><span style="color:#79B8FF;"> 42</span><span style="color:#E1E4E8;">;</span><span style="color:#818e99;"> // 假设这是异步操作的结果</span></span>
 <span class="line"><span style="color:#818e99;">    // 异步操作完成后调用回调函数</span></span>
 <span class="line"><span style="color:#B392F0;">    callback</span><span style="color:#E1E4E8;">(result);</span></span>
 <span class="line"><span style="color:#E1E4E8;">}</span></span>

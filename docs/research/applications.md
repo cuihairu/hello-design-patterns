@@ -19,6 +19,7 @@
 - **给子系统一个薄入口** → [外观](/structural/facade)。
 - **控制访问、加缓存或权限** → [代理](/structural/proxy)的四个变体。Java 用 `java.lang.reflect.Proxy` 做动态代理，C++ 用包装类，Go 用接口包装，JavaScript 直接用语言内置的 `Proxy` 对象 [S28]。
 - **给对象加职责而不改类** → [装饰](/structural/decorator)。Java 的 `java.io` 输入输出流链是标准例子，C++ 对应 `std::istreambuf_iterator` 那层包装，C# 对应 `Stream` 的包装类。
+- **接口要跨进程** → [远程外观与数据传输对象](/structural/remote-facade)。Java 落地是 Spring MVC 的 controller 方法签名（EJB Session Facade 是前身），Go 是手写 service struct 加请求/响应结构体，gRPC 的 `message` 定义就是 DTO。
 
 ## 行为与流程
 
