@@ -98,8 +98,31 @@ if (rows2b < 0) {
   errors.push(`docs/knowledge.md: declares 2b rows ${declared2b[1]}, coverage has ${rows2b}`)
 }
 
+// 7. 侧栏反向覆盖：除豁免页外每个文件都要在侧栏里
+const sidebarLinks = new Set([...config.matchAll(/link: '(\/[^']*)'/g)].map((m) => m[1].replace(/\/$/, '')))
+const sidebarExempt = new Set(['/index', '/behavioral/snapshot'])
+for (const p of pages) {
+  if (sidebarExempt.has(p)) continue
+  if (!sidebarLinks.has(p)) errors.push(`page missing from sidebar: ${p}`)
+}
+
+// 8. 来源编号：用到的 [Sn] 都要登记在调研总览的来源清单里，声明条数一致
+const overview = readFileSync(join(docs, 'research/overview.md'), 'utf8')
+const definedSources = new Set([...overview.matchAll(/^- \[S(\d+)\] /gm)].map((m) => +m[1]))
+const declSources = overview.match(/共 (\d+) 条/)
+for (const f of files) {
+  for (const [, n] of readFileSync(f, 'utf8').matchAll(/\[S(\d+)\]/g)) {
+    if (!definedSources.has(+n)) errors.push(`${relative(root, f)}: undefined source [S${n}]`)
+  }
+}
+if (!declSources) {
+  errors.push('docs/research/overview.md: missing source count (共 N 条)')
+} else if (+declSources[1] !== definedSources.size) {
+  errors.push(`docs/research/overview.md: declares ${declSources[1]} sources, listed ${definedSources.size}`)
+}
+
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exit(1)
 }
-console.log(`ok: ${pages.size} pages (${bodyPages} pattern), sidebar, links, h1`)
+console.log(`ok: ${pages.size} pages (${bodyPages} pattern), sidebar, links, h1, sources`)
