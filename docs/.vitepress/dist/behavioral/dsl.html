@@ -9,12 +9,12 @@
     
     <link rel="preload stylesheet" href="/hello-design-patterns/assets/style.CJtnmGZt.css" as="style">
     <link rel="preload stylesheet" href="/hello-design-patterns/assets/vp-icons.139f4833.css" as="style">
-    <script type="module" src="/hello-design-patterns/assets/chunks/metadata.7aa910b9.js"></script>
+    <script type="module" src="/hello-design-patterns/assets/chunks/metadata.13fe300f.js"></script>
     <script type="module" src="/hello-design-patterns/assets/app.CscroXRS.js"></script>
     <link rel="preload" href="/hello-design-patterns/assets/inter-roman-latin.q5rAVC0E.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="modulepreload" href="/hello-design-patterns/assets/chunks/framework.OKfwtFe7.js">
     <link rel="modulepreload" href="/hello-design-patterns/assets/chunks/theme.tqRnwAvP.js">
-    <link rel="modulepreload" href="/hello-design-patterns/assets/behavioral_dsl.md.BF_pQxio.lean.js">
+    <link rel="modulepreload" href="/hello-design-patterns/assets/behavioral_dsl.md.CvkfM4GS.lean.js">
     <script id="check-dark-mode">(()=>{let e=localStorage.getItem(`vitepress-theme-appearance`)||`auto`,t=window.matchMedia(`(prefers-color-scheme: dark)`).matches;(!e||e===`auto`?t:e===`dark`)&&document.documentElement.classList.add(`dark`)})();</script>
     <script id="check-mac-os">document.documentElement.classList.toggle(`mac`,/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
   </head>
@@ -128,7 +128,7 @@
 <span class="line"></span>
 <span class="line"><span style="color:#818e99;">// 操作符重载</span></span>
 <span class="line"><span style="color:#B392F0;">BinaryOperation</span><span style="color:#F97583;"> operator</span><span style="color:#B392F0;">+</span><span style="color:#E1E4E8;">(</span><span style="color:#F97583;">const</span><span style="color:#B392F0;"> Expression</span><span style="color:#F97583;">&amp;</span><span style="color:#FFAB70;"> left</span><span style="color:#E1E4E8;">, </span><span style="color:#F97583;">const</span><span style="color:#B392F0;"> Expression</span><span style="color:#F97583;">&amp;</span><span style="color:#FFAB70;"> right</span><span style="color:#E1E4E8;">) {</span></span>
-<span class="line"><span style="color:#F97583;">    return</span><span style="color:#B392F0;"> BinaryOperation</span><span style="color:#E1E4E8;">(left, </span><span style="color:#9ECBFF;">&#39;+&#39;</span><span style="color:#E1E4E8;">, right);</span></span>
+<span class="line"><span style="color:#E1E4E8;">    return BinaryOperation(left, &#39;+&#39;, right);</span></span>
 <span class="line"><span style="color:#E1E4E8;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#B392F0;">BinaryOperation</span><span style="color:#F97583;"> operator</span><span style="color:#B392F0;">-</span><span style="color:#E1E4E8;">(</span><span style="color:#F97583;">const</span><span style="color:#B392F0;"> Expression</span><span style="color:#F97583;">&amp;</span><span style="color:#FFAB70;"> left</span><span style="color:#E1E4E8;">, </span><span style="color:#F97583;">const</span><span style="color:#B392F0;"> Expression</span><span style="color:#F97583;">&amp;</span><span style="color:#FFAB70;"> right</span><span style="color:#E1E4E8;">) {</span></span>

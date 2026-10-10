@@ -9,12 +9,12 @@
     
     <link rel="preload stylesheet" href="/hello-design-patterns/assets/style.CJtnmGZt.css" as="style">
     <link rel="preload stylesheet" href="/hello-design-patterns/assets/vp-icons.139f4833.css" as="style">
-    <script type="module" src="/hello-design-patterns/assets/chunks/metadata.7aa910b9.js"></script>
+    <script type="module" src="/hello-design-patterns/assets/chunks/metadata.13fe300f.js"></script>
     <script type="module" src="/hello-design-patterns/assets/app.CscroXRS.js"></script>
     <link rel="preload" href="/hello-design-patterns/assets/inter-roman-latin.q5rAVC0E.woff2" as="font" type="font/woff2" crossorigin="">
     <link rel="modulepreload" href="/hello-design-patterns/assets/chunks/framework.OKfwtFe7.js">
     <link rel="modulepreload" href="/hello-design-patterns/assets/chunks/theme.tqRnwAvP.js">
-    <link rel="modulepreload" href="/hello-design-patterns/assets/structural_virtual-proxy.md.waCuBt4k.lean.js">
+    <link rel="modulepreload" href="/hello-design-patterns/assets/structural_virtual-proxy.md.CQWMUHO7.lean.js">
     <script id="check-dark-mode">(()=>{let e=localStorage.getItem(`vitepress-theme-appearance`)||`auto`,t=window.matchMedia(`(prefers-color-scheme: dark)`).matches;(!e||e===`auto`?t:e===`dark`)&&document.documentElement.classList.add(`dark`)})();</script>
     <script id="check-mac-os">document.documentElement.classList.toggle(`mac`,/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
   </head>
@@ -41,7 +41,7 @@
 <span class="line"><span style="color:#F97583;">public:</span></span>
 <span class="line"><span style="color:#B392F0;">    Proxy</span><span style="color:#E1E4E8;">() : </span><span style="color:#B392F0;">realSubject</span><span style="color:#E1E4E8;">(</span><span style="color:#79B8FF;">nullptr</span><span style="color:#E1E4E8;">) {}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:#F97583;">    void</span><span style="color:#B392F0;"> request</span><span style="color:#E1E4E8;">() </span><span style="color:#F97583;">override</span><span style="color:#E1E4E8;"> {</span></span>
+<span class="line"><span style="color:#E1E4E8;">    void request() override {</span></span>
 <span class="line"><span style="color:#F97583;">        if</span><span style="color:#E1E4E8;"> (</span><span style="color:#F97583;">!</span><span style="color:#E1E4E8;">realSubject) {</span></span>
 <span class="line"><span style="color:#E1E4E8;">            realSubject </span><span style="color:#F97583;">=</span><span style="color:#B392F0;"> std</span><span style="color:#E1E4E8;">::</span><span style="color:#B392F0;">make_unique</span><span style="color:#E1E4E8;">&lt;</span><span style="color:#B392F0;">RealSubject</span><span style="color:#E1E4E8;">&gt;();</span></span>
 <span class="line"><span style="color:#E1E4E8;">        }</span></span>
