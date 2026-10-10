@@ -121,8 +121,19 @@ if (!declSources) {
   errors.push(`docs/research/overview.md: declares ${declSources[1]} sources, listed ${definedSources.size}`)
 }
 
+// 9. 来源清单里的书籍在参考资料页都有书目条目
+const booksSection = overview.slice(overview.indexOf('### 书籍'), overview.indexOf('### 官方与社区文档'))
+const refText = readFileSync(join(docs, 'reference.md'), 'utf8')
+if (booksSection.length === 0) {
+  errors.push('docs/research/overview.md: missing 书籍 section in 来源清单')
+} else {
+  for (const [, title] of booksSection.matchAll(/^- \[S\d+\] .*?《([^》]+)》/gm)) {
+    if (!refText.includes(title)) errors.push(`docs/reference.md: missing book entry 《${title}》`)
+  }
+}
+
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exit(1)
 }
-console.log(`ok: ${pages.size} pages (${bodyPages} pattern), sidebar, links, h1, sources`)
+console.log(`ok: ${pages.size} pages (${bodyPages} pattern), sidebar, links, h1, sources, books`)
