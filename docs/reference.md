@@ -31,6 +31,7 @@
 ### 概览
 
 - [设计模式概览](/introduction)
+- [知识点整理](/knowledge)
 
 ### 创建型模式
 
@@ -91,6 +92,9 @@
 - [事件循环模式](/concurrency/event-loop)
 - [反应器模式](/concurrency/reactor)
 - [主动器模式](/concurrency/proactor)
+- [线程池模式](/concurrency/thread-pool)
+- [读写锁模式](/concurrency/read-write-lock)
+- [工作窃取模式](/concurrency/work-stealing)
 
 ### 其他模式
 
