@@ -13,9 +13,13 @@
 - 《面向模式的软件架构》（Pattern-Oriented Software Architecture），Frank Buschmann 等（POSA 系列）。系统化讲解通信、并发、结构等架构层模式。
 - 《企业集成模式》（Enterprise Integration Patterns），Gregor Hohpe、Bobby Woolf。消息、路由、转换等企业应用集成（EAI）中消息传递模式的经典目录，对应站内[集成模式](/integration/overview)分区。
 - 《架构整洁之道》（Clean Architecture），Robert C. Martin。SOLID 五原则、依赖规则与组件级设计原则，对应站内[现代演进](/evolution/overview)分区。
+- 《敏捷软件开发：原则、模式与实践》（Agile Software Development: Principles, Patterns, and Practices），Robert C. Martin。SOLID 五原则的出处，对应站内[SOLID 与依赖规则](/evolution/solid)。
 - 《反模式》（AntiPatterns: Refactoring Software, Architectures, and Projects in Crisis），William J. Brown 等。反模式目录，对应站内[反模式](/anti-patterns/overview)分区。
+- 《大泥球》（Big Ball of Mud），Brian Foote、Joseph Yoder，PLoP 1997 论文。失控遗留系统的形态与出路，对应站内[大泥球](/anti-patterns/big-ball-of-mud)。
 - 《领域驱动设计》（Domain-Driven Design），Eric Evans。限界上下文、聚合等战略设计词汇；仓储按领域层接口口径成篇，对应[仓储与单元工作](/other/repository)。
 - 《Release It!》（第 2 版），Michael T. Nygard。生产环境稳定性模式，[熔断器](/evolution/circuit-breaker)、[隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)、[重试](/evolution/retry)四篇出自此书。
+- 《微服务模式》（Microservices Patterns），Chris Richardson。API 网关、服务发现、Saga 等微服务落地模式，按口径记入[覆盖核对与差异表](/research/coverage)；事件溯源另见站内[事件溯源](/other/event-sourcing)。
+- 《Kubernetes 模式》（Kubernetes Patterns），Bilgin Ibryam、Roland Huß。容器编排平台上的模式目录，按口径记入[覆盖核对与差异表](/research/coverage)。
 
 ## 在线资源
 
