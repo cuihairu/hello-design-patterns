@@ -25,7 +25,7 @@ Survey output consolidated: [Knowledge Notes](https://cuihairu.github.io/hello-d
 
 ## Development
 
-Built with [VitePress](https://vitepress.dev/)
+Built with [VitePress](https://vitepress.dev/). Run `npm run docs:audit` to check sidebar, internal links, page titles, and section indexes against the files on disk; `npm run docs:build` gates dead links.
 
 ## License
 

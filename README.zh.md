@@ -25,7 +25,7 @@
 
 ## 开发
 
-依赖 [VitePress](https://vitepress.dev/)
+依赖 [VitePress](https://vitepress.dev/)。`npm run docs:audit` 核对侧栏、站内链接、页面标题与各分区索引是否与磁盘文件一致；`npm run docs:build` 兜底死链。
 
 ## License
 
