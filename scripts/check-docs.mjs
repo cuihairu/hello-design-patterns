@@ -83,6 +83,21 @@ if (!declared) {
   if (+declared[2] !== bodyPages) errors.push(`docs/research/coverage.md: declares 模式正文 ${declared[2]}, found ${bodyPages}`)
 }
 
+// 6. knowledge 页声明的差异表 2b 行数与 coverage 表实际行数一致
+const b2Start = cov.indexOf('### 2b.')
+const b2End = cov.indexOf('### 2c.')
+const rows2b = b2Start >= 0 && b2End > b2Start
+  ? cov.slice(b2Start, b2End).split('\n').filter((l) => l.startsWith('| ')).length - 2
+  : -1
+const declared2b = readFileSync(join(docs, 'knowledge.md'), 'utf8').match(/不新增的共 (\d+) 行/)
+if (rows2b < 0) {
+  errors.push('docs/research/coverage.md: missing section 2b')
+} else if (!declared2b) {
+  errors.push('docs/knowledge.md: missing declared 2b row count (不新增的共 N 行)')
+} else if (+declared2b[1] !== rows2b) {
+  errors.push(`docs/knowledge.md: declares 2b rows ${declared2b[1]}, coverage has ${rows2b}`)
+}
+
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exit(1)
