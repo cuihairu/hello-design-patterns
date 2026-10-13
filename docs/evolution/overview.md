@@ -33,3 +33,20 @@ GoF 那本书定型于 1994 年 [S1]，它解决的是"在继承体系里复用�
 ## 怎么读
 
 先读[组合式设计](/evolution/composition-over-inheritance)，它是后面各篇的共同底座；[SOLID 与依赖规则](/evolution/solid)决定依赖怎么摆；跨进程的四篇连着读：[隔舱](/evolution/bulkhead)先分仓，[超时](/evolution/timeout)给每次调用限时，[重试](/evolution/retry)恢复瞬时故障，[熔断器](/evolution/circuit-breaker)在故障持续时断闸。
+
+## 来源
+
+- [S12]《Release It!》稳定性模式，本区四篇的总出处。
+- [Azure · Cloud design patterns](https://learn.microsoft.com/en-us/azure/architecture/patterns/)（云端口径，[S24]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [bulkhead](bulkhead.md)
+- [circuit-breaker](circuit-breaker.md)
+- [retry](retry.md)
+- [timeout](timeout.md)
+- [introduction](/introduction.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

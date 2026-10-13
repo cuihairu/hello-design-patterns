@@ -152,3 +152,14 @@ Java 侧不必自己写：Spring Data JPA 的 `Repository`（接口 + 方法名�
 
 - [S5] Martin Fowler，《Patterns of Enterprise Application Architecture》，Addison-Wesley，2002。仓储与单元工作的原始出处。
 - [S11] Eric Evans，《Domain-Driven Design》，Addison-Wesley，2003。仓储绑定聚合的口径。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](/evolution/overview.md)
+- [glossary](/glossary.md)
+- [overview](overview.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [remote-facade](/structural/remote-facade.md)

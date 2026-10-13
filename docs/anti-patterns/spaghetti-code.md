@@ -94,3 +94,15 @@ class OrderProcessor:
 - [S7] Brown 等，《AntiPatterns》，Wiley，1998，Spaghetti Code 条目。
 - [S17] SourceMaking 的对应条目，形态段落参照。
 - [S6] 《Refactoring》第 2 版，过长函数与重复代码的重构手法。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [anemic-domain-model](anemic-domain-model.md)
+- [big-ball-of-mud](big-ball-of-mud.md)
+- [overview](overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [transaction-script](/other/transaction-script.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

@@ -137,3 +137,20 @@ func main() {
 
 ### 总结
 Future 模式在异步编程和并发任务处理中非常有用。通过 Future 对象，可以在不阻塞主线程的情况下处理耗时任务，并在任务完成后获取结果。这种模式在现代编程中得到了广泛的应用，提高了程序的响应速度和资源利用率。
+
+## 来源
+
+- [Wikipedia · Futures and promises](https://en.wikipedia.org/wiki/Futures_and_promises)
+- [Java · CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)（标准库形态，[S19]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [thread-pool](thread-pool.md)
+- [work-stealing](work-stealing.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [official-docs](/research/official-docs.md)

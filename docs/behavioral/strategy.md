@@ -254,3 +254,29 @@ public:
 - 由于策略模式将每个算法都封装成独立的类，可能会增加类的数量，导致系统变得复杂。
 
 策略模式特别适合用于有多种算法需求的场景，通过将算法的实现与使用算法的客户端代码解耦，可以更方便地添加、修改和选择不同的算法实现。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern)
+- [Refactoring.Guru · Strategy](https://refactoring.guru/design-patterns/strategy)
+- 空对象变体见 [Wikipedia · Null object pattern](https://en.wikipedia.org/wiki/Null_object_pattern)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [golden-hammer](/anti-patterns/golden-hammer.md)
+- [overview](/anti-patterns/overview.md)
+- [spaghetti-code](/anti-patterns/spaghetti-code.md)
+- [overview](overview.md)
+- [circuit-breaker](/evolution/circuit-breaker.md)
+- [composition-over-inheritance](/evolution/composition-over-inheritance.md)
+- [solid](/evolution/solid.md)
+- [timeout](/evolution/timeout.md)
+- [glossary](/glossary.md)
+- [message-router](/integration/message-router.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)
+- [official-docs](/research/official-docs.md)

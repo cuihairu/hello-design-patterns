@@ -190,3 +190,17 @@ public class Main {
 ```
 
 在这些示例中，组合模式被用来构建一个树形结构，`Component` 定义了组合对象和叶子对象的接口。`Leaf` 类实现了叶子节点，它不包含子节点。`Composite` 类实现了组合节点，它包含子节点，并实现了 `Component` 接口的 `add` 和 `remove` 方法。客户端代码可以一致地使用组合对象和叶子对象，从而简化了操作。
+
+## 来源
+
+- [S1] GoF 结构型目录（第 4 章），本篇模式的原始出处。
+- [Wikipedia · Composite pattern](https://en.wikipedia.org/wiki/Composite_pattern)
+- [Refactoring.Guru · Composite](https://refactoring.guru/design-patterns/composite)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)
+- [overview](overview.md)

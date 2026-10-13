@@ -199,3 +199,20 @@ public class Main {
 ```
 
 这些示例展示了在 C++、Go 和 Java 中如何实现桥接模式。在每个例子中，抽象部分和实现部分通过组合关系分离，具体实现类（ConcreteImplementor）实现了 `Implementor` 接口，抽象类（Abstraction）维护了一个实现 `Implementor` 接口的引用。具体的操作在 `RefinedAbstraction` 类中定义，从而实现了抽象和实现的分离，使它们可以独立地变化。
+
+## 来源
+
+- [S1] GoF 结构型目录（第 4 章），本篇模式的原始出处。
+- [Wikipedia · Bridge pattern](https://en.wikipedia.org/wiki/Bridge_pattern)
+- [Refactoring.Guru · Bridge](https://refactoring.guru/design-patterns/bridge)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [composition-over-inheritance](/evolution/composition-over-inheritance.md)
+- [overview](/evolution/overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)
+- [official-docs](/research/official-docs.md)
+- [overview](overview.md)

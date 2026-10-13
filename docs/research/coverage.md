@@ -2,7 +2,7 @@
 
 核对口径：把权威书籍与文档的目录拆成条目，逐条对站内 `docs/` 下的文件；站内自己的三处交叉引用（简介、参考、侧栏与各目录导读）另做一致性核对。核对时间：2026-10-08。来源编号见[调研总览的来源清单](/research/overview#来源清单)。
 
-计数口径：文档总数=`docs/` 下全部 Markdown；模式正文=文档总数 − 首页/简介/参考/知识点 4 页 − 快照跳转页 1 页 − 分区导读 8 页 − 调研 5 页。截至 2026-10-10：文档总数 86，模式正文 68。
+计数口径：文档总数=`docs/` 下全部 Markdown；模式正文=文档总数 − 首页/简介/参考/知识点/术语表 5 页 − 快照跳转页 1 页 − 分区导读 8 页 − 调研 5 页。截至 2026-10-14：文档总数 87，模式正文 68。
 
 ## 表 1：GoF 23 个模式 × 站内覆盖
 
@@ -101,6 +101,8 @@ GoF 之外站内另有的 24 个条目（多例、对象池、服务定位器、
 
 口径：远程外观=服务边界上的粗粒度用例接口（弃透明、粒度跟用例走），与[远程代理](/structural/remote-proxy)的透明取向相对；数据传输对象=跨边界的纯数据载体，领域对象不出边界。补齐后文档总数 85 → 86，模式正文 67 → 68。至此表 2b 全部处置完毕，无候选项挂账。
 
+2026-10-14 新增[术语表](/glossary)（术语中英对照与出处，导航性质不计入模式正文），文档总数 86 → 87，模式正文 68 不变；同批为全部正文页篇末补「来源」小节（`[S#]` 编号加可点链接，约定见[调研总览](/research/overview#引用约定)）。
+
 ## 表 3：站内交叉引用不一致（6 处，已修订）
 
 | # | 位置 | 问题 | 处置 |
@@ -133,3 +135,23 @@ GoF 之外站内另有的 24 个条目（多例、对象池、服务定位器、
 3. GoF 23 条逐条对过文件名，见表 1。
 4. 引用的 API 名称以 Java SE、C++ Core Guidelines、Go、Vue、React 官方文档为准，见[官方与社区文档](/research/official-docs)。
 5. 补完后文档总数 56 → 75，其中模式正文 47 → 59（14 篇新篇里 2 篇是分区导读，不计入正文）。
+
+## 来源
+
+- 对账基准是 [S1] GoF 23 目录。
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](/anti-patterns/overview.md)
+- [strategy](/behavioral/strategy.md)
+- [overview](/evolution/overview.md)
+- [solid](/evolution/solid.md)
+- [overview](/integration/overview.md)
+- [introduction](/introduction.md)
+- [knowledge](/knowledge.md)
+- [repository](/other/repository.md)
+- [reference](/reference.md)
+- [books](books.md)
+- [overview](overview.md)

@@ -187,3 +187,18 @@ public class ProductController : Controller {
 
 ### 总结
 模型-视图-控制器（MVC）模式通过将应用程序逻辑、数据管理和用户界面分离，使代码更清晰、可维护和可扩展。尽管引入了一些复杂性，但在大多数现代应用程序中，MVC 模式能够显著提升代码质量和开发效率。通过上述不同编程语言的示例代码，可以看到 MVC 模式的广泛适用性和强大之处。
+
+## 来源
+
+- [Wikipedia · Model–view–controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+- [Fowler · GUI Architectures](https://martinfowler.com/eaaDev/uiArchs.html)（MVC/MVP 的演进梳理，[S26]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [overview](overview.md)
+- [transaction-script](transaction-script.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)

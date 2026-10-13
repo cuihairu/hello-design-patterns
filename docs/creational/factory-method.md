@@ -173,3 +173,19 @@ func main() {
 ### 总结
 
 工厂方法模式通过定义一个创建对象的接口，让子类决定实例化哪一个类，从而实现了对象创建的解耦和扩展。这种模式非常适合需要生成复杂对象或者需要灵活选择生成对象的场景。
+
+## 来源
+
+- [S1] GoF 创建型目录（第 3 章），本篇模式的原始出处。
+- [Wikipedia · Factory method pattern](https://en.wikipedia.org/wiki/Factory_method_pattern)
+- [Refactoring.Guru · Factory Method](https://refactoring.guru/design-patterns/factory-method)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [anemic-domain-model](/anti-patterns/anemic-domain-model.md)
+- [overview](overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

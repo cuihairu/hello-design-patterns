@@ -275,3 +275,22 @@ public class Main {
 ```
 
 这些例子展示了如何在 C++、Go 和 Java 中实现装饰模式。每个例子都定义了一个基础的组件接口和一个具体的组件类，然后通过装饰类来动态地添加功能，同时保持组件接口的完整性。
+
+## 来源
+
+- [S1] GoF 结构型目录（第 4 章），本篇模式的原始出处。
+- [Wikipedia · Decorator pattern](https://en.wikipedia.org/wiki/Decorator_pattern)
+- [Refactoring.Guru · Decorator](https://refactoring.guru/design-patterns/decorator)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [circuit-breaker](/evolution/circuit-breaker.md)
+- [composition-over-inheritance](/evolution/composition-over-inheritance.md)
+- [overview](/evolution/overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)
+- [overview](overview.md)

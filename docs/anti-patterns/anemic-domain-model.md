@@ -121,3 +121,20 @@ class OrderService {
 
 - [S26] martinfowler.com bliki：Anemic Domain Model。
 - [S5] Martin Fowler，《Patterns of Enterprise Application Architecture》，2002，领域逻辑四式。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [god-object](god-object.md)
+- [overview](overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [overview](/other/overview.md)
+- [repository](/other/repository.md)
+- [transaction-script](/other/transaction-script.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [remote-facade](/structural/remote-facade.md)

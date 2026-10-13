@@ -192,3 +192,15 @@ Client received data: Hello from Server
 - `NetworkBridge` 接口也持有对 `NetworkDevice` 的引用（双向关联），并按发送方把数据路由到另一侧。
 - `NetworkBridgeImpl` 是 `NetworkBridge` 的具体实现，负责维护已接入的设备并转发数据。
 - `Client` 和 `Server` 是 `NetworkDevice` 的具体实现，通过桥接接口实现双向数据传输。
+
+## 来源
+
+- [Wikipedia · Bridge pattern](https://en.wikipedia.org/wiki/Bridge_pattern)（双向引用是其工程化形态）。
+- [Refactoring.Guru · Bridge](https://refactoring.guru/design-patterns/bridge)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [overview](overview.md)

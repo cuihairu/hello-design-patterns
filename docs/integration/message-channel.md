@@ -84,3 +84,14 @@ Java 侧按框架对号入座：JMS 的 `Queue` 是点对点通道、`Topic` 是
 ## 来源
 
 - [S10] Gregor Hohpe、Bobby Woolf，《Enterprise Integration Patterns》，Addison-Wesley，2002。消息通道的原始出处。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [message-router](message-router.md)
+- [message-translator](message-translator.md)
+- [overview](overview.md)
+- [publish-subscribe](publish-subscribe.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

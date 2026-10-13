@@ -101,3 +101,15 @@ Java 侧不必自己写：Resilience4j 的 `Bulkhead`（`maxConcurrentCalls`、`
 
 - [S12] Michael T. Nygard，《Release It!》第 2 版，Pragmatic Bookshelf，2018。舱壁隔离的原始出处。
 - [S13] Chris Richardson，《Microservices Patterns》，2018，服务间资源隔离的实践口径。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [circuit-breaker](circuit-breaker.md)
+- [overview](overview.md)
+- [retry](retry.md)
+- [timeout](timeout.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

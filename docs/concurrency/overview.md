@@ -29,3 +29,15 @@
 - 只需要延迟保存创建结果时用 Future；需要把整个方法调用异步化时用主动对象。
 - 单线程事件驱动的服务端用事件循环或反应器；底层支持异步完成通知时用主动器。
 - 惰性初始化务必配合正确的同步原语（volatile/atomic、互斥锁、sync.Once）避免数据竞争。
+
+## 来源
+
+- [S9] POSA 卷 2《Patterns for Concurrent and Networked Objects》，并发模式的系统目录。
+- [Java · java.util.concurrent](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html)（标准库实现，[S19]）。
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

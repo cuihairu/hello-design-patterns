@@ -109,3 +109,12 @@ Java 侧的对照要分清：`ApplicationEventPublisher`（Spring 事件）是�
 ## 来源
 
 - [S10] Gregor Hohpe、Bobby Woolf，《Enterprise Integration Patterns》，Addison-Wesley，2002。发布订阅通道的原始出处。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [message-channel](message-channel.md)
+- [overview](overview.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

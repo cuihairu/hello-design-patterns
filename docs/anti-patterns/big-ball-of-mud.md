@@ -86,3 +86,13 @@ def reconcile_job(batch):
 - [S8] Brian Foote、Joseph Yoder，《Big Ball of Mud》，PLoP 1997。
 - [S11] Eric Evans，《Domain-Driven Design》，2003，限界上下文与防腐层。
 - [S13] Chris Richardson，《Microservices Patterns》，2018，绞杀式迁移的实践来源。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [god-object](god-object.md)
+- [overview](overview.md)
+- [spaghetti-code](spaghetti-code.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

@@ -120,3 +120,15 @@ Go 的 `embed` 与 C++ 的私有继承（"用它实现"而非"是它一种"）�
 - [S22] Vue.js 官方文档，组合式 API。
 - [S23] React 官方文档，组件组合与状态管理。
 - [S21] Go 官方文档，Effective Go 的嵌入与接口部分。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [solid](solid.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [official-docs](/research/official-docs.md)

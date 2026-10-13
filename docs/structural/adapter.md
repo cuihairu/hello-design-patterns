@@ -142,3 +142,22 @@ public class Main {
 ```
 
 这些例子展示了如何在 C++、Go 和 Java 中实现适配器模式。每个例子都定义了一个目标接口、需要适配的类和适配器类，并通过客户端代码调用目标接口的方法，适配器将这些调用转发给需要适配的类的方法。
+
+## 来源
+
+- [S1] GoF 结构型目录（第 4 章），本篇模式的原始出处。
+- [Wikipedia · Adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern)
+- [Refactoring.Guru · Adapter](https://refactoring.guru/design-patterns/adapter)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [golden-hammer](/anti-patterns/golden-hammer.md)
+- [composition-over-inheritance](/evolution/composition-over-inheritance.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [message-translator](/integration/message-translator.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)
+- [overview](overview.md)

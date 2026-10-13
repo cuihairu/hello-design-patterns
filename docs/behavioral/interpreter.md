@@ -240,3 +240,16 @@ public class InterpreterPatternDemo {
 2. **性能问题**：解释操作可能比较耗时，尤其是文法复杂的情况。
 
 解释器模式在实际开发中可以有效地解析和执行特定领域的简单文法，特别是在需要频繁更改和扩展文法规则的场景中，是一种非常有用的设计模式。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Interpreter pattern](https://en.wikipedia.org/wiki/Interpreter_pattern)（Refactoring.Guru 未收此条）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

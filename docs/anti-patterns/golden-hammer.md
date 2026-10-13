@@ -88,3 +88,13 @@ class Pricing:
 
 - [S7] Brown 等，《AntiPatterns》，Wiley，1998。
 - [S17] SourceMaking 的 AntiPatterns 条目，形态与代价段落的结构参照。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

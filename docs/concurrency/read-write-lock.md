@@ -114,3 +114,15 @@ try {
 - [S19] Java SE API `java.util.concurrent.locks` 包说明，`ReadWriteLock`、`ReentrantReadWriteLock`、`StampedLock`。
 - [S20] C++ Core Guidelines，资源与互斥的 RAII 用法。
 - [S21] Go 官方文档，`sync.RWMutex`。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [thread-pool](thread-pool.md)
+- [glossary](/glossary.md)
+- [transaction-script](/other/transaction-script.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)
+- [official-docs](/research/official-docs.md)

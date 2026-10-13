@@ -165,3 +165,17 @@ asyncio.run(main())
 ### 总结
 
 Proactor设计模式通过异步I/O操作提高了并发处理的效率和性能，适用于高性能服务器、网络编程和事件驱动的应用程序。虽然实现起来比较复杂，尤其是在C++等低级语言中，但通过异步操作处理器的支持，Proactor模式能够提供高效、可扩展的并发解决方案。
+
+## 来源
+
+- [Wikipedia · Proactor pattern](https://en.wikipedia.org/wiki/Proactor_pattern)
+- [Microsoft · I/O completion ports](https://learn.microsoft.com/en-us/windows/win32/fileio/i-o-completion-ports)（Windows 落地，[S24]）。
+- [S9] POSA 卷 2 的原始目录。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [reactor](reactor.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)

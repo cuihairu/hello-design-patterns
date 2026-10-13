@@ -186,3 +186,17 @@ public class Main {
 - 外部状态的管理复杂化，因为外部状态不能被共享，必须由客户端维护。
 
 享元模式特别适合用于需要大量相似对象且内存占用较大的场景，例如图形编辑器中的图形对象、游戏中的粒子系统等。在这些场景中，通过共享对象可以显著减少内存消耗。
+
+## 来源
+
+- [S1] GoF 结构型目录（第 4 章），本篇模式的原始出处。
+- [Wikipedia · Flyweight pattern](https://en.wikipedia.org/wiki/Flyweight_pattern)
+- [Refactoring.Guru · Flyweight](https://refactoring.guru/design-patterns/flyweight)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)
+- [overview](overview.md)

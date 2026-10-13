@@ -27,3 +27,14 @@
 - 需要控制访问、延迟加载或附加额外行为时，选择代理及其变体。
 - 需要动态叠加行为时用装饰，而不是创建大量子类。
 - 存在多个独立变化维度时用桥接；存在大量相似对象时考虑享元。
+
+## 来源
+
+- [S1] GoF 目录把结构型模式列为第二组（7 个），本区沿此收录并加代理变体、智能指针等条目。
+- [Refactoring.Guru · 结构型模式](https://refactoring.guru/design-patterns/structural-patterns)
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [reference](/reference.md)

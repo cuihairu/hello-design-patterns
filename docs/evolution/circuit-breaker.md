@@ -169,3 +169,18 @@ Java 侧不必自己写：Resilience4j 的 `CircuitBreaker`、Hystrix 的熔断�
 
 - [S12] Michael T. Nygard，《Release It!》第 2 版，Pragmatic Bookshelf，2018。熔断、隔舱、超时的原始出处。
 - [S13] Chris Richardson，《Microservices Patterns》，2018，服务间调用的故障处理。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [bulkhead](bulkhead.md)
+- [overview](overview.md)
+- [retry](retry.md)
+- [timeout](timeout.md)
+- [glossary](/glossary.md)
+- [overview](/integration/overview.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [remote-proxy](/structural/remote-proxy.md)

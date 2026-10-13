@@ -152,3 +152,20 @@ func main() {
 
 ### 总结
 信号量模式在控制对共享资源的并发访问方面非常有效。通过限制同时访问资源的线程数量，可以避免资源争用和系统过载，从而提高系统的稳定性和性能。然而，需要仔细管理信号量的值，以避免复杂的并发问题。
+
+## 来源
+
+- [Wikipedia · Semaphore](https://en.wikipedia.org/wiki/Semaphore_%28programming%29)
+- [man7 · sem_overview](https://man7.org/linux/man-pages/man7/sem_overview.7.html)（POSIX 信号量）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [read-write-lock](read-write-lock.md)
+- [thread-pool](thread-pool.md)
+- [bulkhead](/evolution/bulkhead.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [official-docs](/research/official-docs.md)

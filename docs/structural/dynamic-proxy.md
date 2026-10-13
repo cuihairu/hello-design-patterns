@@ -167,3 +167,18 @@ if __name__ == "__main__":
 ### 总结
 
 动态代理是一种强大的技术，能够在不修改业务逻辑的情况下添加额外的功能，尤其适用于横切关注点的实现。通过动态代理，开发人员可以编写更加简洁、模块化和可维护的代码。
+
+## 来源
+
+- [Wikipedia · Proxy pattern](https://en.wikipedia.org/wiki/Proxy_pattern)（动态代理是其中按运行时代理分类的变体）。
+- [Java · java.lang.reflect.Proxy](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Proxy.html)（JDK 动态代理，[S19]）。
+- [MDN · Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)（前端落地，[S28]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [introduction](/introduction.md)
+- [reference](/reference.md)
+- [official-docs](/research/official-docs.md)
+- [overview](overview.md)

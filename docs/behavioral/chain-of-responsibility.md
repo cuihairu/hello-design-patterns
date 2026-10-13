@@ -253,3 +253,22 @@ public class Main {
 - **调试困难**：不容易确定请求最终的处理者是谁，调试较复杂。
 
 责任链模式适用于需要多个对象处理请求的情况，特别是请求的处理者不明确或需要动态指定的场景。通过将请求沿着链传递，责任链模式提供了一种灵活的请求处理方式。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Chain-of-responsibility pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)
+- [Refactoring.Guru · Chain of Responsibility](https://refactoring.guru/design-patterns/chain-of-responsibility)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [spaghetti-code](/anti-patterns/spaghetti-code.md)
+- [overview](overview.md)
+- [overview](/evolution/overview.md)
+- [glossary](/glossary.md)
+- [message-router](/integration/message-router.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

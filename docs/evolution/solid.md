@@ -78,3 +78,13 @@ SOLID 是五条类与组件设计原则的首字母缩写，出处是 Martin 200
 - [S4] Robert C. Martin，《Agile Software Development: Principles, Patterns, and Practices》，2002。SOLID 出处。
 - [S2] 《Head First Design Patterns》第 2 版，2020，开闭原则的入门讲法。
 - [S26] martinfowler.com bliki，服务定位器作为反模式的论述。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [composition-over-inheritance](composition-over-inheritance.md)
+- [overview](overview.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

@@ -360,3 +360,21 @@ int main() {
 - [远程外观与数据传输对象](/structural/remote-facade)：跨进程的另一种取向——代理保透明、粒度跟对象，外观弃透明、粒度跟用例。
 - [外观模式](/structural/facade)：进程内版本的统一入口。
 - [超时](/evolution/timeout)、[重试](/evolution/retry)、[熔断器](/evolution/circuit-breaker)：代理层统一处理的稳定性逻辑。
+
+## 来源
+
+- [Wikipedia · Proxy pattern](https://en.wikipedia.org/wiki/Proxy_pattern)（变体词汇见该词条）。
+- [Refactoring.Guru · Proxy](https://refactoring.guru/design-patterns/proxy)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [message-translator](/integration/message-translator.md)
+- [introduction](/introduction.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [official-docs](/research/official-docs.md)
+- [overview](overview.md)
+- [remote-facade](remote-facade.md)

@@ -198,3 +198,16 @@ new Vue({
 ### 总结
 
 MVVM 模式通过引入 ViewModel 层，将视图与模型分离，从而实现更高的模块化、可维护性和可测试性。它在现代用户界面开发中非常流行，适用于桌面应用、Web 应用和移动应用等多种场景。通过上述不同编程语言的示例代码，可以看到 MVVM 模式的广泛适用性和强大之处。
+
+## 来源
+
+- [Wikipedia · Model–view–viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)
+- [MSDN Magazine · MVVM](https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern)（Gossman 2005 原始提出后的经典阐述，[S24]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [overview](overview.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)

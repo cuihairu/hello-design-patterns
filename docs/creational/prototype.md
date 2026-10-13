@@ -198,3 +198,17 @@ public class Main {
 ```
 
 这些例子展示了如何在 C++、Go 和 Java 中实现原型模式。每个例子都定义了一个原型接口及其具体实现，并通过工厂类来管理和克隆这些原型实例。
+
+## 来源
+
+- [S1] GoF 创建型目录（第 3 章），本篇模式的原始出处。
+- [Wikipedia · Prototype pattern](https://en.wikipedia.org/wiki/Prototype_pattern)
+- [Refactoring.Guru · Prototype](https://refactoring.guru/design-patterns/prototype)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

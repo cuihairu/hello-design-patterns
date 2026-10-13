@@ -231,3 +231,17 @@
 - **集成模式**（[导读](/integration/overview)）：跨进程消息传递的组件词汇，收录消息通道、消息路由、消息转换、发布订阅四篇。
 
 以上分类与站内篇目的核对过程、来源与差异表，记在[调研总览](/research/overview)与[覆盖核对与差异表](/research/coverage)里。
+
+## 来源
+
+- [S1] GoF 目录是「23 个模式」这一基准线的出处。
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+- [Refactoring.Guru · Design Patterns](https://refactoring.guru/design-patterns)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [reference](reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [overview](/research/overview.md)

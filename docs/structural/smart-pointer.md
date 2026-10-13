@@ -116,3 +116,18 @@ int main() {
 2. **循环引用问题**：需要谨慎处理，避免循环引用导致的内存泄漏。
 
 智能指针模式通过RAII原则，实现了资源的自动管理，有效解决了内存泄漏和资源管理复杂性的问题。智能指针模式是现代C++编程中非常重要的一部分，广泛应用于各种场景中。
+
+## 来源
+
+- [Wikipedia · Smart pointer](https://en.wikipedia.org/wiki/Smart_pointer)
+- [cppreference · Memory management library](https://en.cppreference.com/w/cpp/memory)（标准库参考）。
+- [S20] C++ Core Guidelines 的资源管理建议（清单见调研总览）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [official-docs](/research/official-docs.md)
+- [overview](overview.md)

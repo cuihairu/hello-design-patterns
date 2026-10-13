@@ -63,3 +63,17 @@
 2. 需要"复用逻辑"的地方：继承在 Go 与函数式语言里不存在，统一改写成组合，见[组合式设计](/evolution/composition-over-inheritance)。
 3. 单例的代价（全局状态、测试困难）在 Java/C# 上最明显，在 Go 里包级变量同样可测性差，站内单例篇与反模式篇各写一半。
 4. 线程模型差异决定了并发篇的示例：Java 用线程池，C++ 用 `std::jthread` 与 `std::stop_token`，Go 用 goroutine 加 channel。
+
+## 来源
+
+- 语言落地写法核对自 [S19][S21][S22][S23]（清单见调研总览）。
+- [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns)（可运行示例，[S18]）
+- [Refactoring.Guru · Design Patterns](https://refactoring.guru/design-patterns)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [coverage](coverage.md)
+- [overview](overview.md)

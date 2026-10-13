@@ -100,3 +100,16 @@ func workerPool(jobs <-chan Job, workers int) {
 - [S19] Java SE API `java.util.concurrent` 包说明，`ThreadPoolExecutor` 参数与语义。
 - [S21] Go 官方文档，goroutine 与 channel 的惯用法。
 - [S9] POSA 卷 2，线程池与半同步/半异步相关的并发结构。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [read-write-lock](read-write-lock.md)
+- [work-stealing](work-stealing.md)
+- [bulkhead](/evolution/bulkhead.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)
+- [official-docs](/research/official-docs.md)

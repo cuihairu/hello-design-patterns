@@ -318,3 +318,18 @@ public class ActiveObjectPattern {
 ### 总结
 
 主动对象模式通过将方法调用与执行分离，简化了并发编程的复杂性。通过引入代理、调度器、方法请求和未来对象，客户端可以异步调用方法并获得结果。C++、Go和Java的实现示例展示了如何在不同编程语言中应用主动对象模式。
+
+## 来源
+
+- [Wikipedia · Active object](https://en.wikipedia.org/wiki/Active_object)
+- [S9] POSA 卷 2 的原始目录。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [work-stealing](work-stealing.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

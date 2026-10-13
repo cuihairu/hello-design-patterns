@@ -181,3 +181,23 @@ public class Main {
 ### 总结
 
 依赖注入是一种强大的设计模式，通过将对象的依赖关系从内部转移到外部管理，实现对象之间的解耦。使用依赖注入可以提升代码的可维护性、可测试性和灵活性，但也需要注意复杂度和性能开销的权衡。在实际开发中，选择合适的依赖注入框架，可以有效管理依赖关系，提高开发效率。
+
+## 来源
+
+- [Wikipedia · Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection)
+- [Fowler · Inversion of Control](https://martinfowler.com/articles/injection.html)（DI 与 Service Locator 的取舍）。
+- [S27] Spring Framework 文档的应用上下文章节（清单见调研总览）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [golden-hammer](/anti-patterns/golden-hammer.md)
+- [overview](/anti-patterns/overview.md)
+- [overview](/evolution/overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [repository](/other/repository.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [official-docs](/research/official-docs.md)
+- [overview](overview.md)

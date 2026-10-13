@@ -195,3 +195,21 @@ public class Main {
 - 如果设计不当，可能会增加系统类之间的依赖关系，使得子系统难以被独立复用。
 
 外观模式特别适合于复杂系统中的简化调用、解耦和屏蔽内部变化等场景。在实际应用中，外观模式常用于构建更高层次的接口，为底层的复杂操作提供统一的简单接口。
+
+## 来源
+
+- [S1] GoF 结构型目录（第 4 章），本篇模式的原始出处。
+- [Wikipedia · Facade pattern](https://en.wikipedia.org/wiki/Facade_pattern)
+- [Refactoring.Guru · Facade](https://refactoring.guru/design-patterns/facade)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [god-object](/anti-patterns/god-object.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)
+- [overview](overview.md)
+- [remote-facade](remote-facade.md)
+- [remote-proxy](remote-proxy.md)

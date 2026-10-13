@@ -219,3 +219,19 @@ public class Main {
 ```
 
 这些例子展示了如何在 C++、Go 和 Java 中实现建造者模式。每个例子都定义了产品、抽象建造者、具体建造者和指挥者，并演示了如何使用这些组件来创建复杂对象。
+
+## 来源
+
+- [S1] GoF 创建型目录（第 3 章），本篇模式的原始出处。
+- [Wikipedia · Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern)
+- [Refactoring.Guru · Builder](https://refactoring.guru/design-patterns/builder)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [anemic-domain-model](/anti-patterns/anemic-domain-model.md)
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)

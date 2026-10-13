@@ -350,3 +350,19 @@ public class Main {
 ### 总结
 
 对象池模式在需要频繁创建和销毁对象的场景中非常有用，可以显著提高性能并有效管理资源。虽然实现复杂度较高，但通过适当的同步和资源管理，可以大大优化系统的性能和资源利用效率。
+
+## 来源
+
+- 对象池未入 [S1] 目录，词汇出处见 [Wikipedia · Object pool pattern](https://en.wikipedia.org/wiki/Object_pool_pattern)。
+- [Apache Commons Pool](https://commons.apache.org/proper/commons-pool/)（Java 生态的标准实现）。
+- [Wikipedia · Thread pool](https://en.wikipedia.org/wiki/Thread_pool)（同一思想的线程资源版）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [read-write-lock](/concurrency/read-write-lock.md)
+- [thread-pool](/concurrency/thread-pool.md)
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)

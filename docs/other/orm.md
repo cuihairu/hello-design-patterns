@@ -158,3 +158,22 @@ namespace Example {
 
 ### 总结
 对象-关系映射（ORM）模式通过将数据库表映射到对象，实现了数据库与面向对象编程之间的无缝集成。尽管 ORM 具有提高开发效率、简化代码等优点，但在使用时需要考虑性能开销和复杂查询的情况。通过学习不同编程语言中的 ORM 框架，可以更好地理解和应用该模式。
+
+## 来源
+
+- [Wikipedia · Object–relational mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping)
+- [Fowler · ORM Hate](https://martinfowler.com/bliki/OrmHate.html)（定位辨析，[S26]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [anemic-domain-model](/anti-patterns/anemic-domain-model.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [overview](overview.md)
+- [repository](repository.md)
+- [transaction-script](transaction-script.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

@@ -26,3 +26,14 @@
 - 一对多的状态通知用观察者；请求的处理者不确定时用责任链。
 - 需要撤销、排队、记录日志的请求用命令；需要保存历史状态用备忘录。
 - 遍历逻辑与容器实现分离用迭代器；稳定结构上频繁新增操作用访问者。
+
+## 来源
+
+- [S1] GoF 目录把行为型模式列为第三组（11 个），本区沿此收录并加回调、DSL、快照页。
+- [Refactoring.Guru · 行为型模式](https://refactoring.guru/design-patterns/behavioral-patterns)
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [reference](/reference.md)

@@ -85,3 +85,13 @@ Go 标准库没有工作窃取池，自实现时用"每线程一个 slice 当 de
 - [S19] Java SE API `java.util.concurrent.ForkJoinPool` 说明。
 - [S9] POSA 卷 2，任务池与主动对象一族的并发结构。
 - [S21] Go 官方文档与博客，goroutine 调度与流水线。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [thread-pool](thread-pool.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)

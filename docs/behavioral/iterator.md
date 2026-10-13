@@ -223,3 +223,18 @@ public class IteratorPatternDemo {
 2. **复杂性**：增加了类和接口的数量，可能使系统结构变得更加复杂。
 
 迭代器模式是一个有用的工具，特别是在需要遍历不同类型集合对象的场景中，能够提供简洁和统一的访问接口。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Iterator pattern](https://en.wikipedia.org/wiki/Iterator_pattern)
+- [Refactoring.Guru · Iterator](https://refactoring.guru/design-patterns/iterator)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)
+- [official-docs](/research/official-docs.md)

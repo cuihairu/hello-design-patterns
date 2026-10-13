@@ -26,3 +26,23 @@
 ## 怎么读
 
 先读[消息通道](/integration/message-channel)，把点对点与发布订阅两种形态分清；[消息路由](/integration/message-router)与[消息转换](/integration/message-translator)是通道上的两类加工组件；[发布订阅](/integration/publish-subscribe)对照[观察者](/behavioral/observer)读，体会同步回调换成异步消息时换掉的失败模型。
+
+## 来源
+
+- [S10] EIP《Enterprise Integration Patterns》目录。
+- [Enterprise Integration Patterns 站点](https://www.enterpriseintegrationpatterns.com/)（[S10] 配套站）。
+- [Wikipedia · Enterprise Integration Patterns](https://en.wikipedia.org/wiki/Enterprise_Integration_Patterns)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [message-channel](message-channel.md)
+- [message-router](message-router.md)
+- [message-translator](message-translator.md)
+- [publish-subscribe](publish-subscribe.md)
+- [introduction](/introduction.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

@@ -261,3 +261,19 @@ public class Main {
 - **可能导致性能瓶颈**：由于所有的通信都通过中介者进行，中介者可能成为系统的性能瓶颈。
 
 中介者模式适用于对象之间关系复杂且耦合度高的系统。通过引入中介者，可以有效降低系统的复杂度和耦合度，提升系统的可维护性和可扩展性。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Mediator pattern](https://en.wikipedia.org/wiki/Mediator_pattern)
+- [Refactoring.Guru · Mediator](https://refactoring.guru/design-patterns/mediator)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [god-object](/anti-patterns/god-object.md)
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

@@ -20,3 +20,14 @@
 - 创建逻辑需要随环境变化或需要解耦具体类型时，选择工厂方法或抽象工厂。
 - 构造参数多、步骤有先后依赖时，使用建造者代替一长串构造函数。
 - 对象创建成本高且可复用时，使用原型或对象池。
+
+## 来源
+
+- [S1] GoF 目录把创建型模式列为第一组（5 个），本区沿此收录并扩充非 GoF 条目。
+- [Refactoring.Guru · 创建型模式](https://refactoring.guru/design-patterns/creational-patterns)
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [reference](/reference.md)

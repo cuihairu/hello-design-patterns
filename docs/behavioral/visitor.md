@@ -288,3 +288,19 @@ public class VisitorPatternDemo {
 3. **复杂性**：增加新的访问者比较简单，但是如果增加新的元素类，所有访问者都需要修改，增加了系统的复杂性。
 
 访问者模式在需要对一个对象结构中的对象进行多种不同操作的场景中非常有用，特别是在对象结构相对稳定但操作经常变化的情况下，可以通过这个模式来扩展操作，而不需要修改对象结构本身。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern)
+- [Refactoring.Guru · Visitor](https://refactoring.guru/design-patterns/visitor)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)

@@ -98,3 +98,16 @@ asyncOperation(onOperationComplete);
 ### 总结
 
 回调模式是一种常见的设计模式，广泛用于处理异步操作。通过回调函数或回调对象，回调模式实现了异步操作完成后的灵活处理。尽管回调模式可能带来代码复杂性增加的问题，但通过合理的设计和使用，可以有效提高系统的响应速度和并发处理能力。
+
+## 来源
+
+- [Wikipedia · Callback](https://en.wikipedia.org/wiki/Callback_%28computer_programming%29)
+- [MDN · Callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)（前端落地，[S28]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [official-docs](/research/official-docs.md)

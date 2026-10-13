@@ -102,3 +102,16 @@ class OrderService {
 
 - [S6] 《Refactoring》第 2 版的"过大类"、"过多实例变量"坏味道。
 - [S25] Wikipedia 的 God object 词条，别名与形态描述。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [anemic-domain-model](anemic-domain-model.md)
+- [big-ball-of-mud](big-ball-of-mud.md)
+- [overview](overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

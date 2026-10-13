@@ -90,3 +90,13 @@ Java 侧按场景对号入座：字段映射用 MapStruct（编译期生成映�
 ## 来源
 
 - [S10] Gregor Hohpe、Bobby Woolf，《Enterprise Integration Patterns》，Addison-Wesley，2002。消息转换的原始出处。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [message-channel](message-channel.md)
+- [message-router](message-router.md)
+- [overview](overview.md)
+- [publish-subscribe](publish-subscribe.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

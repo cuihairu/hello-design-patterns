@@ -282,3 +282,19 @@ public class Main {
 ```
 
 这些例子展示了如何在 C++、Go 和 Java 中实现抽象工厂模式。每个例子都定义了抽象产品、具体产品、抽象工厂和具体工厂，并演示了如何使用这些工厂来创建不同的产品对象。
+
+## 来源
+
+- [S1] GoF 创建型目录（第 3 章），本篇模式的原始出处。
+- [Wikipedia · Abstract factory pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern)
+- [Refactoring.Guru · Abstract Factory](https://refactoring.guru/design-patterns/abstract-factory)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)

@@ -142,3 +142,20 @@ func main() {
 ### 小结
 
 单例模式是一种用于确保一个类只有一个实例的设计模式。在C++中，可以通过懒汉模式和饿汉模式来实现单例，而在Go中，可以利用`sync.Once`来确保只创建一个实例。单例模式在需要全局共享资源、控制资源访问时非常有用。
+
+## 来源
+
+- [S1] GoF 创建型目录（第 3 章），本篇模式的原始出处。
+- [Wikipedia · Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern)
+- [Refactoring.Guru · Singleton](https://refactoring.guru/design-patterns/singleton)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](/anti-patterns/overview.md)
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

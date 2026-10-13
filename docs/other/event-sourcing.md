@@ -275,3 +275,21 @@ class EventProcessor:
 ### 总结
 
 事件溯源模式通过记录状态变化事件而不是当前状态，提供了完整的历史记录和灵活的读取模型。然而，这种模式的实现复杂度较高，需要合适的存储和一致性管理策略。在需要详细历史记录和高可审计性的系统中，事件溯源模式是一种强大的设计方法。
+
+## 来源
+
+- [Fowler · Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)（Wikipedia 暂无独立词条，[S26]）。
+- [S13]《Microservices Patterns》事件驱动章（清单见调研总览）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [big-ball-of-mud](/anti-patterns/big-ball-of-mud.md)
+- [glossary](/glossary.md)
+- [publish-subscribe](/integration/publish-subscribe.md)
+- [overview](overview.md)
+- [transaction-script](transaction-script.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [remote-facade](/structural/remote-facade.md)

@@ -251,3 +251,24 @@ public class Main {
 - 观察者和被观察者之间有依赖关系，可能导致内存泄漏。
 
 观察者模式适用于需要广播通知的场景，通过将状态的维护和通知逻辑分离，提高系统的灵活性和可扩展性。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
+- [Refactoring.Guru · Observer](https://refactoring.guru/design-patterns/observer)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [circuit-breaker](/evolution/circuit-breaker.md)
+- [glossary](/glossary.md)
+- [message-router](/integration/message-router.md)
+- [overview](/integration/overview.md)
+- [publish-subscribe](/integration/publish-subscribe.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [official-docs](/research/official-docs.md)

@@ -69,5 +69,15 @@
 ### 引用约定
 
 - 调研篇里的 `[S1]` 指向本页清单，对应书目在[参考资料](/reference)里也有书目条目；
-- 站内模式正文不逐条标来源，来源集中在本目录，避免每篇重复贴书目；
+- 站内正文页在篇末附「来源」小节：书目用 `[S#]` 指回本清单，细节不重复贴；在线词条给可直接点开的深层链接；
 - 出版年份、版本、章节归属按上列版本写，改版时同步更新本清单。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [introduction](/introduction.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [books](books.md)
+- [coverage](coverage.md)

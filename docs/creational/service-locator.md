@@ -166,3 +166,21 @@ int main() {
 ### 总结
 
 服务定位器模式通过集中化管理和获取服务实例，提供了服务的解耦和灵活替换的能力。尽管它隐藏了客户端的依赖并可能引入全局状态相关的问题，但在某些场景下，如插件系统、模块化应用和依赖注入管理中，它是一种有用的设计模式。
+
+## 来源
+
+- 服务定位器未入 [S1] 目录；与依赖注入的取舍评述见 [Fowler · Inversion of Control](https://martinfowler.com/articles/injection.html)。
+- [Wikipedia · Service locator pattern](https://en.wikipedia.org/wiki/Service_locator_pattern)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](/anti-patterns/overview.md)
+- [overview](overview.md)
+- [overview](/evolution/overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [official-docs](/research/official-docs.md)

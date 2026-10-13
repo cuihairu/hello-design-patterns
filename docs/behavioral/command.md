@@ -200,3 +200,19 @@ public class Main {
 - **调试困难**：命令模式涉及的对象较多，调试起来比较麻烦。
 
 命令模式适用于需要对请求进行参数化和排队处理，或者需要支持撤销和恢复操作的场景。通过将请求封装为对象，命令模式可以实现更灵活的请求处理和命令管理。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Command pattern](https://en.wikipedia.org/wiki/Command_pattern)
+- [Refactoring.Guru · Command](https://refactoring.guru/design-patterns/command)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [spaghetti-code](/anti-patterns/spaghetti-code.md)
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [transaction-script](/other/transaction-script.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

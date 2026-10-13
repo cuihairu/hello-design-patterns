@@ -170,3 +170,17 @@ public class Main {
 ### 总结
 
 保护代理模式通过代理控制对真实对象的访问权限，在不改变原始对象的前提下，实现了访问控制的功能。这种模式在需要保护敏感操作、控制资源访问时非常有用。
+
+## 来源
+
+- [Wikipedia · Proxy pattern](https://en.wikipedia.org/wiki/Proxy_pattern)（变体词汇见该词条）。
+- [Refactoring.Guru · Proxy](https://refactoring.guru/design-patterns/proxy)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [introduction](/introduction.md)
+- [reference](/reference.md)
+- [official-docs](/research/official-docs.md)
+- [overview](overview.md)

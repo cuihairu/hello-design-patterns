@@ -95,3 +95,12 @@ Java 侧不必自己写：Apache Camel 的 `choice().when(...).to(...).otherwise
 ## 来源
 
 - [S10] Gregor Hohpe、Bobby Woolf，《Enterprise Integration Patterns》，Addison-Wesley，2002。消息路由的原始出处。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [message-channel](message-channel.md)
+- [message-translator](message-translator.md)
+- [overview](overview.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

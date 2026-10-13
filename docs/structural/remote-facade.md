@@ -131,3 +131,13 @@ Java 侧不必自己写：Spring MVC 的 `@RestController` 方法签名（`@Requ
 
 - [S5] Martin Fowler，《Patterns of Enterprise Application Architecture》，Addison-Wesley，2002。远程外观与数据传输对象的原始出处。
 - [S13] Chris Richardson，《Microservices Patterns》，Manning，2018。API 契约与 DTO 在微服务边界的实践口径。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [overview](overview.md)
+- [remote-proxy](remote-proxy.md)

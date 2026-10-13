@@ -81,3 +81,17 @@ React 的组件组合路径：自底向上用组件嵌套 + props 组合出 UI�
 2. 站内 C++ 示例的智能指针赋值用 copy-and-swap 写法，与 Guidelines 的资源管理意图一致（本次一并修正了旧版手写自赋值判断的写法）。
 3. Go 示例不出现"继承"字样，组合写法用嵌入表达。
 4. 前端示例不写 Vue 2 选项式与 React class 组件，统一用组合式 API 与函数组件。
+
+## 来源
+
+- [SourceMaking · Design Patterns](https://sourcemaking.com/design_patterns)（[S17]）
+- [iluwatar/java-design-patterns](https://github.com/iluwatar/java-design-patterns)（[S18]）
+- [Refactoring.Guru · Design Patterns](https://refactoring.guru/design-patterns)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [coverage](coverage.md)
+- [overview](overview.md)

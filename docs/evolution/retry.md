@@ -85,3 +85,17 @@ Java 侧不必自己写：Resilience4j 的 `Retry`（`maxAttempts`、`waitDurati
 
 - [S12] Michael T. Nygard，《Release It!》第 2 版，Pragmatic Bookshelf，2018。瞬时故障与重试的原始出处。
 - [S13] Chris Richardson，《Microservices Patterns》，2018，重试、退避与幂等的实践口径。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [bulkhead](bulkhead.md)
+- [circuit-breaker](circuit-breaker.md)
+- [overview](overview.md)
+- [timeout](timeout.md)
+- [glossary](/glossary.md)
+- [overview](/integration/overview.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)
+- [remote-proxy](/structural/remote-proxy.md)

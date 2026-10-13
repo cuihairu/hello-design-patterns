@@ -89,3 +89,18 @@ API 网关、服务发现、Saga、断路器 vs 熔断、Sidecar、声明式 API
 - 现代演进 4 篇：导读、组合式设计、SOLID 与依赖规则、熔断器。
 - 并发 3 篇：线程池、读写锁、工作窃取（[设计模式概览](/introduction)已声明，站内缺页）。
 - 其他 1 篇：事务脚本（同为概览已声明缺页）。
+
+## 来源
+
+- 本页书目对账以[调研总览的来源清单](/research/overview#来源清单)为准。
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+- [Fowler · eaaCatalog](https://martinfowler.com/eaaCatalog/)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](/anti-patterns/overview.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [coverage](coverage.md)
+- [overview](overview.md)

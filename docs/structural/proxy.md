@@ -137,3 +137,22 @@ public class Main {
 ```
 
 这些例子展示了如何在 C++、Go 和 Java 中实现代理模式。在每个例子中，代理类都实现了与目标对象相同的接口，客户端通过代理对象访问目标对象的方法，代理对象在调用目标对象的方法之前或之后执行一些额外的操作。
+
+## 来源
+
+- [S1] GoF 结构型目录（第 4 章），本篇模式的原始出处。
+- [Wikipedia · Proxy pattern](https://en.wikipedia.org/wiki/Proxy_pattern)
+- [Refactoring.Guru · Proxy](https://refactoring.guru/design-patterns/proxy)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [circuit-breaker](/evolution/circuit-breaker.md)
+- [composition-over-inheritance](/evolution/composition-over-inheritance.md)
+- [overview](/evolution/overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [overview](overview.md)

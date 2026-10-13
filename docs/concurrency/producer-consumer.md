@@ -139,3 +139,23 @@ int main() {
 
 ### 结论
 生产者-消费者模式是一种常见的并发设计模式，适用于需要在多线程环境中协调生产者和消费者之间的关系的场景。通过缓冲区和同步机制，可以有效地解决生产者和消费者之间的速度差异，并确保线程安全。
+
+## 来源
+
+- [Wikipedia · Producer–consumer problem](https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem)
+- [Java · BlockingQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html)（标准库形态，[S19]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [thread-pool](thread-pool.md)
+- [work-stealing](work-stealing.md)
+- [bulkhead](/evolution/bulkhead.md)
+- [glossary](/glossary.md)
+- [message-channel](/integration/message-channel.md)
+- [overview](/integration/overview.md)
+- [publish-subscribe](/integration/publish-subscribe.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [official-docs](/research/official-docs.md)

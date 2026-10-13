@@ -258,3 +258,24 @@ public class TemplateMethodPatternDemo {
 2. **继承相关问题**：模板方法模式依赖继承，子类必须继承自抽象类，这会带来继承相关的问题，如违反里氏替换原则（LSP）。
 
 模板方法模式在实际开发中是一个有用的工具，特别是在具有统一算法结构的场景中，可以通过这个模式将通用的行为提取到基类中，从而简化代码，增强扩展性。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Template method pattern](https://en.wikipedia.org/wiki/Template_method_pattern)
+- [Refactoring.Guru · Template Method](https://refactoring.guru/design-patterns/template-method)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [spaghetti-code](/anti-patterns/spaghetti-code.md)
+- [overview](overview.md)
+- [composition-over-inheritance](/evolution/composition-over-inheritance.md)
+- [overview](/evolution/overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)
+- [official-docs](/research/official-docs.md)

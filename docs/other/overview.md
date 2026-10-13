@@ -12,3 +12,14 @@
 - [事件溯源模式](/other/event-sourcing)：记录状态变化事件而非最终状态，以此重建状态并支持审计回溯。
 - [事务脚本模式](/other/transaction-script)：把一个业务操作写成线性处理函数，规则跟流程走，与[贫血模型](/anti-patterns/anemic-domain-model)互为对照。
 - [仓储与单元工作](/other/repository)：领域层拿聚合根的集合式接口，实现落基础设施层；单元工作把一次事务的整批改动包成一个数据库事务。
+
+## 来源
+
+- [S5] PoEAA《Patterns of Enterprise Application Architecture》，企业应用模式目录。
+- [Fowler · eaaCatalog](https://martinfowler.com/eaaCatalog/)（[S5] 的在线目录，[S26]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [reference](/reference.md)
+- [coverage](/research/coverage.md)

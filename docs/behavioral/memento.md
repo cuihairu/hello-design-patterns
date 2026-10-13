@@ -255,3 +255,19 @@ public class MementoPatternDemo {
 2. **复杂性**：引入了新的类和接口，增加了系统的复杂性，特别是在实现比较复杂的状态保存和恢复逻辑时。
 
 备忘录模式在实际开发中非常有用，特别是在需要保存和恢复对象多个状态的场景中，可以通过这个模式将对象的状态保存到备忘录中，从而在需要时恢复对象的状态，简化代码，提高可维护性。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · Memento pattern](https://en.wikipedia.org/wiki/Memento_pattern)
+- [Refactoring.Guru · Memento](https://refactoring.guru/design-patterns/memento)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [snapshot](snapshot.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)

@@ -57,3 +57,14 @@
 - [S8] Foote、Yoder，《Big Ball of Mud》，PLoP 1997。
 - [S25] Wikipedia 的 Software antipattern、God object 词条，用于核对别名。
 - [S26] martinfowler.com 的 bliki 与企业应用模式目录。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](/evolution/overview.md)
+- [solid](/evolution/solid.md)
+- [glossary](/glossary.md)
+- [introduction](/introduction.md)
+- [reference](/reference.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)

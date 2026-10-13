@@ -150,3 +150,16 @@ public class VirtualProxyPattern {
 ### 总结
 
 虚拟代理模式通过代理对象控制对实际对象的访问，延迟实际对象的创建，直到真正需要时才实例化。这样可以优化系统性能，减少不必要的资源消耗。上述示例展示了如何在C++、Go和Java中实现虚拟代理模式。
+
+## 来源
+
+- [Wikipedia · Proxy pattern](https://en.wikipedia.org/wiki/Proxy_pattern)（变体词汇见该词条）。
+- [Refactoring.Guru · Proxy](https://refactoring.guru/design-patterns/proxy)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [glossary](/glossary.md)
+- [introduction](/introduction.md)
+- [reference](/reference.md)
+- [overview](overview.md)

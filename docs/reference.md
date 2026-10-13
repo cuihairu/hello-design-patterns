@@ -23,12 +23,12 @@
 
 ## 在线资源
 
-- Refactoring.Guru：按语言分类的模式教程，含意图、结构、适用场景与示例代码。
-- SourceMaking：设计模式与反模式的系统站点，附 UML 图与优缺点说明。
-- Wikipedia：Software design pattern / Behavioral pattern 等词条，适合快速核对模式定义。
-- dofactory：经典 GoF 模式的模式分类与代码示例。
-- Martin Fowler 的个人站点（martinfowler.com）：重构、企业应用架构、演进式架构等文章。
-- Java 官方文档 java.util.concurrent 包说明：Future、Semaphore、BlockingQueue 等并发模式的标准库实现。
+- [Refactoring.Guru](https://refactoring.guru/design-patterns)：按语言分类的模式教程，含意图、结构、适用场景与示例代码。
+- [SourceMaking](https://sourcemaking.com/design_patterns)：设计模式与反模式的系统站点，附 UML 图与优缺点说明。
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)：设计模式总词条，另有各模式分词条，适合快速核对定义。
+- [dofactory](https://www.dofactory.com/net/design-patterns)：经典 GoF 模式的模式分类与代码示例。
+- [Martin Fowler 的个人站点](https://martinfowler.com/eaaCatalog/)：重构、企业应用架构、演进式架构等文章，eaaCatalog 为 [S5] 的在线目录。
+- [Java 官方文档 java.util.concurrent 包](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html)：Future、Semaphore、BlockingQueue 等并发模式的标准库实现。
 
 ## 站内文档索引
 
@@ -36,6 +36,7 @@
 
 - [设计模式概览](/introduction)
 - [知识点整理](/knowledge)
+- [术语表](/glossary)
 
 ### 创建型模式
 
@@ -156,3 +157,9 @@
 - [熔断器](/evolution/circuit-breaker)、[隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)与[重试](/evolution/retry)同出《Release It!》，分别管失败率、资源上限、单次时长与瞬时故障恢复，跨进程调用常四件一起配。
 - [策略模式](/behavioral/strategy)的空对象一节："空行为"也是可替换的策略，返回空实现代替 `null`，调用方不必判空。
 - [发布订阅](/integration/publish-subscribe)与[观察者](/behavioral/observer)是同一意图在跨进程与进程内两个域的实现：异步消息与同步回调，失败模型不同。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [coverage](/research/coverage.md)
+- [overview](/research/overview.md)

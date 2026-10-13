@@ -172,3 +172,15 @@ int main() {
 ### 领域特定语言（DSL）模式总结
 
 DSL 模式通过提供专门的语法和语义，使得特定领域的问题能够更加自然和高效地解决。虽然 DSL 的设计和实现需要一定的投入，但在特定领域中，其带来的开发效率和代码可维护性提升是非常显著的。
+
+## 来源
+
+- [Wikipedia · Domain-specific language](https://en.wikipedia.org/wiki/Domain-specific_language)
+- [Fowler · Domain-Specific Languages 书页](https://martinfowler.com/books/dsl.html)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)

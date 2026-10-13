@@ -244,3 +244,17 @@ int main(int argc, char* argv[]) {
 ### 总结
 
 Reactor设计模式是处理并发I/O操作的强大工具。通过将事件处理逻辑与事件分发机制分离，Reactor模式不仅提高了系统的性能和可扩展性，还简化了代码的维护和扩展。虽然实现起来比较复杂，但在需要高并发处理的场景下，Reactor模式是非常有效的设计选择。
+
+## 来源
+
+- [Wikipedia · Reactor pattern](https://en.wikipedia.org/wiki/Reactor_pattern)
+- [S9] POSA 卷 2 的原始目录。
+- [Java · Selector](https://docs.oracle.com/javase/8/docs/api/java/nio/channels/Selector.html)（NIO 落地，[S19]）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)

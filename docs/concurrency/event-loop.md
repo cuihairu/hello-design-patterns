@@ -150,3 +150,16 @@ func main() {
 
 ### 总结
 事件循环模式通过一个或少量线程的循环来处理大量 I/O 操作，是一种高效的并发处理模式。它适用于 I/O 密集型任务，能有效避免多线程的上下文切换和锁竞争问题。然而，对于需要处理阻塞操作或 CPU 密集型任务的场景，事件循环模式的单线程特性可能会成为瓶颈。
+
+## 来源
+
+- [Wikipedia · Event loop](https://en.wikipedia.org/wiki/Event_loop)
+- [libuv · Design overview](https://docs.libuv.org/en/v1.x/design.html)（Node.js 事件循环实现）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)

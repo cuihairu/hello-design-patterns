@@ -120,3 +120,18 @@ func main() {
 
 ### 总结
 双重检查锁定模式通过在进入同步代码块前后进行两次检查，确保只有在必要时才进行同步，从而提高性能。该模式特别适用于实现单例模式，能够在保证线程安全的同时减少同步开销。然而，在不同编程语言中实现时，需要注意语言的内存模型和并发控制机制，确保正确性和有效性。
+
+## 来源
+
+- [Wikipedia · Double-checked locking](https://en.wikipedia.org/wiki/Double-checked_locking)
+- [Pugh · Double-Checked Locking is Broken](https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html)（Java 内存模型下的失败宣言）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [read-write-lock](read-write-lock.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [official-docs](/research/official-docs.md)

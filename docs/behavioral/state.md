@@ -201,3 +201,20 @@ public class StatePatternDemo {
 2. **状态切换开销**：频繁的状态切换可能会引入一定的运行时开销。
 
 状态模式在实际开发中是一个非常有用的工具，特别是在对象需要根据状态改变行为的场景中，可以通过这个模式将状态相关的行为封装到独立的状态类中，从而简化代码，提高可维护性。
+
+## 来源
+
+- [S1] GoF 行为型目录（第 5 章），本篇模式的原始出处。
+- [Wikipedia · State pattern](https://en.wikipedia.org/wiki/State_pattern)
+- [Refactoring.Guru · State](https://refactoring.guru/design-patterns/state)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](/anti-patterns/overview.md)
+- [overview](overview.md)
+- [composition-over-inheritance](/evolution/composition-over-inheritance.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [coverage](/research/coverage.md)

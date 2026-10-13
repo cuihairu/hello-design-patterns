@@ -88,3 +88,19 @@ public class RefundScript {
 
 - [S5] Martin Fowler，《Patterns of Enterprise Application Architecture》，2002，领域逻辑一章。
 - [S26] martinfowler.com bliki，Anemic Domain Model。
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [anemic-domain-model](/anti-patterns/anemic-domain-model.md)
+- [god-object](/anti-patterns/god-object.md)
+- [overview](/anti-patterns/overview.md)
+- [glossary](/glossary.md)
+- [knowledge](/knowledge.md)
+- [overview](overview.md)
+- [repository](repository.md)
+- [reference](/reference.md)
+- [applications](/research/applications.md)
+- [books](/research/books.md)
+- [coverage](/research/coverage.md)
+- [remote-facade](/structural/remote-facade.md)

@@ -181,3 +181,15 @@ int main() {
     return 0;
 }
 ```
+
+## 来源
+
+- 多例未入 [S1] 目录，词汇出处见 [Wikipedia · Multiton pattern](https://en.wikipedia.org/wiki/Multiton_pattern)。
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)（GoF 之外的扩充词条口径）
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [overview](overview.md)
+- [glossary](/glossary.md)
+- [reference](/reference.md)
