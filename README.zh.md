@@ -17,7 +17,7 @@
 
 ---
 
-系统梳理创建型、结构型、行为型、并发等设计模式，并收录集成模式、反模式与现代演进（稳定性）条目，涵盖 C++、Java、Go 多语言实现。
+这里记录个人学习笔记、心得与经验，以游戏开发者的视角分享创建型、结构型、行为型、并发等设计模式，以及集成模式、反模式和现代设计实践；示例涉及 C++、Java、Go。
 
 > 📖 English version see [README.md](./README.md)
 
@@ -25,7 +25,7 @@
 
 ## 开发
 
-依赖 [VitePress](https://vitepress.dev/)。`npm run docs:audit` 核对侧栏、站内链接、页面标题与各分区索引是否与磁盘文件一致；`npm run docs:build` 兜底死链。
+本站使用 [VitePress](https://vitepress.dev/) 构建。[VitePress 侧栏](./docs/.vitepress/config.mts)是唯一权威导航源；新增或移动页面时更新侧栏，不另维护手写页面清单。`npm run docs:audit` 核对侧栏、站内链接、页面标题与各分区索引是否与磁盘文件一致；`npm run docs:build` 兜底死链。
 
 ## License
 

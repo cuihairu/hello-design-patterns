@@ -17,7 +17,7 @@ Design Patterns Guide · [Read online](https://cuihairu.github.io/hello-design-p
 
 ---
 
-A systematic guide to creational, structural, behavioral, and concurrency design patterns, plus integration patterns, anti-patterns, and post-GoF resilience patterns, with implementations in C++, Java, and Go.
+Personal notes, takeaways, and experience with design patterns from a game developer's perspective. The collection covers creational, structural, behavioral, and concurrency patterns, alongside integration patterns, anti-patterns, and modern design practices, with examples in C++, Java, and Go.
 
 > 📖 中文说明见 [README.zh.md](./README.zh.md)
 
@@ -25,7 +25,7 @@ Survey output consolidated: [Knowledge Notes](https://cuihairu.github.io/hello-d
 
 ## Development
 
-Built with [VitePress](https://vitepress.dev/). Run `npm run docs:audit` to check sidebar, internal links, page titles, and section indexes against the files on disk; `npm run docs:build` gates dead links.
+Built with [VitePress](https://vitepress.dev/). The [VitePress sidebar](./docs/.vitepress/config.mts) is the authoritative navigation source; update it when adding or moving a page. Do not maintain a separate hand-written page list. Run `npm run docs:audit` to check sidebar, internal links, page titles, and section indexes against the files on disk; `npm run docs:build` gates dead links.
 
 ## License
 

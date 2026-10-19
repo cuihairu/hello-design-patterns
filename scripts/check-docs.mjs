@@ -8,7 +8,7 @@ const docs = join(root, 'docs')
 
 function walk(dir) {
   return readdirSync(dir).flatMap((name) => {
-    if (name === '.vitepress' || name === 'node_modules') return []
+    if (name === '.vitepress' || name === 'node_modules' || name === 'review') return []
     const p = join(dir, name)
     return statSync(p).isDirectory() ? walk(p) : p.endsWith('.md') ? [p] : []
   })
