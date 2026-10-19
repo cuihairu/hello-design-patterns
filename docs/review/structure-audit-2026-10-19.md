@@ -121,3 +121,9 @@
 | 代理 | **不同角度，保留**。`docs/introduction.md:70-73` 写统一意图并列出四变体，供分类定位；`docs/structural/overview.md:27` 给选择建议，`docs/glossary.md:89-91` 给术语定义，`docs/structural/proxy.md:3` 展开访问控制与调用前后行为。简介中的变体链接指向各自正文，概览也链接代理页；职责与结论不同，不硬并。 |
 
 本次确认 **合并真重复 1 组，保留不同角度 2 组**；不删除 Markdown 页面或改变 URL。
+
+### C：文案和条目对账
+
+- `README.md` 与 `README.zh.md` 没有篇数或目录逐项清单，无需修数字/删不存在目录；口径改为个人笔记与开发者分享，见 `README.md:20,28`、`README.zh.md:20,28`。
+- 首页原称“兼顾 Python、C#”，与实际展示的 C++、Java、Go 示例不符；改为只列实际示例语言，见 `docs/index.md:5-7`。
+- 侧栏没有过期“第 N 讲”或篇数注释；配置条目缺文件 0；重要 overview 均在侧栏中。构建及审计均通过。

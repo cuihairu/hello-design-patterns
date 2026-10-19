@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: 设计模式指南
-  text: 系统梳理创建型、结构型、行为型、并发等设计模式
-  tagline: 涵盖 C++、Java、Go 多语言实现，从基础概念到实战应用，助你构建可维护、可扩展的软件架构。
+  name: 设计模式笔记
+  text: 个人心得与经验：从游戏开发者视角看设计模式
+  tagline: 收录创建型、结构型、行为型、并发等主题，以及 C++、Java、Go 示例。
   image:
     src: /logo.svg
-    alt: 设计模式指南
+    alt: 设计模式笔记
   actions:
     - theme: brand
       text: 开始阅读
