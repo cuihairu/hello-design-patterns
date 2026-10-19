@@ -1,5 +1,7 @@
 # 简介
 
+这里按模式类别整理个人笔记，清单中的用途与示例用于快速定位；具体取舍和实现见各篇正文。以单例为例，[本节的用途速览](#创建型模式-creational-patterns)与[术语表定义](/glossary#单例模式-singleton-pattern)各有侧重，完整讨论见[单例模式正文](/creational/singleton)。
+
 设计模式通常可以归类为三大类：
 - **创建型模式（Creational Patterns）**
 - **结构型模式（Structural Patterns）**
