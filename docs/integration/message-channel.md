@@ -79,7 +79,7 @@ Java 侧按框架对号入座：JMS 的 `Queue` 是点对点通道、`Topic` 是
 - [发布订阅](/integration/publish-subscribe)：通道的第二种形态。
 - [消息路由](/integration/message-router)、[消息转换](/integration/message-translator)：通道上的加工组件。
 - [生产者-消费者模式](/concurrency/producer-consumer)：进程内同构。
-- [集成模式导读](/integration/overview)：本区口径。
+- [集成模式概览](/integration/overview)：本区口径。
 
 ## 来源
 

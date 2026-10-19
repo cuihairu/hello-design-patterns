@@ -90,7 +90,7 @@ Java 侧不必自己写：Apache Camel 的 `choice().when(...).to(...).otherwise
 - [消息通道](/integration/message-channel)、[消息转换](/integration/message-translator)：路由器的输入输出与搭档组件。
 - [责任链模式](/behavioral/chain-of-responsibility)：逐个试与按规则定向的对比。
 - [策略模式](/behavioral/strategy)：路由规则作为可替换策略。
-- [集成模式导读](/integration/overview)：本区口径。
+- [集成模式概览](/integration/overview)：本区口径。
 
 ## 来源
 

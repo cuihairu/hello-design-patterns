@@ -79,7 +79,7 @@ Java 侧不必自己写：Resilience4j 的 `Retry`（`maxAttempts`、`waitDurati
 ## 相关篇目
 
 - [超时](/evolution/timeout)、[隔舱](/evolution/bulkhead)、[熔断器](/evolution/circuit-breaker)：同出 Release It! 的稳定性三模式。
-- [现代演进导读](/evolution/overview)：本篇为什么放在 GoF 之后。
+- [现代演进概览](/evolution/overview)：本篇为什么放在 GoF 之后。
 
 ## 来源
 

@@ -104,7 +104,7 @@ Java 侧的对照要分清：`ApplicationEventPublisher`（Spring 事件）是�
 - [观察者模式](/behavioral/observer)：进程内同构。
 - [消息通道](/integration/message-channel)：点对点与发布订阅两种通道形态。
 - [事件溯源](/other/event-sourcing)：同一批事实的另一种用法。
-- [集成模式导读](/integration/overview)：本区口径。
+- [集成模式概览](/integration/overview)：本区口径。
 
 ## 来源
 

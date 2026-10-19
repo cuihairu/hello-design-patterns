@@ -5,7 +5,7 @@
 ## 经典书籍
 
 - 《设计模式：可复用面向对象软件的基础》（Design Patterns: Elements of Reusable Object-Oriented Software），Erich Gamma、Richard Helm、Ralph Johnson、John Vlissides（"四人帮"/GoF）。设计模式领域的开山之作，定义了 23 种经典模式及其意图、适用性与结构。
-- 《Head First 设计模式》（Head First Design Patterns），Eric Freeman 等。以图形化、案例化的方式讲解经典模式，适合入门。
+- 《Head First 设计模式》（Head First Design Patterns），Eric Freeman 等。以图形化、案例化的方式呈现经典模式。
 - 《面向对象分析与设计》（Object-Oriented Analysis and Design with Applications），Grady Booch 等。讲解面向对象基础与模式在软件生命周期中的应用。
 - 《企业应用架构模式》（Patterns of Enterprise Application Architecture），Martin Fowler。覆盖企业级应用中的领域逻辑、数据映射、Web 表现层等模式；仓储与单元工作出自此书，对应[仓储与单元工作](/other/repository)；远程外观与数据传输对象出自"分布"一组，对应[远程外观与数据传输对象](/structural/remote-facade)。
 - 《重构：改善既有代码的设计》（Refactoring: Improving the Design of Existing Code），Martin Fowler。说明如何通过重构手法把代码逐步整理为引入模式的形态。
@@ -23,7 +23,7 @@
 
 ## 在线资源
 
-- [Refactoring.Guru](https://refactoring.guru/design-patterns)：按语言分类的模式教程，含意图、结构、适用场景与示例代码。
+- [Refactoring.Guru](https://refactoring.guru/design-patterns)：按语言分类的模式教程（外部链接），含意图、结构、适用场景与示例代码。
 - [SourceMaking](https://sourcemaking.com/design_patterns)：设计模式与反模式的系统站点，附 UML 图与优缺点说明。
 - [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)：设计模式总词条，另有各模式分词条，适合快速核对定义。
 - [dofactory](https://www.dofactory.com/net/design-patterns)：经典 GoF 模式的模式分类与代码示例。
@@ -40,7 +40,7 @@
 
 ### 创建型模式
 
-- [创建型模式导读](/creational/overview)
+- [创建型模式概览](/creational/overview)
 - [单例模式](/creational/singleton)
 - [工厂方法模式](/creational/factory-method)
 - [抽象工厂模式](/creational/abstract-factory)
@@ -52,7 +52,7 @@
 
 ### 结构型模式
 
-- [结构型模式导读](/structural/overview)
+- [结构型模式概览](/structural/overview)
 - [适配器模式](/structural/adapter)
 - [装饰模式](/structural/decorator)
 - [代理模式](/structural/proxy)
@@ -71,7 +71,7 @@
 
 ### 行为型模式
 
-- [行为型模式导读](/behavioral/overview)
+- [行为型模式概览](/behavioral/overview)
 - [策略模式](/behavioral/strategy)
 - [观察者模式](/behavioral/observer)
 - [命令模式](/behavioral/command)
@@ -88,7 +88,7 @@
 
 ### 并发模式
 
-- [并发模式导读](/concurrency/overview)
+- [并发模式概览](/concurrency/overview)
 - [生产者-消费者模式](/concurrency/producer-consumer)
 - [信号量模式](/concurrency/semaphore)
 - [Future 模式](/concurrency/future)
@@ -103,7 +103,7 @@
 
 ### 其他模式
 
-- [其他模式导读](/other/overview)
+- [其他模式概览](/other/overview)
 - [MVC 模式](/other/mvc)
 - [MVVM 模式](/other/mvvm)
 - [对象-关系映射（ORM）](/other/orm)
@@ -113,7 +113,7 @@
 
 ### 集成模式
 
-- [集成模式导读](/integration/overview)
+- [集成模式概览](/integration/overview)
 - [消息通道模式](/integration/message-channel)
 - [消息路由模式](/integration/message-router)
 - [消息转换模式](/integration/message-translator)
@@ -121,7 +121,7 @@
 
 ### 反模式
 
-- [反模式导读](/anti-patterns/overview)
+- [反模式概览](/anti-patterns/overview)
 - [神对象](/anti-patterns/god-object)
 - [大泥球](/anti-patterns/big-ball-of-mud)
 - [金锤子](/anti-patterns/golden-hammer)
@@ -130,7 +130,7 @@
 
 ### 现代演进
 
-- [现代演进导读](/evolution/overview)
+- [现代演进概览](/evolution/overview)
 - [组合式设计](/evolution/composition-over-inheritance)
 - [SOLID 与依赖规则](/evolution/solid)
 - [熔断器模式](/evolution/circuit-breaker)

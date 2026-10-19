@@ -346,7 +346,7 @@
 
 **出处**：[S10]；[Enterprise Integration Patterns 站点](https://www.enterpriseintegrationpatterns.com/)
 
-**相关页**：[消息通道模式](/integration/message-channel)、[集成模式导读](/integration/overview)
+**相关页**：[消息通道模式](/integration/message-channel)、[集成模式概览](/integration/overview)
 
 ### 发布-订阅（Publish–subscribe）
 
@@ -446,7 +446,7 @@
 
 **出处**：[S7]；[Wikipedia · Anti-pattern](https://en.wikipedia.org/wiki/Anti-pattern)
 
-**相关页**：[反模式导读](/anti-patterns/overview)
+**相关页**：[反模式概览](/anti-patterns/overview)
 
 ### 神对象（God object）
 

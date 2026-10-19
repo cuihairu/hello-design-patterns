@@ -10,7 +10,7 @@ hero:
     alt: 设计模式笔记
   actions:
     - theme: brand
-      text: 开始阅读
+      text: 查看笔记
       link: /introduction
     - theme: alt
       text: GitHub 仓库

@@ -95,7 +95,7 @@ Java 侧不必自己写：Resilience4j 的 `Bulkhead`（`maxConcurrentCalls`、`
 - [熔断器](/evolution/circuit-breaker)、[超时](/evolution/timeout)、[重试](/evolution/retry)：同出 Release It! 的稳定性三模式。
 - [信号量模式](/concurrency/semaphore)：隔舱的计数原语。
 - [线程池模式](/concurrency/thread-pool)：线程池隔离的基础设施。
-- [现代演进导读](/evolution/overview)：本篇为什么放在 GoF 之后。
+- [现代演进概览](/evolution/overview)：本篇为什么放在 GoF 之后。
 
 ## 来源
 

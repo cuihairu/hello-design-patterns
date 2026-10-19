@@ -1,4 +1,4 @@
-# 集成模式导读
+# 集成模式概览
 
 应用一多，进程边界就成了问题：订单系统要知道库存系统的地址，一个下游重启把调用链拖垮，两个系统的消息格式各改各的。企业应用集成（EAI）的解法是把"进程间怎么传消息"整理成一套可替换的组件词汇，出自 Hohpe 与 Woolf 的《Enterprise Integration Patterns》[S10]，Spring Integration 与 Apache Camel 的通道、路由器、转换器就是这套词汇的框架落地。
 

@@ -70,7 +70,7 @@ SOLID 是五条类与组件设计原则的首字母缩写，出处是 Martin 200
 - [组合式设计](/evolution/composition-over-inheritance)：LSP 的绕开方式，也是五条原则的共同底座。
 - [依赖注入](/structural/dependency-injection)、[服务定位器](/creational/service-locator)：DIP 的两种落法。
 - [策略](/behavioral/strategy)、[工厂方法](/creational/factory-method)、[装饰](/structural/decorator)：OCP 的三个常用工具。
-- [反模式导读](/anti-patterns/overview)：五条的反面案例在这里。
+- [反模式概览](/anti-patterns/overview)：五条的反面案例在这里。
 
 ## 来源
 

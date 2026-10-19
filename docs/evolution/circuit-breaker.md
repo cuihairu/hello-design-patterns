@@ -163,7 +163,7 @@ Java 侧不必自己写：Resilience4j 的 `CircuitBreaker`、Hystrix 的熔断�
 - [隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)、[重试](/evolution/retry)：同出 Release It! 的稳定性三模式。
 - [策略模式](/behavioral/strategy)：正常实现与降级实现的切换。
 - [观察者模式](/behavioral/observer)：状态转换事件的分发。
-- [现代演进导读](/evolution/overview)：本篇为什么放在 GoF 之后。
+- [现代演进概览](/evolution/overview)：本篇为什么放在 GoF 之后。
 
 ## 来源
 

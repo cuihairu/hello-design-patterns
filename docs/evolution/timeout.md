@@ -87,7 +87,7 @@ Java 侧不必自己写：Resilience4j 的 `TimeLimiter`（`timeoutDuration`）�
 
 - [熔断器](/evolution/circuit-breaker)、[隔舱](/evolution/bulkhead)、[重试](/evolution/retry)：同出 Release It! 的稳定性三模式。
 - [策略模式](/behavioral/strategy)：超时后降级实现的切换。
-- [现代演进导读](/evolution/overview)：本篇为什么放在 GoF 之后。
+- [现代演进概览](/evolution/overview)：本篇为什么放在 GoF 之后。
 
 ## 来源
 

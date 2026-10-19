@@ -11,13 +11,13 @@
   <img src="docs/public/badges/langs.svg" alt="langs" />
 </p>
 
-设计模式指南 · [在线阅读](https://cuihairu.github.io/hello-design-patterns/) · [English](./README.md)
+设计模式笔记 · [在线查看](https://cuihairu.github.io/hello-design-patterns/) · [English](./README.md)
 
 </div>
 
 ---
 
-这里记录个人学习笔记、心得与经验，以游戏开发者的视角分享创建型、结构型、行为型、并发等设计模式，以及集成模式、反模式和现代设计实践；示例涉及 C++、Java、Go。
+这里记录我在游戏开发中接触设计模式的心得与取舍，涉及创建型、结构型、行为型、并发等模式，以及集成模式、反模式和现代设计实践；示例涉及 C++、Java、Go。
 
 > 📖 English version see [README.md](./README.md)
 

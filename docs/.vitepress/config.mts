@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: '设计模式指南',
-  description: '系统梳理创建型、结构型、行为型、并发等设计模式，涵盖 C++、Java、Go 多语言实现',
+  title: '设计模式笔记',
+  description: '一位游戏开发者关于创建型、结构型、行为型、并发等设计模式的个人记录，含 C++、Java、Go 示例',
 
   // GitHub Pages 项目页部署在仓库子路径下，缺 base 会导致全部静态资源 404
   base: '/hello-design-patterns/',
@@ -17,7 +17,7 @@ export default defineConfig({
   themeConfig: {
     // 主题组件会自动加 base 前缀，这里写根路径即可
     logo: '/logo.svg',
-    siteTitle: '设计模式指南',
+    siteTitle: '设计模式笔记',
 
     nav: [
       { text: '首页', link: '/' },
@@ -34,7 +34,7 @@ export default defineConfig({
       {
         text: '创建型模式',
         items: [
-          { text: '创建型模式导读', link: '/creational/overview' },
+          { text: '创建型模式概览', link: '/creational/overview' },
           { text: '单例模式', link: '/creational/singleton' },
           { text: '工厂方法模式', link: '/creational/factory-method' },
           { text: '抽象工厂模式', link: '/creational/abstract-factory' },
@@ -48,7 +48,7 @@ export default defineConfig({
       {
         text: '结构型模式',
         items: [
-          { text: '结构型模式导读', link: '/structural/overview' },
+          { text: '结构型模式概览', link: '/structural/overview' },
           { text: '适配器模式', link: '/structural/adapter' },
           { text: '装饰模式', link: '/structural/decorator' },
           { text: '代理模式', link: '/structural/proxy' },
@@ -69,7 +69,7 @@ export default defineConfig({
       {
         text: '行为型模式',
         items: [
-          { text: '行为型模式导读', link: '/behavioral/overview' },
+          { text: '行为型模式概览', link: '/behavioral/overview' },
           { text: '策略模式', link: '/behavioral/strategy' },
           { text: '观察者模式', link: '/behavioral/observer' },
           { text: '命令模式', link: '/behavioral/command' },
@@ -88,7 +88,7 @@ export default defineConfig({
       {
         text: '并发模式',
         items: [
-          { text: '并发模式导读', link: '/concurrency/overview' },
+          { text: '并发模式概览', link: '/concurrency/overview' },
           { text: '生产者消费者模式', link: '/concurrency/producer-consumer' },
           { text: '反应堆模式', link: '/concurrency/reactor' },
           { text: '主动器模式', link: '/concurrency/proactor' },
@@ -105,7 +105,7 @@ export default defineConfig({
       {
         text: '其他模式',
         items: [
-          { text: '其他模式导读', link: '/other/overview' },
+          { text: '其他模式概览', link: '/other/overview' },
           { text: 'ORM 模式', link: '/other/orm' },
           { text: 'MVC 模式', link: '/other/mvc' },
           { text: 'MVVM 模式', link: '/other/mvvm' },
@@ -117,7 +117,7 @@ export default defineConfig({
       {
         text: '集成模式',
         items: [
-          { text: '集成模式导读', link: '/integration/overview' },
+          { text: '集成模式概览', link: '/integration/overview' },
           { text: '消息通道模式', link: '/integration/message-channel' },
           { text: '消息路由模式', link: '/integration/message-router' },
           { text: '消息转换模式', link: '/integration/message-translator' },
@@ -127,7 +127,7 @@ export default defineConfig({
       {
         text: '反模式',
         items: [
-          { text: '反模式导读', link: '/anti-patterns/overview' },
+          { text: '反模式概览', link: '/anti-patterns/overview' },
           { text: '神对象', link: '/anti-patterns/god-object' },
           { text: '大泥球', link: '/anti-patterns/big-ball-of-mud' },
           { text: '金锤子', link: '/anti-patterns/golden-hammer' },
@@ -138,7 +138,7 @@ export default defineConfig({
       {
         text: '现代演进',
         items: [
-          { text: '现代演进导读', link: '/evolution/overview' },
+          { text: '现代演进概览', link: '/evolution/overview' },
           { text: '组合式设计', link: '/evolution/composition-over-inheritance' },
           { text: 'SOLID 与依赖规则', link: '/evolution/solid' },
           { text: '熔断器模式', link: '/evolution/circuit-breaker' },

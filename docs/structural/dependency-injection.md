@@ -169,14 +169,14 @@ public class Main {
 
 ### 使用依赖注入框架
 
-在实际开发中，我们通常使用依赖注入框架来管理依赖关系。例如：
+项目里我通常用依赖注入框架管理依赖，例如：
 
 - Java 中的 Spring Framework
 - .NET 中的 ASP.NET Core Dependency Injection
 - C++ 中的 Boost.DI
 - Go 中的 Google Wire
 
-这些框架和库提供了强大的依赖注入功能，可以帮助我们更好地管理依赖关系，提升代码的可维护性和可测试性。
+这些框架和库提供依赖注入能力，能集中管理对象关系，也让代码更容易维护和测试。
 
 ### 总结
 

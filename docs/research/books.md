@@ -20,7 +20,7 @@ GoF 之外，站内还收了它没有的条目：多例、对象池、服务定�
 
 这本书给本仓带来两个额外要求：
 
-1. 它在观察者一章讲开闭原则，第 2 版还加了 Lambda 与函数式接口的写法。站内没有专门讲开闭原则与 SOLID 的篇目，本次补在[现代演进导读](/evolution/overview)下的[SOLID 与依赖规则](/evolution/solid)。
+1. 它在观察者一章讲开闭原则，第 2 版还加了 Lambda 与函数式接口的写法。站内没有专门讲开闭原则与 SOLID 的篇目，本次补在[现代演进概览](/evolution/overview)下的[SOLID 与依赖规则](/evolution/solid)。
 2. 它明确讨论单例的代价（全局状态、测试困难、序列化与反射破坏），站内[单例模式](/creational/singleton)有实现细节，缺反面视角，由[神对象](/anti-patterns/god-object)与[金锤子](/anti-patterns/golden-hammer)承接。
 
 ## 架构整洁之道（Clean Architecture，2017）[S3]
@@ -45,7 +45,7 @@ SOLID 的更早出处是 Martin 2002 年那本书 [S4]，两本口径一致。
 
 ## 重构（第 2 版，2018）[S6]
 
-坏味道目录（过长函数、过大的类、依恋情节、数据泥团、霰弹式修改等）是反模式篇的代码层依据。站内原本一条坏味道都没有，本次用[反模式导读](/anti-patterns/overview)把"坏味道—反模式—模式"三层关系讲清，具体坏味道的演进路径引 Joshua Kerievky 的《Refactoring to Patterns》[S14]，站内不逐条复制原书目录。
+坏味道目录（过长函数、过大的类、依恋情节、数据泥团、霰弹式修改等）是反模式篇的代码层依据。站内原本一条坏味道都没有，本次用[反模式概览](/anti-patterns/overview)把"坏味道—反模式—模式"三层关系讲清，具体坏味道的演进路径引 Joshua Kerievky 的《Refactoring to Patterns》[S14]，站内不逐条复制原书目录。
 
 ## AntiPatterns（1998）与 Big Ball of Mud（1997）[S7][S8]
 
@@ -67,7 +67,7 @@ SOLID 的更早出处是 Martin 2002 年那本书 [S4]，两本口径一致。
 
 ## 企业集成模式（EIP，2002）[S10]
 
-消息通道、消息路由器、消息转换器、发布订阅等条目，站内由[观察者](/behavioral/observer)、[中介者](/behavioral/mediator)、[责任链](/behavioral/chain-of-responsibility)覆盖了"通知与分发"的近似场景，但缺少消息管道与路由的独立篇目。本次不新增，记入差异表，理由是需要先决定本仓是否开"集成模式"分区（分区已于 2026-10-10 开出，四条各成一篇，见[集成模式导读](/integration/overview)）。
+消息通道、消息路由器、消息转换器、发布订阅等条目，站内由[观察者](/behavioral/observer)、[中介者](/behavioral/mediator)、[责任链](/behavioral/chain-of-responsibility)覆盖了"通知与分发"的近似场景，但缺少消息管道与路由的独立篇目。本次不新增，记入差异表，理由是需要先决定本仓是否开"集成模式"分区（分区已于 2026-10-10 开出，四条各成一篇，见[集成模式概览](/integration/overview)）。
 
 ## 领域驱动设计（DDD，2003）[S11]
 
@@ -85,8 +85,8 @@ API 网关、服务发现、Saga、断路器 vs 熔断、Sidecar、声明式 API
 
 共 14 项，全部补成新篇，逐项见[覆盖核对与差异表](/research/coverage)第二张表：
 
-- 反模式 6 篇：导读、神对象、大泥球、金锤子、意面代码、贫血模型。
-- 现代演进 4 篇：导读、组合式设计、SOLID 与依赖规则、熔断器。
+- 反模式 6 篇：概览、神对象、大泥球、金锤子、意面代码、贫血模型。
+- 现代演进 4 篇：概览、组合式设计、SOLID 与依赖规则、熔断器。
 - 并发 3 篇：线程池、读写锁、工作窃取（[设计模式概览](/introduction)已声明，站内缺页）。
 - 其他 1 篇：事务脚本（同为概览已声明缺页）。
 

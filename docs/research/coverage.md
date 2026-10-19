@@ -1,8 +1,8 @@
 # 覆盖核对与差异表
 
-核对口径：把权威书籍与文档的目录拆成条目，逐条对站内 `docs/` 下的文件；站内自己的三处交叉引用（简介、参考、侧栏与各目录导读）另做一致性核对。核对时间：2026-10-08。来源编号见[调研总览的来源清单](/research/overview#来源清单)。
+核对口径：把权威书籍与文档的目录拆成条目，逐条对站内 `docs/` 下的文件；站内自己的三处交叉引用（简介、参考、侧栏与各目录概览）另做一致性核对。核对时间：2026-10-08。来源编号见[调研总览的来源清单](/research/overview#来源清单)。
 
-计数口径：文档总数=`docs/` 下全部 Markdown；模式正文=文档总数 − 首页/简介/参考/知识点/术语表 5 页 − 快照跳转页 1 页 − 分区导读 8 页 − 调研 5 页。截至 2026-10-14：文档总数 87，模式正文 68。
+计数口径：文档总数=`docs/` 下全部 Markdown；模式正文=文档总数 − 首页/简介/参考/知识点/术语表 5 页 − 快照跳转页 1 页 − 分区概览 8 页 − 调研 5 页。截至 2026-10-14：文档总数 87，模式正文 68。
 
 ## 表 1：GoF 23 个模式 × 站内覆盖
 
@@ -22,13 +22,13 @@ GoF 之外站内另有的 24 个条目（多例、对象池、服务定位器、
 
 | # | 缺口条目 | 来源 | 新篇 |
 | --- | --- | --- | --- |
-| 1 | 反模式方法论（坏味道—反模式—模式三层关系） | [S6][S7] | [反模式导读](/anti-patterns/overview) |
+| 1 | 反模式方法论（坏味道—反模式—模式三层关系） | [S6][S7] | [反模式概览](/anti-patterns/overview) |
 | 2 | 神对象（God Object） | [S6][S25] | [神对象](/anti-patterns/god-object) |
 | 3 | 大泥球（Big Ball of Mud） | [S8] | [大泥球](/anti-patterns/big-ball-of-mud) |
 | 4 | 金锤子（Golden Hammer） | [S7][S17] | [金锤子](/anti-patterns/golden-hammer) |
 | 5 | 意面代码（Spaghetti Code） | [S7][S17] | [意面代码](/anti-patterns/spaghetti-code) |
 | 6 | 贫血模型（Anemic Domain Model） | [S26][S5] | [贫血模型](/anti-patterns/anemic-domain-model) |
-| 7 | 现代演进选题口径（GoF 之后模式往哪走） | [S2][S3] | [现代演进导读](/evolution/overview) |
+| 7 | 现代演进选题口径（GoF 之后模式往哪走） | [S2][S3] | [现代演进概览](/evolution/overview) |
 | 8 | 组合优于继承 / 组合式设计 | [S1][S2][S22][S23] | [组合式设计](/evolution/composition-over-inheritance) |
 | 9 | SOLID 五原则与依赖规则 | [S3][S4] | [SOLID 与依赖规则](/evolution/solid) |
 | 10 | 熔断器（Circuit Breaker） | [S12] | [熔断器](/evolution/circuit-breaker) |
@@ -83,7 +83,7 @@ GoF 之外站内另有的 24 个条目（多例、对象池、服务定位器、
 
 | 条目 | 来源 | 新篇 |
 | --- | --- | --- |
-| 集成模式选题口径（EIP 分区） | [S10] | [集成模式导读](/integration/overview) |
+| 集成模式选题口径（EIP 分区） | [S10] | [集成模式概览](/integration/overview) |
 | 消息通道（Message Channel） | [S10] | [消息通道](/integration/message-channel) |
 | 消息路由（Message Router） | [S10] | [消息路由](/integration/message-router) |
 | 消息转换（Message Translator） | [S10] | [消息转换](/integration/message-translator) |
@@ -109,14 +109,14 @@ GoF 之外站内另有的 24 个条目（多例、对象池、服务定位器、
 | --- | --- | --- | --- |
 | 1 | [参考资料](/reference) 智能指针条目 | 写成"智能指引模式" | 改为"智能指针模式" |
 | 2 | [设计模式概览](/introduction) 行为型清单 | 漏列站内已有的 DSL 篇 | 补列 DSL 条目 |
-| 3 | [并发模式导读](/concurrency/overview) | 未列线程池、读写锁、工作窃取 | 三条补进目录清单与选用建议 |
-| 4 | [其他模式导读](/other/overview) | 未列事务脚本 | 补进目录清单 |
+| 3 | [并发模式概览](/concurrency/overview) | 未列线程池、读写锁、工作窃取 | 三条补进目录清单与选用建议 |
+| 4 | [其他模式概览](/other/overview) | 未列事务脚本 | 补进目录清单 |
 | 5 | [设计模式概览](/introduction) 结尾 | 没有反模式与现代演进的入口 | 补两个分区入口 |
 | 6 | [参考资料](/reference) 站内索引 | 未收录反模式、现代演进、调研三组 | 索引补齐，并补 AntiPatterns、Release It!、DDD 等书目 |
 
 另外一处一并处理：[快照模式](/behavioral/snapshot)页是合并到备忘录模式的跳转页，侧栏不收录，参考页保留指向，不做改动。
 
-2026-10-10 复核再补两处：[参考资料](/reference)的站内索引漏列线程池、读写锁、工作窃取三篇与[知识点整理](/knowledge)页，已补列；用脚本对过侧栏、各分区导读、站内索引与 `docs/` 实际文件，四者一致。
+2026-10-10 复核再补两处：[参考资料](/reference)的站内索引漏列线程池、读写锁、工作窃取三篇与[知识点整理](/knowledge)页，已补列；用脚本对过侧栏、各分区概览、站内索引与 `docs/` 实际文件，四者一致。
 
 ## 新增页面清单（19 篇）
 
@@ -134,7 +134,7 @@ GoF 之外站内另有的 24 个条目（多例、对象池、服务定位器、
 2. 新增页面的站内链接一律写成绝对路径（`/分区/文件`），由 VitePress 的死链检查兜底：`npm run docs:build` 不通过视为未完成。
 3. GoF 23 条逐条对过文件名，见表 1。
 4. 引用的 API 名称以 Java SE、C++ Core Guidelines、Go、Vue、React 官方文档为准，见[官方与社区文档](/research/official-docs)。
-5. 补完后文档总数 56 → 75，其中模式正文 47 → 59（14 篇新篇里 2 篇是分区导读，不计入正文）。
+5. 补完后文档总数 56 → 75，其中模式正文 47 → 59（14 篇新篇里 2 篇是分区概览，不计入正文）。
 
 ## 来源
 

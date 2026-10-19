@@ -11,7 +11,7 @@
   <img src="docs/public/badges/langs.svg" alt="langs" />
 </p>
 
-Design Patterns Guide · [Read online](https://cuihairu.github.io/hello-design-patterns/) · [简体中文](./README.zh.md)
+Design Patterns Notes · [Read online](https://cuihairu.github.io/hello-design-patterns/) · [简体中文](./README.zh.md)
 
 </div>
 

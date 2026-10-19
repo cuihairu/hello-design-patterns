@@ -85,7 +85,7 @@ Java 侧按场景对号入座：字段映射用 MapStruct（编译期生成映�
 
 - [消息通道](/integration/message-channel)、[消息路由](/integration/message-router)：转换器所在的管道。
 - [适配器模式](/structural/adapter)：同一意图在接口域的形态。
-- [集成模式导读](/integration/overview)：本区口径。
+- [集成模式概览](/integration/overview)：本区口径。
 
 ## 来源
 
