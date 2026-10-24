@@ -4,7 +4,7 @@ English-Chinese term pairs and one-sentence definitions for pattern terms on thi
 
 ## Creational Patterns
 
-### Singleton pattern (单例模式)
+### Singleton pattern
 
 Guarantees a class has only one instance and provides a global point of access.
 
@@ -12,7 +12,7 @@ Guarantees a class has only one instance and provides a global point of access.
 
 **Related pages**: [Singleton](/creational/singleton), [Double-Checked Locking](/concurrency/double-checked-locking)
 
-### Factory method pattern (工厂方法模式)
+### Factory method pattern
 
 Defers object creation to a subclass, which decides which concrete product to instantiate.
 
@@ -20,7 +20,7 @@ Defers object creation to a subclass, which decides which concrete product to in
 
 **Related pages**: [Factory Method](/creational/factory-method), [Abstract Factory](/creational/abstract-factory)
 
-### Abstract factory pattern (抽象工厂模式)
+### Abstract factory pattern
 
 Creates families of related products without specifying concrete classes.
 
@@ -28,7 +28,7 @@ Creates families of related products without specifying concrete classes.
 
 **Related pages**: [Abstract Factory](/creational/abstract-factory), [Factory Method](/creational/factory-method)
 
-### Builder pattern (建造者模式)
+### Builder pattern
 
 Constructs complex objects step by step; the same construction process can produce different representations.
 
@@ -36,7 +36,7 @@ Constructs complex objects step by step; the same construction process can produ
 
 **Related pages**: [Builder](/creational/builder)
 
-### Prototype pattern (原型模式)
+### Prototype pattern
 
 Creates new objects by cloning an existing instance, bypassing field-by-field initialization.
 
@@ -44,7 +44,7 @@ Creates new objects by cloning an existing instance, bypassing field-by-field in
 
 **Related pages**: [Prototype](/creational/prototype)
 
-### Multiton pattern (多例模式)
+### Multiton pattern
 
 A generalization of Singleton: manages a finite number of instances keyed, at most one per key.
 
@@ -52,7 +52,7 @@ A generalization of Singleton: manages a finite number of instances keyed, at mo
 
 **Related pages**: [Multiton](/creational/multiton), [Singleton](/creational/singleton)
 
-### Object pool pattern (对象池模式)
+### Object pool pattern
 
 Reuses expensive-to-create objects via a borrow/return protocol, avoiding repeated construction and destruction.
 
@@ -60,7 +60,7 @@ Reuses expensive-to-create objects via a borrow/return protocol, avoiding repeat
 
 **Related pages**: [Object Pool](/creational/object-pool), [Thread Pool](/concurrency/thread-pool)
 
-### Service locator pattern (服务定位器模式)
+### Service locator pattern
 
 Centralized registration, dependencies fetched by name; Fowler has a dedicated article comparing it to DI.
 
@@ -70,7 +70,7 @@ Centralized registration, dependencies fetched by name; Fowler has a dedicated a
 
 ## Structural Patterns
 
-### Adapter pattern (适配器模式)
+### Adapter pattern
 
 Converts an existing interface to meet a client's expectations, letting incompatible sides work together.
 
@@ -78,7 +78,7 @@ Converts an existing interface to meet a client's expectations, letting incompat
 
 **Related pages**: [Adapter](/structural/adapter), [Facade](/structural/facade)
 
-### Decorator pattern (装饰模式)
+### Decorator pattern
 
 Dynamically wraps an object with extra responsibilities — a more flexible alternative to inheritance.
 
@@ -86,7 +86,7 @@ Dynamically wraps an object with extra responsibilities — a more flexible alte
 
 **Related pages**: [Decorator](/structural/decorator), [Proxy](/structural/proxy)
 
-### Proxy pattern (代理模式)
+### Proxy pattern
 
 Controls access to an object; variants by purpose include virtual, protection, remote, and dynamic.
 
@@ -94,7 +94,7 @@ Controls access to an object; variants by purpose include virtual, protection, r
 
 **Related pages**: [Proxy](/structural/proxy), [Virtual Proxy](/structural/virtual-proxy), [Protection Proxy](/structural/protection-proxy), [Remote Proxy](/structural/remote-proxy), [Dynamic Proxy](/structural/dynamic-proxy)
 
-### Facade pattern (外观模式)
+### Facade pattern
 
 Provides a unified high-level interface to a subsystem, reducing the coupling surface for callers.
 
@@ -102,7 +102,7 @@ Provides a unified high-level interface to a subsystem, reducing the coupling su
 
 **Related pages**: [Facade](/structural/facade)
 
-### Bridge pattern (桥接模式)
+### Bridge pattern
 
 Splits abstraction and implementation onto two inheritance axes so they can vary independently.
 
@@ -110,7 +110,7 @@ Splits abstraction and implementation onto two inheritance axes so they can vary
 
 **Related pages**: [Bridge](/structural/bridge), [Bidirectional Bridge](/structural/bidirectional-bridge)
 
-### Composite pattern (组合模式)
+### Composite pattern
 
 Handles parts and wholes uniformly in a tree; leaves and containers share the same interface.
 
@@ -118,7 +118,7 @@ Handles parts and wholes uniformly in a tree; leaves and containers share the sa
 
 **Related pages**: [Composite](/structural/composite), [Iterator](/behavioral/iterator)
 
-### Flyweight pattern (享元模式)
+### Flyweight pattern
 
 Shares fine-grained instances, externalizing common state to save memory.
 
@@ -126,7 +126,7 @@ Shares fine-grained instances, externalizing common state to save memory.
 
 **Related pages**: [Flyweight](/structural/flyweight), [Object Pool](/creational/object-pool)
 
-### Dependency injection (依赖注入)
+### Dependency injection
 
 Dependencies are injected externally rather than self-constructed; what's inverted is the direction of dependency acquisition.
 
@@ -134,7 +134,7 @@ Dependencies are injected externally rather than self-constructed; what's invert
 
 **Related pages**: [Dependency Injection](/structural/dependency-injection), [Service Locator](/creational/service-locator)
 
-### Smart pointer (智能指针)
+### Smart pointer
 
 A pointer object managing resource lifetime via RAII; destruction releases the resource.
 
@@ -144,7 +144,7 @@ A pointer object managing resource lifetime via RAII; destruction releases the r
 
 ## Behavioral Patterns
 
-### Strategy pattern (策略模式)
+### Strategy pattern
 
 Encapsulates a family of interchangeable algorithms, substitutable at runtime; "no-op behavior" is also a legal strategy (null object).
 
@@ -152,7 +152,7 @@ Encapsulates a family of interchangeable algorithms, substitutable at runtime; "
 
 **Related pages**: [Strategy](/behavioral/strategy), [State](/behavioral/state)
 
-### Observer pattern (观察者模式)
+### Observer pattern
 
 Notifies all subscribers automatically when the subject's state changes, decoupling both sides.
 
@@ -160,7 +160,7 @@ Notifies all subscribers automatically when the subject's state changes, decoupl
 
 **Related pages**: [Observer](/behavioral/observer), [Publish-Subscribe](/integration/publish-subscribe)
 
-### Command pattern (命令模式)
+### Command pattern
 
 Encapsulates a request as an object, making it queueable, undoable, and loggable.
 
@@ -168,7 +168,7 @@ Encapsulates a request as an object, making it queueable, undoable, and loggable
 
 **Related pages**: [Command](/behavioral/command), [Memento](/behavioral/memento)
 
-### Chain of responsibility pattern (责任链模式)
+### Chain of responsibility pattern
 
 A request travels down a chain of handlers until one handles it or falls through.
 
@@ -176,7 +176,7 @@ A request travels down a chain of handlers until one handles it or falls through
 
 **Related pages**: [Chain of Responsibility](/behavioral/chain-of-responsibility), [Mediator](/behavioral/mediator)
 
-### Mediator pattern (中介者模式)
+### Mediator pattern
 
 A mediator object centralizes the many-to-many interaction among colleague objects.
 
@@ -184,7 +184,7 @@ A mediator object centralizes the many-to-many interaction among colleague objec
 
 **Related pages**: [Mediator](/behavioral/mediator), [Observer](/behavioral/observer)
 
-### Iterator pattern (迭代器模式)
+### Iterator pattern
 
 Traverses aggregate contents in order without exposing the internal representation.
 
@@ -192,7 +192,7 @@ Traverses aggregate contents in order without exposing the internal representati
 
 **Related pages**: [Iterator](/behavioral/iterator), [Composite](/structural/composite)
 
-### Template method pattern (模板方法模式)
+### Template method pattern
 
 Fixes the algorithm skeleton; variable steps are left for subclasses to implement.
 
@@ -200,7 +200,7 @@ Fixes the algorithm skeleton; variable steps are left for subclasses to implemen
 
 **Related pages**: [Template Method](/behavioral/template-method), [Strategy](/behavioral/strategy)
 
-### State pattern (状态模式)
+### State pattern
 
 Behavior changes wholesale as internal state switches; state is an object.
 
@@ -208,7 +208,7 @@ Behavior changes wholesale as internal state switches; state is an object.
 
 **Related pages**: [State](/behavioral/state), [Strategy](/behavioral/strategy)
 
-### Memento pattern (备忘录模式)
+### Memento pattern
 
 Saves and restores a prior object state without breaking encapsulation; "snapshot" is an alias for the same pattern.
 
@@ -216,7 +216,7 @@ Saves and restores a prior object state without breaking encapsulation; "snapsho
 
 **Related pages**: [Memento](/behavioral/memento), [Snapshot](/behavioral/snapshot)
 
-### Interpreter pattern (解释器模式)
+### Interpreter pattern
 
 Defines an interpreter for a grammar and evaluates according to its rules.
 
@@ -224,7 +224,7 @@ Defines an interpreter for a grammar and evaluates according to its rules.
 
 **Related pages**: [Interpreter](/behavioral/interpreter), [DSL](/behavioral/dsl)
 
-### Visitor pattern (访问者模式)
+### Visitor pattern
 
 Adds new operations to element classes without modifying them, via double dispatch.
 
@@ -232,7 +232,7 @@ Adds new operations to element classes without modifying them, via double dispat
 
 **Related pages**: [Visitor](/behavioral/visitor)
 
-### Callback (回调)
+### Callback
 
 Hand a function to a callee to invoke at its own time — the minimal form of inversion of control.
 
@@ -240,7 +240,7 @@ Hand a function to a callee to invoke at its own time — the minimal form of in
 
 **Related pages**: [Callback](/behavioral/callback), [Observer](/behavioral/observer)
 
-### Domain-specific language, DSL (领域特定语言)
+### Domain-specific language, DSL
 
 A small language for a narrow domain, in contrast to a general-purpose language; the Interpreter pattern is one of its implementation vehicles.
 
@@ -250,7 +250,7 @@ A small language for a narrow domain, in contrast to a general-purpose language;
 
 ## Concurrency Patterns
 
-### Producer-consumer (生产者-消费者)
+### Producer-consumer
 
 A buffered queue decouples the rate difference between production and consumption; blocking queues are the standard-library form.
 
@@ -258,7 +258,7 @@ A buffered queue decouples the rate difference between production and consumptio
 
 **Related pages**: [Producer-Consumer](/concurrency/producer-consumer), [Message Channel](/integration/message-channel)
 
-### Reactor pattern (反应器模式)
+### Reactor pattern
 
 A single (or few) threads wait synchronously on many event sources and dispatch to handlers as soon as one is ready.
 
@@ -266,7 +266,7 @@ A single (or few) threads wait synchronously on many event sources and dispatch 
 
 **Related pages**: [Reactor](/concurrency/reactor), [Proactor](/concurrency/proactor), [Event Loop](/concurrency/event-loop)
 
-### Proactor pattern (主动器模式)
+### Proactor pattern
 
 Async-I/O-driven completions trigger the pattern; Windows IOCP is the representative implementation.
 
@@ -282,7 +282,7 @@ A placeholder receipt for an async result — hand back the ticket, retrieve the
 
 **Related pages**: [Future](/concurrency/future)
 
-### Semaphore (信号量)
+### Semaphore
 
 A counting permit that controls how many tasks can enter a critical section at once.
 
@@ -290,7 +290,7 @@ A counting permit that controls how many tasks can enter a critical section at o
 
 **Related pages**: [Semaphore](/concurrency/semaphore), [Read-Write Lock](/concurrency/read-write-lock)
 
-### Event loop (事件循环)
+### Event loop
 
 A single thread polls ready events and dispatches callbacks; the backbone of Node.js and browsers.
 
@@ -298,7 +298,7 @@ A single thread polls ready events and dispatches callbacks; the backbone of Nod
 
 **Related pages**: [Event Loop](/concurrency/event-loop), [Reactor](/concurrency/reactor)
 
-### Double-checked locking (双重检查锁定)
+### Double-checked locking
 
 A locking optimization for lazy initialization: check without a lock first, lock only on miss; under the Java Memory Model there is a famous failure statement.
 
@@ -306,7 +306,7 @@ A locking optimization for lazy initialization: check without a lock first, lock
 
 **Related pages**: [Double-Checked Locking](/concurrency/double-checked-locking), [Singleton](/creational/singleton)
 
-### Active object (主动对象)
+### Active object
 
 Decouples method invocation from execution: calls become queued requests, executed in order by an independent thread.
 
@@ -314,7 +314,7 @@ Decouples method invocation from execution: calls become queued requests, execut
 
 **Related pages**: [Active Object](/concurrency/active-object), [Producer-Consumer](/concurrency/producer-consumer)
 
-### Readers-writer lock (读写锁)
+### Readers-writer lock
 
 A lock strategy with shared reads and exclusive writes; higher throughput in read-heavy, write-light workloads.
 
@@ -322,7 +322,7 @@ A lock strategy with shared reads and exclusive writes; higher throughput in rea
 
 **Related pages**: [Read-Write Lock](/concurrency/read-write-lock)
 
-### Thread pool (线程池)
+### Thread pool
 
 Pre-builds a set of threads to execute tasks, saving per-task create/destroy overhead.
 
@@ -330,7 +330,7 @@ Pre-builds a set of threads to execute tasks, saving per-task create/destroy ove
 
 **Related pages**: [Thread Pool](/concurrency/thread-pool), [Object Pool](/creational/object-pool)
 
-### Work stealing (工作窃取)
+### Work stealing
 
 An idle thread pulls tasks from the tail of a busy thread's queue, balancing load automatically.
 
@@ -340,7 +340,7 @@ An idle thread pulls tasks from the tail of a busy thread's queue, balancing loa
 
 ## Integration and Evolution Patterns
 
-### Message channel (消息通道)
+### Message channel
 
 The first-class citizen of integration patterns: endpoints send messages via a channel rather than peer-to-peer.
 
@@ -348,7 +348,7 @@ The first-class citizen of integration patterns: endpoints send messages via a c
 
 **Related pages**: [Message Channel](/integration/message-channel), [Integration Overview](/integration/overview)
 
-### Publish-subscribe (发布-订阅)
+### Publish-subscribe
 
 Publishers broadcast by topic; subscribers receive by subscription — a routing layer beyond the channel for decoupling.
 
@@ -356,7 +356,7 @@ Publishers broadcast by topic; subscribers receive by subscription — a routing
 
 **Related pages**: [Publish-Subscribe](/integration/publish-subscribe), [Observer](/behavioral/observer)
 
-### Circuit breaker (熔断器)
+### Circuit breaker
 
 Trips to fast-fail when the failure rate exceeds a threshold, preventing cascading faults; half-open probes during recovery.
 
@@ -364,7 +364,7 @@ Trips to fast-fail when the failure rate exceeds a threshold, preventing cascadi
 
 **Related pages**: [Circuit Breaker](/evolution/circuit-breaker), [Retry](/evolution/retry)
 
-### Bulkhead (隔舱)
+### Bulkhead
 
 Partitions resource ceilings by purpose, so a breach in one compartment doesn't sink the ship.
 
@@ -372,7 +372,7 @@ Partitions resource ceilings by purpose, so a breach in one compartment doesn't 
 
 **Related pages**: [Bulkhead](/evolution/bulkhead)
 
-### Timeout (超时)
+### Timeout
 
 Sets a limit on a single call so an endless wait doesn't drag down upstream.
 
@@ -380,7 +380,7 @@ Sets a limit on a single call so an endless wait doesn't drag down upstream.
 
 **Related pages**: [Timeout](/evolution/timeout), [Circuit Breaker](/evolution/circuit-breaker)
 
-### Retry (重试)
+### Retry
 
 Retries transient failures with a backoff strategy; non-idempotent operations need idempotency solved before retrying.
 
@@ -390,7 +390,7 @@ Retries transient failures with a backoff strategy; non-idempotent operations ne
 
 ## Other Patterns
 
-### MVC (Model-view-controller)
+### MVC
 
 Model-view-controller three-way split — the earliest separation of the UI from application logic.
 
@@ -398,7 +398,7 @@ Model-view-controller three-way split — the earliest separation of the UI from
 
 **Related pages**: [MVC](/other/mvc), [MVVM](/other/mvvm)
 
-### MVVM (Model-view-viewmodel)
+### MVVM
 
 A view model connects view and model via data binding — the classic WPF front-end layering.
 
@@ -406,7 +406,7 @@ A view model connects view and model via data binding — the classic WPF front-
 
 **Related pages**: [MVVM](/other/mvvm), [MVC](/other/mvc)
 
-### Object-relational mapping, ORM (对象关系映射)
+### Object-relational mapping, ORM
 
 Maps relational tables through an object layer, eliminating hand-written SQL boilerplate.
 
@@ -414,7 +414,7 @@ Maps relational tables through an object layer, eliminating hand-written SQL boi
 
 **Related pages**: [ORM](/other/orm), [Repository and Unit of Work](/other/repository)
 
-### Event sourcing (事件溯源)
+### Event sourcing
 
 An immutable event sequence is the single source of truth; state is derived by replay.
 
@@ -422,7 +422,7 @@ An immutable event sequence is the single source of truth; state is derived by r
 
 **Related pages**: [Event Sourcing](/other/event-sourcing), [Publish-Subscribe](/integration/publish-subscribe)
 
-### Repository (仓储)
+### Repository
 
 A collection-like interface encapsulates domain-object persistence, hiding storage details.
 
@@ -430,7 +430,7 @@ A collection-like interface encapsulates domain-object persistence, hiding stora
 
 **Related pages**: [Repository and Unit of Work](/other/repository), [ORM](/other/orm)
 
-### Transaction script (事务脚本)
+### Transaction script
 
 One use case, one procedural script — the most direct way to organize business logic.
 
@@ -440,7 +440,7 @@ One use case, one procedural script — the most direct way to organize business
 
 ## Anti-Patterns
 
-### Anti-pattern (反模式)
+### Anti-pattern
 
 A frequently adopted solution whose consequences are worse than its benefits; forms a three-tier relationship with code smells and patterns.
 
@@ -448,7 +448,7 @@ A frequently adopted solution whose consequences are worse than its benefits; fo
 
 **Related pages**: [Anti-Patterns Overview](/anti-patterns/overview)
 
-### God object (神对象)
+### God object
 
 Too many responsibilities gathered in one object; changing one thing ripples everywhere.
 
@@ -456,7 +456,7 @@ Too many responsibilities gathered in one object; changing one thing ripples eve
 
 **Related pages**: [God Object](/anti-patterns/god-object), [Big Ball of Mud](/anti-patterns/big-ball-of-mud)
 
-### Big ball of mud (大泥球)
+### Big ball of mud
 
 An entangled system with no clear architecture — the common shape of legacy code.
 
@@ -464,7 +464,7 @@ An entangled system with no clear architecture — the common shape of legacy co
 
 **Related pages**: [Big Ball of Mud](/anti-patterns/big-ball-of-mud)
 
-### Golden hammer (金锤子)
+### Golden hammer
 
 Forcing a familiar tool onto every problem — the engineering version of the Law of the Instrument.
 
@@ -472,7 +472,7 @@ Forcing a familiar tool onto every problem — the engineering version of the La
 
 **Related pages**: [Golden Hammer](/anti-patterns/golden-hammer)
 
-### Spaghetti code (意面代码)
+### Spaghetti code
 
 Control flow entangled like pasta; readability and maintainability both collapse.
 
@@ -480,7 +480,7 @@ Control flow entangled like pasta; readability and maintainability both collapse
 
 **Related pages**: [Spaghetti Code](/anti-patterns/spaghetti-code)
 
-### Anemic domain model (贫血模型)
+### Anemic domain model
 
 Domain objects keep only data fields with no behavior; logic scatters into service layers.
 
