@@ -1,131 +1,131 @@
-# 知识点整理
+# Knowledge Points
 
-调研五篇回答了「权威来源讲了什么、站内覆盖了多少、差异怎么处置」（见[调研总览](/research/overview)）。这一页把取证之后的结论收拢成一张知识点网，来源编号沿用[调研总览的来源清单](/research/overview#来源清单)的 S1–S28，想知道一条结论怎么查出来的，走条目里的链接回调研原文或站内落点页。术语的中英对照与一句话定义另收在[术语表](/glossary)。
+The five research pages answer "what the authoritative sources say, how much the site covers, and how the gaps were handled" (see the [research overview](/research/overview)). This page collects those evidence-backed conclusions into a single knowledge web. Source IDs S1-S28 follow the [source list in the research overview](/research/overview#source-list); to trace how a conclusion was reached, follow the entry's links back to the research page or the on-site landing page. English-Chinese term pairs and one-sentence definitions live in the [glossary](/glossary).
 
-## 核心概念
+## Core Concepts
 
-### GoF 23 是基准线，不是边界
+### The GoF 23 is a baseline, not a boundary
 
-23 个模式站内全部有正文页（创建型 5、结构型 7、行为型 11），覆盖核对 23/23。站内另收 GoF 没有的条目，核对时点（2026-10-08）计 24 个：多例、对象池、服务定位器、四个代理变体、智能指针、双向桥接、依赖注入、回调、DSL，加上并发与特定领域两组（快照页是备忘录的跳转页，不计条目）。调研之后边界也划清了：聚合、限界上下文属于战略设计词汇，API 网关、Saga 属于分布式系统设计，都不在「对象级模式」的口径里，逐条理由记在[覆盖核对与差异表](/research/coverage)（来源：[权威书籍与标准目录调研](/research/books)，[S1]）。边界判据 2026-10-10 定案：组件级协作、可独立实现并被框架标准化落地的模式收——[集成模式](/integration/overview)分区按此收录；约束全系统拓扑的架构风格不收——分层、管道-过滤器等按此维持排除。
+All 23 GoF patterns have full articles on the site (5 creational, 7 structural, 11 behavioral), coverage check 23/23. The site also collects entries GoF didn't have; at the time of the check (2026-10-08) that was 24: Multiton, Object Pool, Service Locator, the four proxy variants, Smart Pointer, Bidirectional Bridge, Dependency Injection, Callback, DSL, plus the concurrency and domain-specific groups (the snapshot page is a redirect for Memento, not counted). The research also drew the boundary: aggregates and bounded contexts are strategic-design vocabulary, API gateway and Saga belong to distributed-system design — none of these fall within the "object-level pattern" scope, with per-entry reasons in [coverage and differences](/research/coverage) (source: [books and standards research](/research/books), [S1]). Boundary criterion finalized 2026-10-10: component-level collaboration patterns that can be implemented independently and are standardized by frameworks — collected, the [Integration Patterns](/integration/overview) section follows this rule; architectural styles that constrain whole-system topology — not collected, so layering, pipes-and-filters, etc. remain excluded.
 
-### 坏味道、反模式、模式是三层关系
+### Code smells, anti-patterns, and patterns form a three-tier relationship
 
-《重构》第 2 版的坏味道目录（过长函数、霰弹式修改、依恋情节）是代码层依据，AntiPatterns 与 Big Ball of Mud 给出架构与项目层的条目，模式是走出来的路。反模式篇按「形态、成因、代价、怎么走出来」四段写，段落结构沿用 SourceMaking 的条目骨架（[S6][S7][S17]）。
+The smell catalog in *Refactoring* 2nd edition (long method, shotgun surgery, feature envy) is the code-layer basis; AntiPatterns and Big Ball of Mud give architecture- and project-layer entries; patterns are the road walked. Anti-pattern pages follow a four-part structure — "shape, cause, cost, way out" — reusing SourceMaking's entry skeleton ([S6][S7][S17]).
 
-### SOLID 的出处链要认 2002 年那本
+### SOLID's origin traces to the 2002 book
 
-五原则首见于 Martin 2002 年的《Agile Software Development: Principles, Patterns, and Practices》[S4]，Clean Architecture [S3] 把它归纳进依赖规则。站内只在[SOLID 与依赖规则](/evolution/solid)里讲依赖方向，架构分层与组件级三原则暂不单独成篇，理由是与「模式」口径的边界要先立住（来源：[权威书籍调研](/research/books) §3）。
+The five principles first appeared in Martin's 2002 *Agile Software Development: Principles, Patterns, and Practices* [S4]; Clean Architecture [S3] folded them into the dependency rule. The site discusses only dependency direction in [SOLID and Dependency Rules](/evolution/solid); architectural layering and component-level principles don't have standalone pages yet, because the boundary with "pattern" scope needs to be established first (source: [books research](/research/books) §3).
 
-### 组合优于继承在 Go 和前端是语言默认
+### Composition over inheritance is the language default in Go and on the front end
 
-Go 没有继承，复用靠结构体嵌入加小接口；Vue 组合式 API 把同一功能的逻辑、状态、生命周期收进一个函数，React 用组件嵌套加自定义 Hook 收口。三处是同一原则在不同平台上的落地，都写在[组合式设计](/evolution/composition-over-inheritance)（[S21][S22][S23]）。
+Go has no inheritance; reuse comes from struct embedding plus small interfaces. Vue's Composition API gathers the logic, state, and lifecycle of one feature into a single function; React uses component nesting plus custom hooks to converge. These are the same principle landing on different platforms, all covered in [Composition over Inheritance](/evolution/composition-over-inheritance) ([S21][S22][S23]).
 
-### 稳定性模式从 Release It! 来，熔断器应用面最广
+### Stability patterns come from *Release It!*; circuit breaker has the widest application
 
-熔断器同时服务限流、降级、故障隔离三个场景，现在是网关与 RPC 客户端的标配：Resilience4j、Polly、Sentinel 的熔断器是同一个模型——统计窗口内失败率超阈值就直接失败，不再打下游。同书其余三条也已补齐（[隔舱](/evolution/bulkhead)、[超时](/evolution/timeout)、[重试](/evolution/retry)），四条各管一段：隔舱限制同时占用，超时给单次调用限时，重试恢复瞬时故障，熔断器在故障持续时断闸；稳态讲"每个可消耗的资源都要有补充机制"，属容量纪律，不单独成篇 [S12]。
+The circuit breaker simultaneously serves rate limiting, degradation, and fault isolation; it is now standard in gateways and RPC clients. The breakers in Resilience4j, Polly, and Sentinel are the same model — if the failure rate in a stats window exceeds the threshold, fail directly instead of hitting the downstream. The other three from the same book are also covered ([Bulkhead](/evolution/bulkhead), [Timeout](/evolution/timeout), [Retry](/evolution/retry)), each covering one aspect: bulkhead caps simultaneous usage, timeout bounds a single call, retry recovers transient faults, circuit breaker trips during sustained failures. Steady state prescribes "every consumable resource needs a replenishment mechanism" — a capacity discipline, not a standalone page [S12].
 
-### 有些模式在有的语言里根本不用写
+### Some patterns don't need to be written in some languages
 
-策略在 Java 传 `Function`、C++ 传 `std::function` 或模板参数、TypeScript 传函数属性，四者都不需要为每个算法建子类。观察者在浏览器里就是 `EventTarget` 的 `addEventListener` [S28]，动态代理在 JavaScript 里是语言内置的 `Proxy` 对象。语言吃掉模式是常态，正文示例按语言习惯写，不硬造类图（来源：[应用场景与语言落地](/research/applications)）。
+Strategy in Java passes a `Function`, in C++ a `std::function` or a template parameter, in TypeScript a function property — none need a subclass per algorithm. Observer in the browser is `EventTarget`'s `addEventListener` [S28]; dynamic proxy in JavaScript is the language-built-in `Proxy` object. Languages swallowing patterns is the norm; example code follows language convention and doesn't force class diagrams (source: [applications and language](/research/applications)).
 
-## 权威书籍要点
+## Authoritative Book Highlights
 
-15 本书的逐本对照在[权威书籍与标准目录调研](/research/books)，这里是收拢后的定位表：
+Per-book cross-reference is in [books and standards research](/research/books); here is the condensed positioning table:
 
-| 书 | 作者 / 出版 | 对应知识点 |
+| Book | Author / Publisher | Corresponding knowledge point |
 | --- | --- | --- |
-| Design Patterns（GoF）[S1] | Gamma 等，Addison-Wesley，1994 | 23 模式基准线，创建型 5、结构型 7、行为型 11 |
-| Head First 设计模式（第 2 版）[S2] | Freeman 等，O'Reilly，2020 | 案例教学顺序；观察者章讲开闭原则，第 2 版加 Lambda 写法 |
-| Clean Architecture [S3] | Robert C. Martin，2017 | SOLID、依赖规则、组件级三原则 |
-| Agile SW Development [S4] | Robert C. Martin，2002 | SOLID 的原始出处 |
-| Patterns of Enterprise Application Architecture [S5] | Martin Fowler，2002 | 事务脚本、活动记录、数据映射器、仓储、单元工作；领域逻辑四式与数据源四式的分层 |
-| Refactoring（第 2 版）[S6] | Martin Fowler，2018 | 坏味道目录，反模式篇的代码层依据 |
-| AntiPatterns [S7] | Brown 等，Wiley，1998 | 金锤子、意面代码的出处 |
-| Big Ball of Mud [S8] | Foote、Yoder，PLoP 1997 | 大泥球的原始论文 |
-| POSA 卷 1、卷 2 [S9] | Buschmann 等，Wiley | 分层、管道-过滤器、反应器、主动器、主动对象 |
-| Enterprise Integration Patterns [S10] | Hohpe、Woolf，2002 | 消息通道、路由、转换、发布订阅；分区已开，对应[集成模式](/integration/overview) |
-| Domain-Driven Design [S11] | Eric Evans，2003 | 战略设计词汇，本仓不收，理由见差异表 |
-| Release It!（第 2 版）[S12] | Nygard，2018 | 熔断器、隔舱、超时、重试、稳态 |
-| Microservices Patterns [S13] | Richardson，2018 | API 网关、Saga、事件溯源的选题来源 |
-| Refactoring to Patterns [S14] | Kerievsky，2004 | 从坏味道到模式的演进路径 |
-| Kubernetes Patterns [S15] | Ibryam、Huß，2019 | 容器平台模式，选题来源 |
+| Design Patterns (GoF) [S1] | Gamma et al., Addison-Wesley, 1994 | 23-pattern baseline: 5 creational, 7 structural, 11 behavioral |
+| Head First Design Patterns (2nd ed.) [S2] | Freeman et al., O'Reilly, 2020 | Case-driven teaching order; the Observer chapter covers open-closed principle, 2nd ed. adds lambda form |
+| Clean Architecture [S3] | Robert C. Martin, 2017 | SOLID, dependency rule, component-level principles |
+| Agile SW Development [S4] | Robert C. Martin, 2002 | Original source of SOLID |
+| Patterns of Enterprise Application Architecture [S5] | Martin Fowler, 2002 | Transaction Script, Active Record, Data Mapper, Repository, Unit of Work; the four domain-logic styles and four data-source styles |
+| Refactoring (2nd ed.) [S6] | Martin Fowler, 2018 | Code-smell catalog, code-layer basis for anti-patterns |
+| AntiPatterns [S7] | Brown et al., Wiley, 1998 | Source of Golden Hammer and Spaghetti Code |
+| Big Ball of Mud [S8] | Foote, Yoder, PLoP 1997 | Original Big Ball of Mud paper |
+| POSA vol. 1, vol. 2 [S9] | Buschmann et al., Wiley | Layering, pipes-and-filters, reactor, proactor, active object |
+| Enterprise Integration Patterns [S10] | Hohpe, Woolf, 2002 | Message channel, router, translator, publish-subscribe; section opened, see [Integration Patterns](/integration/overview) |
+| Domain-Driven Design [S11] | Eric Evans, 2003 | Strategic-design vocabulary; not collected by this site, see difference table |
+| Release It! (2nd ed.) [S12] | Nygard, 2018 | Circuit Breaker, Bulkhead, Timeout, Retry, steady state |
+| Microservices Patterns [S13] | Richardson, 2018 | Source for API gateway, Saga, event sourcing topics |
+| Refactoring to Patterns [S14] | Kerievsky, 2004 | Evolution path from smells to patterns |
+| Kubernetes Patterns [S15] | Ibryam, Huss, 2019 | Container-platform patterns, topic source |
 
-两本给过额外要求：Head First 的单例代价讨论（全局状态、测试困难、序列化与反射破坏）由[神对象](/anti-patterns/god-object)与[金锤子](/anti-patterns/golden-hammer)承接反面视角；PoEAA 的领域逻辑四式里只有事务脚本此前缺页，本次补成[事务脚本](/other/transaction-script)并与[贫血模型](/anti-patterns/anemic-domain-model)对照，数据源四式由 [ORM 篇](/other/orm)覆盖，不重复成篇。
+Two books drove extra requirements: Head First's Singleton cost discussion (global state, hard to test, serialization and reflection breakage) is carried by the negative-angle coverage in [God Object](/anti-patterns/god-object) and [Golden Hammer](/anti-patterns/golden-hammer); of PoEAA's four domain-logic styles only Transaction Script lacked a page, added as [Transaction Script](/other/transaction-script) and contrasted with [Anemic Domain Model](/anti-patterns/anemic-domain-model); the four data-source styles are covered by the [ORM page](/other/orm) and not duplicated.
 
-## 官方文档要点
+## Official Documentation Highlights
 
-8 个官方文档与 3 个社区站点的核对在[官方与社区文档调研](/research/official-docs)，口径要点收拢如下，入口链接按调研清单登记的官方域名挂出：
+Cross-reference of 8 official docs and 3 community sites is in [official and community docs research](/research/official-docs). The condensed takeaways, with entry links registered under official domains:
 
-| 来源 | 入口 | 要点 |
+| Source | Entry | Key points |
 | --- | --- | --- |
-| Java SE `java.util.concurrent` [S19] | [docs.oracle.com](https://docs.oracle.com/) | 并发篇术语基准；`Future.get()` 是阻塞取值，组合与回调要 `CompletableFuture`；`Semaphore` 的 `acquire` 可被中断，拿到许可后才 `release` |
-| C++ Core Guidelines [S20] | [isocpp.github.io](https://isocpp.github.io/CppCoreGuidelines/) | 资源用 RAII 表达；`unique_ptr`/`shared_ptr` 参数传递按 R.30/R.31；站内示例按「值传递 + 移动」写 |
-| Go 官方文档 [S21] | [go.dev](https://go.dev/) | 无继承，接口隐式实现加结构体嵌入；`context.Context` 当第一参数传超时与取消；pipeline 的 `close`、`range`、`select` 写法以官方博客为准 |
-| Vue.js 文档 [S22] | [vuejs.org](https://vuejs.org/) | 组合式 API：逻辑复用靠函数返回值组合，不靠 mixin |
-| React 文档 [S23] | [react.dev](https://react.dev/) | 组件嵌套 + props 组合，状态提升，重复逻辑用自定义 Hook 收口 |
-| .NET 设计指南 [S24] | [learn.microsoft.com](https://learn.microsoft.com/) | 依赖走构造函数注入，扩展点用接口不用虚方法基类 |
-| Spring 文档 [S27] | [docs.spring.io](https://docs.spring.io/) | 控制反转是容器负责组装；与[服务定位器](/creational/service-locator)的区别在谁发起装配 |
-| MDN [S28] | [developer.mozilla.org](https://developer.mozilla.org/) | `Proxy`、迭代器协议、`EventTarget` 是前端三个语言内置的模式落点 |
-| Refactoring.Guru [S16] | [refactoring.guru](https://refactoring.guru/) | 三分法与代理四变体的命名一致；空对象它单列、本仓并入策略篇一节 |
-| SourceMaking [S17] | [sourcemaking.com](https://sourcemaking.com/) | 反模式四段式骨架的出处 |
-| iluwatar/java-design-patterns [S18] | [github.com](https://github.com/iluwatar/java-design-patterns) | 收录取舍以「有没有书籍出处」为准：熔断有（Release It!），类别对象、环境对象这类纯社区条目不收 |
+| Java SE `java.util.concurrent` [S19] | [docs.oracle.com](https://docs.oracle.com/) | Concurrency terminology baseline; `Future.get()` blocks, composition and callbacks need `CompletableFuture`; `Semaphore`'s `acquire` is interruptible — release only after acquiring |
+| C++ Core Guidelines [S20] | [isocpp.github.io](https://isocpp.github.io/CppCoreGuidelines/) | Resources expressed via RAII; `unique_ptr`/`shared_ptr` parameter passing per R.30/R.31; site examples follow "pass by value + move" |
+| Go official docs [S21] | [go.dev](https://go.dev/) | No inheritance; implicit interface implementation plus struct embedding; `context.Context` as first param for timeout and cancellation; pipeline `close`, `range`, `select` per official blog |
+| Vue.js docs [S22] | [vuejs.org](https://vuejs.org/) | Composition API: logic reuse via function return values, not mixins |
+| React docs [S23] | [react.dev](https://react.dev/) | Component nesting + props composition, state lifting, repeated logic via custom hooks |
+| .NET design guidance [S24] | [learn.microsoft.com](https://learn.microsoft.com/) | Dependencies via constructor injection; extension points via interfaces, not virtual-method base classes |
+| Spring docs [S27] | [docs.spring.io](https://docs.spring.io/) | IoC — the container assembles; difference from [Service Locator](/creational/service-locator) is who initiates wiring |
+| MDN [S28] | [developer.mozilla.org](https://developer.mozilla.org/) | `Proxy`, iterator protocol, `EventTarget` are the three front-end language-built-in pattern landings |
+| Refactoring.Guru [S16] | [refactoring.guru](https://refactoring.guru/) | Three-way classification and four proxy variants match the naming; it gives Null Object a standalone entry, this site folds it into the Strategy section |
+| SourceMaking [S17] | [sourcemaking.com](https://sourcemaking.com/) | Source of the four-part anti-pattern skeleton |
+| iluwatar/java-design-patterns [S18] | [github.com](https://github.com/iluwatar/java-design-patterns) | Collection criterion is "does it have a book source": Circuit Breaker does (*Release It!*), but purely community entries like Category Object and Environment Object are not collected |
 
-## 应用场景
+## Application Scenarios
 
-场景到模式的完整对照表在[应用场景与语言落地](/research/applications)，六组场景的骨架：
+The full scenario-to-pattern table is in [applications and language](/research/applications). The six-group skeleton:
 
-| 场景 | 代表模式 | 落地形态 |
+| Scenario | Representative patterns | Landing form |
 | --- | --- | --- |
-| 对象创建与装配 | 抽象工厂、建造者、单例、对象池 | Java/C# 由容器装配，Go 写在 `main` 里 |
-| 接口适配与访问控制 | 适配器、外观、代理四变体、装饰 | Java `java.lang.reflect.Proxy`、JS `Proxy`、C++ 包装类 |
-| 行为与流程 | 策略、模板方法、观察者、责任链、状态、访问者 | 中间件栈是责任链在 Web 框架的形态 |
-| 并发与异步 | 线程池、读写锁、工作窃取、生产者-消费者、Future | 术语以 j.u.c 文档为准 |
-| 数据与分层 | ORM、事务脚本、事件溯源、MVC/MVVM | 事件溯源记过程，备忘录记瞬间 |
-| 分布式与云上 | 熔断器、隔舱、超时、重试 | Resilience4j、Polly、Sentinel 同一模型，在 Resilience4j 里是并列的四个模块 |
-| 集成与解耦 | 消息通道、消息路由、消息转换、发布订阅 | Spring Integration 与 Apache Camel 用同一套词汇 |
+| Object creation and assembly | Abstract Factory, Builder, Singleton, Object Pool | Java/C# assembled by a container; Go written in `main` |
+| Interface adaptation and access control | Adapter, Facade, four proxy variants, Decorator | Java `java.lang.reflect.Proxy`, JS `Proxy`, C++ wrapper classes |
+| Behavior and flow | Strategy, Template Method, Observer, Chain of Responsibility, State, Visitor | Middleware stacks are Chain of Responsibility in web frameworks |
+| Concurrency and async | Thread Pool, Read-Write Lock, Work Stealing, Producer-Consumer, Future | Terminology per `j.u.c` docs |
+| Data and layering | ORM, Transaction Script, Event Sourcing, MVC/MVVM | Event sourcing records processes, memento records instants |
+| Distributed and cloud | Circuit Breaker, Bulkhead, Timeout, Retry | Same model in Resilience4j, Polly, Sentinel — four parallel modules in Resilience4j |
+| Integration and decoupling | Message Channel, Message Router, Message Translator, Publish-Subscribe | Spring Integration and Apache Camel use the same vocabulary |
 
-多语言落地四条约定：多态按语言习惯写（Java/C# 接口、C++ 抽象类、Go 小接口加嵌入）；复用逻辑统一改写成组合；单例的代价 Java/C# 最明显，Go 包级变量可测性同样差；线程模型决定并发篇示例（Java 线程池、C++ `std::jthread` 加 `std::stop_token`、Go goroutine 加 channel）。
+Four multi-language conventions: polymorphism per language habit (Java/C# interfaces, C++ abstract classes, Go small interfaces + embedding); reuse logic uniformly rewritten as composition; Singleton costs are most visible in Java/C#, Go package-level variables are equally untestable; thread models drive concurrency examples (Java thread pools, C++ `std::jthread` + `std::stop_token`, Go goroutines + channels).
 
-## 常见坑与误区
+## Common Pitfalls and Misconceptions
 
-| 坑 | 事实 | 展开页 |
+| Pitfall | Fact | Expansion page |
 | --- | --- | --- |
-| `Future` 当异步组合用 | `Future.get()` 阻塞，组合与回调要 `CompletableFuture` | [Future 模式](/concurrency/future) |
-| `Semaphore` 先 release 后 acquire | `acquire` 可被中断，许可必须在持有后才释放，顺序反了等于没限制 | [信号量模式](/concurrency/semaphore) |
-| C++ 手写自赋值判断 | 旧版写法已被 copy-and-swap 取代，与 Guidelines 的资源管理意图一致 | [智能指针模式](/structural/smart-pointer) |
-| 跨语言硬译模式 | Go 的模板方法没有抽象类，用接口加嵌入表达同一骨架，照搬 Java 类图写不成立 | [模板方法模式](/behavioral/template-method) |
-| C++ 手写双分派表 | 惯用 `std::variant` 加 `std::visit`，分支交给标准库 | [访问者模式](/behavioral/visitor) |
-| 前端示例写旧范式 | Vue 2 选项式与 React class 组件不写，统一组合式 API 与函数组件 | [组合式设计](/evolution/composition-over-inheritance) |
-| 非幂等操作直接重试 | 扣款重试一次就是两笔扣款，先加幂等键或先查结果再重试 | [重试模式](/evolution/retry) |
-| 超时设得比下游 P99 还短 | 正常慢请求被杀，下游副作用却已发生，读超时按下游 P99 的 1.5–2 倍设 | [超时模式](/evolution/timeout) |
-| 空对象当 Optional 用 | 空对象是"有但什么都不做"，调用方无感；Optional 是"可能没有"，调用方仍要处理缺失分支，两者解决的问题不同 | [策略模式](/behavioral/strategy) |
+| Using `Future` for async composition | `Future.get()` blocks; composition and callbacks need `CompletableFuture` | [Future](/concurrency/future) |
+| `Semaphore` released before acquired | `acquire` is interruptible; a permit must be released only while held — reversing the order means no limit at all | [Semaphore](/concurrency/semaphore) |
+| Hand-writing self-assignment checks in C++ | The old form is superseded by copy-and-swap, consistent with the Guidelines' resource-management intent | [Smart Pointer](/structural/smart-pointer) |
+| Cross-language literal translation of patterns | Go's template method has no abstract class; express the same skeleton with interfaces plus embedding — copying a Java class diagram doesn't hold | [Template Method](/behavioral/template-method) |
+| Hand-writing double-dispatch tables in C++ | The idiom is `std::variant` + `std::visit`, leaving branch handling to the standard library | [Visitor](/behavioral/visitor) |
+| Front-end examples using old paradigms | Vue 2 options API and React class components are not written; uniformly use Composition API and function components | [Composition over Inheritance](/evolution/composition-over-inheritance) |
+| Retrying non-idempotent operations directly | Retrying a debit once means two debits — add an idempotency key first, or check the result before retrying | [Retry](/evolution/retry) |
+| Setting a timeout shorter than the downstream P99 | Normal slow requests get killed, but the downstream side effect already happened — set read timeouts at 1.5-2x the downstream P99 | [Timeout](/evolution/timeout) |
+| Using Null Object as Optional | Null Object is "present but does nothing" — callers are unaware; Optional is "may be absent" — callers still handle the missing branch. They solve different problems | [Strategy](/behavioral/strategy) |
 
-## 覆盖核对结论
+## Coverage Check Conclusions
 
-逐条核对表在[覆盖核对与差异表](/research/coverage)，数字收拢：
+The per-entry check table is in [coverage and differences](/research/coverage). The numbers condensed:
 
-- GoF 23/23 全部有正文页，不需要补。
-- 调研得出缺口 14 项，全部补成新篇：反模式 6、现代演进 4、并发 3（线程池、读写锁、工作窃取，概览早已声明但缺页）、其他 1（事务脚本）。
-- 调研到但核对当时不新增的共 12 行（[覆盖核对与差异表](/research/coverage)表 2b），每行都写了理由：聚合与限界上下文不在「模式」口径内，架构风格按判据维持不收录。其中 5 行已按口径补齐（2026-10-10）——隔舱/超时/重试、仓储与单元工作、空对象（并入[策略](/behavioral/strategy)）、集成模式四篇、远程外观与数据传输对象，折合 11 个条目；稳态定为不单独成篇，差异表不再有候选项挂账。
-- 站内交叉引用不一致 6 处，随本次修订（智能指针条目错字、概览漏列 DSL 与并发三篇、参考页索引缺三组书目）。
-- 站内 Markdown 从 56 篇增到 75 篇，模式正文 47 → 59（14 篇新篇里 2 篇是分区概览，不计入正文）；同日新增本页后为 76 篇；稳定性三篇后为 79 篇，模式正文 62；仓储与单元工作后为 80 篇，模式正文 63；集成模式分区五篇后为 85 篇，模式正文 67；远程外观与数据传输对象后为 86 篇，模式正文 68。
+- GoF 23/23 all have full articles — no gaps.
+- Research found 14 gaps, all filled as new pages: 6 anti-patterns, 4 modern evolution, 3 concurrency (thread pool, read-write lock, work stealing — declared in overview but missing pages), 1 other (Transaction Script).
+- 12 rows found in research but not added at check time ([coverage and differences](/research/coverage) table 2b), each with a reason: aggregates and bounded contexts are outside the "pattern" scope, architectural styles stay excluded per the criterion. Of these, 5 were completed per the criterion (2026-10-10) — bulkhead/timeout/retry, Repository and Unit of Work, null object (folded into [Strategy](/behavioral/strategy)), the four integration-pattern pages, and Remote Facade and Data Transfer Object — totaling 11 entries; steady state is decided against a standalone page, so the difference table has no outstanding candidates.
+- 6 on-site cross-reference inconsistencies, fixed in this revision (Smart Pointer typo, overview missing DSL and the three concurrency pages, reference index missing three book groups).
+- On-site Markdown grew from 56 to 75 pages, pattern body from 47 to 59 (of the 14 new pages, 2 are section overviews and not counted as body); after adding this page 76; after the three stability pages 79, pattern body 62; after Repository and Unit of Work 80, pattern body 63; after the five integration-pattern pages 85, pattern body 67; after Remote Facade and Data Transfer Object 86, pattern body 68.
 
-## 来源与口径
+## Sources and Scope
 
-- 来源编号与书籍出版信息以[调研总览的来源清单](/research/overview#来源清单)为准，改版时在该清单维护。
-- 核对方法：书目目录拆条目，逐条对 `docs/` 下的文件；判定只有三档——有正文页、声明未落地、缺口。核对时间 2026-10-08。
-- 验收方式：站内链接一律绝对路径，`npm run docs:build` 的死链检查兜底。
+- Source IDs and book publication info are per the [source list in the research overview](/research/overview#source-list); maintain that list when revising.
+- Check method: book catalogs broken into entries, each checked against files under `docs/`; verdicts have only three tiers — has full article, declared but unimplemented, gap. Check date 2026-10-08.
+- Verification: on-site links are all absolute paths; `npm run docs:build` dead-link check is the backstop.
 
-## 参考资料
+## References
 
-- [调研总览](/research/overview)——范围、方法、结论与 28 条来源清单
-- [权威书籍与标准目录](/research/books)——15 本书逐本对照
-- [官方与社区文档](/research/official-docs)——8 个官方文档与 3 个社区站点
-- [应用场景与语言落地](/research/applications)——场景到 API 的对照表
-- [覆盖核对与差异表](/research/coverage)——三张表：覆盖、缺口、交叉引用修订
+- [Research Overview](/research/overview) — scope, method, conclusions, and the 28-entry source list
+- [Books and Standards](/research/books) — per-book cross-reference of 15 books
+- [Official and Community Docs](/research/official-docs) — 8 official docs and 3 community sites
+- [Applications and Language](/research/applications) — scenario-to-API cross-reference table
+- [Coverage and Differences](/research/coverage) — three tables: coverage, gaps, cross-reference revisions
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related pages
 
 - [reference](reference.md)
 - [coverage](/research/coverage.md)

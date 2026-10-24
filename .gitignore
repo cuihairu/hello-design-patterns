@@ -3,3 +3,5 @@ book
 node_modules
 package-lock.json
 .DS_Store
+docs/.vitepress/dist
+docs/.vitepress/cache

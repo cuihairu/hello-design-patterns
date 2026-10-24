@@ -1,0 +1,33 @@
+# 创建型模式 (Creational Patterns)
+
+**主要解决的问题**：对象的创建方式。这类模式通过将对象创建的过程与其具体类型分离，提高系统的灵活性和可扩展性。
+创建型模式把"对象如何被创建"这一变化点封装起来，客户端只依赖抽象接口，而不必关心具体类型与构造细节。常见的实现手段包括隐藏构造函数、把创建逻辑集中到工厂或建造者、通过复制已有实例来生成新对象等。
+
+### 本目录包含的模式
+
+- [单例模式](/zh/creational/singleton)：保证一个类只有一个实例，并提供全局访问点。
+- [工厂方法模式](/zh/creational/factory-method)：定义创建对象的接口，让子类决定实例化哪个类。
+- [抽象工厂模式](/zh/creational/abstract-factory)：创建一系列相关或相互依赖的对象，而无需指定具体类。
+- [建造者模式](/zh/creational/builder)：把复杂对象的构建过程与其表示分离，同样的构建过程可以创建不同的表示。
+- [原型模式](/zh/creational/prototype)：通过复制已有实例来创建新对象，避免重复执行昂贵的初始化。
+- [多例模式](/zh/creational/multiton)：保证每个键最多只有一个实例，是有键的单例变体。
+- [对象池模式](/zh/creational/object-pool)：管理可复用对象的池子，减少昂贵对象的频繁创建与销毁。
+- [服务定位器模式](/zh/creational/service-locator)：通过集中注册表按名称或类型获取服务实例，实现服务使用的解耦。
+
+### 选用建议
+
+- 只需要一个全局实例时优先考虑单例，并注意多线程下的初始化安全。
+- 创建逻辑需要随环境变化或需要解耦具体类型时，选择工厂方法或抽象工厂。
+- 构造参数多、步骤有先后依赖时，使用建造者代替一长串构造函数。
+- 对象创建成本高且可复用时，使用原型或对象池。
+
+## 来源
+
+- [S1] GoF 目录把创建型模式列为第一组（5 个），本区沿此收录并扩充非 GoF 条目。
+- [Refactoring.Guru · 创建型模式](https://refactoring.guru/design-patterns/creational-patterns)
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [reference](/zh/reference.md)

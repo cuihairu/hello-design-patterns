@@ -1,247 +1,247 @@
-# 简介
+# Introduction
 
-这页是我按类别整理的模式索引，方便查找用途与示例；具体取舍和实现记录在各篇正文。以单例为例，[这里列出常见用途](#创建型模式-creational-patterns)，[术语表](/glossary#单例模式-singleton-pattern)给出定义，我对实现的讨论放在[单例模式正文](/creational/singleton)。
+This page is my category-based index of the patterns, for looking up purpose and examples; the trade-offs and implementation notes live in each full page. Take singleton as an example: [common uses are listed here](#creational-patterns), the [glossary](/glossary#singleton-pattern) gives the definition, and my discussion of the implementation is in the [singleton page](/creational/singleton).
 
-设计模式通常可以归类为三大类：
-- **创建型模式（Creational Patterns）**
-- **结构型模式（Structural Patterns）**
-- **行为型模式（Behavioral Patterns）**
+Design patterns are usually grouped into three classic categories:
+- **Creational Patterns**
+- **Structural Patterns**
+- **Behavioral Patterns**
 
-除这三大经典类别外，并发编程与特定领域实践也各自形成了成熟的模式目录，我也把相关记录放在这里：
+Beyond these three classic categories, concurrent programming and domain-specific practice have each produced their own mature pattern catalogs, and I keep those records here too:
 
-- **并发模式（Concurrency Patterns）**
-- **特定领域模式（Domain-Specific Patterns）**
+- **Concurrency Patterns**
+- **Domain-Specific Patterns**
 
-这些类别是我整理模式时采用的索引方式，下面列出各类别及常见模式，便于按主题查找：
+These categories are how I organize patterns when taking notes. Below are the categories and their common patterns, for lookup by topic:
 
-## 创建型模式（Creational Patterns）
+## Creational Patterns
 
-这些模式主要涉及对象的创建，旨在将对象的创建与使用分离。
+These patterns deal mainly with object creation, aiming to separate object creation from object use.
 
-#### 1. **单例模式（Singleton Pattern）**
-    - **用途**：确保一个类只有一个实例，并提供一个全局访问点。
-    - **示例**：数据库连接池。
+#### 1. **Singleton Pattern**
+    - **Purpose**: Ensure a class has only one instance and provide a global point of access to it.
+    - **Example**: A database connection pool.
 
-#### 2. **工厂方法模式（Factory Method Pattern）**
-    - **用途**：定义一个创建对象的接口，但让子类决定实例化哪个类。
-    - **示例**：日志记录器，可以创建不同的日志记录方法。
+#### 2. **Factory Method Pattern**
+    - **Purpose**: Define an interface for creating an object, but let subclasses decide which class to instantiate.
+    - **Example**: A logger that can create different logging methods.
 
-#### 3. **抽象工厂模式（Abstract Factory Pattern）**
-    - **用途**：提供一个接口，用于创建相关或依赖对象的家族，而无需指定具体类。
-    - **示例**：跨平台UI组件库。
+#### 3. **Abstract Factory Pattern**
+    - **Purpose**: Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+    - **Example**: A cross-platform UI component library.
 
-#### 4. **建造者模式（Builder Pattern）**
-    - **用途**：将复杂对象的构建过程分离，使同样的构建过程可以创建不同的表示。
-    - **示例**：创建复杂的文档格式（如PDF、HTML）。
+#### 4. **Builder Pattern**
+    - **Purpose**: Separate the construction of a complex object so the same construction process can create different representations.
+    - **Example**: Producing complex document formats (PDF, HTML).
 
-#### 5. **原型模式（Prototype Pattern）**
-    - **用途**：使用原型实例指定创建对象的种类，并通过复制这些原型创建新的对象。
-    - **示例**：剪贴板中的复制粘贴功能。
+#### 5. **Prototype Pattern**
+    - **Purpose**: Specify the kinds of objects to create using a prototypical instance, and create new objects by copying it.
+    - **Example**: Copy-paste in a clipboard.
 
-#### 6. **对象池模式（Object Pool Pattern）**
-    - **用途**：管理和复用一组预先创建的对象，避免频繁创建和销毁对象带来的开销。
-    - **典型场景**：
-        - **数据库连接池**：在数据库驱动程序中使用对象池来管理数据库连接，可以减少频繁的连接创建和销毁，提高性能。
-        - **线程池**：在多线程编程中，线程池用于管理和重用线程，避免频繁的线程创建和销毁，提高系统响应速度。
-        - **对象缓存**：在内存中缓存频繁使用的对象，如字符串缓存、对象实例缓存等，减少对象的创建和销毁，提高性能。
-        - **资源管理**：管理有限资源，如文件句柄、网络连接等，确保资源不被耗尽。
-    - **示例**：数据库连接池。
+#### 6. **Object Pool Pattern**
+    - **Purpose**: Manage and reuse a set of pre-created objects, avoiding the overhead of frequent creation and destruction.
+    - **Typical scenarios**:
+        - **Database connection pool**: Object pools manage database connections in drivers, reducing frequent connect/disconnect and improving performance.
+        - **Thread pool**: In multithreaded programming, a thread pool manages and reuses threads, avoiding frequent thread creation and destruction and improving responsiveness.
+        - **Object caching**: Cache frequently used objects in memory — string caches, instance caches — to reduce creation and destruction overhead.
+        - **Resource management**: Manage limited resources such as file handles and network connections so they are not exhausted.
+    - **Example**: A database connection pool.
 
-#### 7. **服务定位器模式（Service Locator Pattern）**
-    - **用途**：通过一个集中式的注册表封装服务的查找与获取逻辑，客户端按名称或类型向定位器请求服务实例，从而与具体实现解耦。
-    - **示例**：分布式系统的服务发现。
+#### 7. **Service Locator Pattern**
+    - **Purpose**: Encapsulate service lookup and retrieval behind a centralized registry; clients request service instances from the locator by name or type, decoupling themselves from concrete implementations.
+    - **Example**: Service discovery in distributed systems.
 
-#### 8. **多例模式（Multiton Pattern）**
-    - **用途**：确保某个类在每个给定的关键字上最多只有一个实例。
-    - **示例**：数据库连接池，但不同的数据库实例。
+#### 8. **Multiton Pattern**
+    - **Purpose**: Ensure a class has at most one instance per given key.
+    - **Example**: A database connection pool with different database instances.
 
-## 结构型模式（Structural Patterns）
+## Structural Patterns
 
-这些模式主要涉及对象或类的组合，旨在使用继承和组合来获得更大的结构。
+These patterns deal mainly with object and class composition, using inheritance and composition to build larger structures.
 
-#### 1. **适配器模式（Adapter Pattern）**
-    - **用途**：将一个类的接口转换成客户期望的另一个接口，使原本接口不兼容的类可以协同工作。
-    - **示例**：电源适配器。
+#### 1. **Adapter Pattern**
+    - **Purpose**: Convert one class's interface into another interface clients expect, letting incompatible classes work together.
+    - **Example**: A power adapter.
 
-#### 2. **装饰模式（Decorator Pattern）**
-    - **用途**：动态地给对象添加一些职责，而不改变其接口。
-    - **示例**：为一个文本编辑器添加不同的功能（如加粗、斜体）。
+#### 2. **Decorator Pattern**
+    - **Purpose**: Attach responsibilities to objects dynamically without changing their interface.
+    - **Example**: Adding features to a text editor (bold, italic).
 
-#### 3. **代理模式（Proxy Pattern）**
-    - **用途**：为其他对象提供一种代理以控制对这个对象的访问。
-    - **示例**：远程代理（远程调用）、虚拟代理（懒加载）。
-    - **变体**：[远程代理](/structural/remote-proxy)、[虚拟代理](/structural/virtual-proxy)、[保护代理](/structural/protection-proxy)、[动态代理](/structural/dynamic-proxy)，各有专篇。
+#### 3. **Proxy Pattern**
+    - **Purpose**: Provide a surrogate for another object to control access to it.
+    - **Example**: Remote proxy (remote calls), virtual proxy (lazy loading).
+    - **Variants**: [Remote proxy](/structural/remote-proxy), [virtual proxy](/structural/virtual-proxy), [protection proxy](/structural/protection-proxy), and [dynamic proxy](/structural/dynamic-proxy), each with its own page.
 
-#### 4. **外观模式（Facade Pattern）**
-    - **用途**：为子系统中的一组接口提供一个统一的高层接口，简化子系统的使用。
-    - **示例**：简化复杂的API调用。
+#### 4. **Facade Pattern**
+    - **Purpose**: Provide a unified high-level interface to a set of interfaces in a subsystem, simplifying its use.
+    - **Example**: Simplifying complex API calls.
 
-#### 5. **桥接模式（Bridge Pattern）**
-    - **用途**：将抽象部分与它的实现部分分离，使它们都可以独立地变化。
-    - **示例**：图形绘制系统中的形状和颜色分离。
+#### 5. **Bridge Pattern**
+    - **Purpose**: Decouple an abstraction from its implementation so the two can vary independently.
+    - **Example**: Separating shapes and colors in a graphics drawing system.
 
-#### 6. **组合模式（Composite Pattern）**
-    - **用途**：将对象组合成树形结构以表示“部分-整体”的层次结构。
-    - **示例**：文件系统中的文件和文件夹。
+#### 6. **Composite Pattern**
+    - **Purpose**: Compose objects into tree structures representing part-whole hierarchies.
+    - **Example**: Files and folders in a file system.
 
-#### 7. **享元模式（Flyweight Pattern）**
-    - **用途**：运用共享技术有效地支持大量细粒度对象。
-    - **示例**：文本编辑器中字符的对象池。
+#### 7. **Flyweight Pattern**
+    - **Purpose**: Use sharing to support large numbers of fine-grained objects efficiently.
+    - **Example**: An object pool of characters in a text editor.
 
-#### 8. **依赖注入 (Dependency Injection)**
-    - **用途**：模式的主要用途是管理对象之间的依赖关系。
-    - **示例**：Java Spring 框架。
+#### 8. **Dependency Injection**
+    - **Purpose**: The main purpose is managing dependencies between objects.
+    - **Example**: The Java Spring framework.
 
-#### 9. **双向桥接（Bidirectional Bridge）**
-    - **用途**：主要用于需要双向通信和交互的场景中，它提供了一种灵活且解耦的方式来实现这一目标。
-    - **示例**：复杂UI框架,分布式系统,实时系统。
+#### 9. **Bidirectional Bridge**
+    - **Purpose**: Mainly for scenarios that need two-way communication and interaction; it provides a flexible, decoupled way to achieve that.
+    - **Example**: Complex UI frameworks, distributed systems, real-time systems.
 
-#### 10. **智能指针模式（Smart Pointer Pattern）**
-    - **用途**：以对象表达资源所有权，生命周期随作用域结束自动释放，避免手动管理出错。
+#### 10. **Smart Pointer Pattern**
+    - **Purpose**: Express resource ownership as an object; lifetime is released automatically at scope exit, avoiding manual-management mistakes.
 
-#### 11. **远程外观与数据传输对象（Remote Facade and Data Transfer Object）**
-    - **用途**：跨进程边界不摆领域对象，接口按业务用例设计成粗粒度方法，参数与返回值是专用的传输对象（DTO）。与[远程代理](/structural/remote-proxy)的取向相对：代理保透明，外观弃透明、粒度跟用例走。
+#### 11. **Remote Facade and Data Transfer Object**
+    - **Purpose**: Keep domain objects from crossing process boundaries; interfaces are designed as coarse-grained methods per business use case, with dedicated transfer objects (DTOs) for parameters and return values. This orientation is opposite to the [remote proxy](/structural/remote-proxy): the proxy stays transparent, while the facade gives up transparency and follows the use case's granularity.
 
-## 行为型模式（Behavioral Patterns）
+## Behavioral Patterns
 
-这些模式主要涉及类和对象之间的职责分配，旨在使这些职责的分配更加明确。
+These patterns deal mainly with assigning responsibilities between classes and objects, making that assignment clearer.
 
-#### 1. **策略模式（Strategy Pattern）**
-    - **用途**：定义一系列算法，将每个算法封装起来，并使它们可以互换。
-    - **示例**：排序算法的策略（如快排、归并排序）。
+#### 1. **Strategy Pattern**
+    - **Purpose**: Define a family of algorithms, encapsulate each one, and make them interchangeable.
+    - **Example**: Sorting strategies (quicksort, merge sort).
 
-#### 2. **观察者模式（Observer Pattern）**
-    - **用途**：定义对象间的一对多依赖关系，当一个对象的状态改变时，所有依赖于它的对象都会得到通知并自动更新。
-    - **示例**：事件监听器。
+#### 2. **Observer Pattern**
+    - **Purpose**: Define a one-to-many dependency between objects; when one object changes state, all its dependents are notified and updated automatically.
+    - **Example**: Event listeners.
 
-#### 3. **命令模式（Command Pattern）**
-    - **用途**：将一个请求封装为一个对象，从而用不同请求对客户端进行参数化。
-    - **示例**：GUI按钮的命令模式。
+#### 3. **Command Pattern**
+    - **Purpose**: Encapsulate a request as an object, letting clients be parameterized with different requests.
+    - **Example**: The command pattern behind a GUI button.
 
-#### 4. **责任链模式（Chain of Responsibility Pattern）**
-    - **用途**：为请求创建一个接收者对象的链，使多个对象都有机会处理请求，避免请求的发送者与接收者耦合。
-    - **示例**：审批流程。
+#### 4. **Chain of Responsibility Pattern**
+    - **Purpose**: Create a chain of receiver objects for a request, giving multiple objects a chance to handle it and avoiding coupling the sender to a receiver.
+    - **Example**: An approval workflow.
 
-#### 5. **中介者模式（Mediator Pattern）**
-    - **用途**：用一个中介对象来封装一系列对象之间的交互，使对象之间不需要直接相互引用。
-    - **示例**：聊天室中的消息转发器。
+#### 5. **Mediator Pattern**
+    - **Purpose**: Use a mediator object to encapsulate interactions among a set of objects, so they don't reference each other directly.
+    - **Example**: The message forwarder in a chat room.
 
-#### 6. **迭代器模式（Iterator Pattern）**
-    - **用途**：提供一种方法顺序访问一个聚合对象中的各个元素，而不暴露其内部的表示。
-    - **示例**：集合框架中的迭代器。
+#### 6. **Iterator Pattern**
+    - **Purpose**: Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+    - **Example**: Iterators in collection frameworks.
 
-#### 7. **模板方法模式（Template Method Pattern）**
-    - **用途**：定义一个操作中的算法骨架，而将一些步骤延迟到子类中。
-    - **示例**：游戏开发中的主循环框架。
+#### 7. **Template Method Pattern**
+    - **Purpose**: Define the skeleton of an algorithm in an operation, deferring some steps to subclasses.
+    - **Example**: The main loop framework in game development.
 
-#### 8. **状态模式（State Pattern）**
-    - **用途**：允许一个对象在其内部状态改变时改变它的行为，使对象看起来似乎修改了它的类。
-    - **示例**：TCP连接状态机。
+#### 8. **State Pattern**
+    - **Purpose**: Let an object alter its behavior when its internal state changes, as if the object changed its class.
+    - **Example**: A TCP connection state machine.
 
-#### 9. **备忘录模式（Memento Pattern）**
-    - **用途**：在不破坏封装性的前提下，捕获并外部化一个对象的内部状态，从而使对象能恢复到原先的状态（又称快照模式 Snapshot Pattern）。
-    - **示例**：撤销功能。
+#### 9. **Memento Pattern**
+    - **Purpose**: Capture and externalize an object's internal state without breaking encapsulation, so it can be restored later (also called the Snapshot Pattern).
+    - **Example**: Undo functionality.
 
-#### 10. **解释器模式（Interpreter Pattern）**
-    - **用途**：给定一个语言，定义它的文法的一种表示，并定义一个解释器，这个解释器使用该表示来解释语言中的句子。
-    - **示例**：编译器或脚本解释器。
+#### 10. **Interpreter Pattern**
+    - **Purpose**: Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences.
+    - **Example**: A compiler or script interpreter.
 
-#### 11. **访问者模式（Visitor Pattern）**
-    - **用途**：表示一个作用于某对象结构中的各元素的操作，可在不改变元素类的前提下定义新操作。
-    - **示例**：对象结构中的元素处理，如编译器中的语法树遍历。
+#### 11. **Visitor Pattern**
+    - **Purpose**: Represent an operation on the elements of an object structure, letting you define new operations without changing the element classes.
+    - **Example**: Element processing in an object structure, like syntax-tree traversal in a compiler.
 
-#### 12. **回调模式（Callback Pattern）**
-    - **用途**：处理异步操作和事件驱动的任务。
-    - **示例**：Node.js 编程。
+#### 12. **Callback Pattern**
+    - **Purpose**: Handle asynchronous operations and event-driven tasks.
+    - **Example**: Node.js programming.
 
-#### 13. **领域特定语言模式（DSL Pattern）**
-    - **用途**：为特定问题域设计一套语法，让非程序员也能表达逻辑。
-    - **示例**：构建工具的配置文件（Gradle、Webpack 的 DSL）。
+#### 13. **DSL Pattern**
+    - **Purpose**: Design a syntax for a specific problem domain so non-programmers can express logic too.
+    - **Example**: Build-tool configuration files (Gradle's and Webpack's DSLs).
 
-## 并发模式（Concurrency Patterns）
+## Concurrency Patterns
 
-这些模式主要解决多线程环境中的问题，旨在协调多个线程或进程的协作。
+These patterns solve problems in multithreaded environments, coordinating how threads or processes work together.
 
-#### 1. **生产者消费者模式（Producer-Consumer Pattern）**
-    - **用途**：解决在多线程环境中协调生产者和消费者之间的关系。
+#### 1. **Producer-Consumer Pattern**
+    - **Purpose**: Coordinate the relationship between producers and consumers in a multithreaded environment.
 
-#### 2. **工作窃取模式（Work Stealing Pattern）**
-    - **用途**：处理线程池中任务的动态负载均衡，线程在完成手头任务后可以从其他线程的任务队列中窃取任务。
+#### 2. **Work Stealing Pattern**
+    - **Purpose**: Handle dynamic load balancing in a thread pool; after finishing its own tasks, a thread can steal tasks from other threads' queues.
 
-#### 3. **读写锁模式（Read-Write Lock Pattern）**
-    - **用途**：允许多个线程同时读取一个共享资源，但只允许一个线程写入共享资源。
+#### 3. **Read-Write Lock Pattern**
+    - **Purpose**: Allow many threads to read a shared resource at once, but only one thread to write to it.
 
-#### 4. **线程池模式（Thread Pool Pattern）**
-    - **用途**：通过提前创建一组线程来处理任务，减少了频繁创建和销毁线程的开销。
+#### 4. **Thread Pool Pattern**
+    - **Purpose**: Create a set of threads up front to handle tasks, reducing the overhead of frequent thread creation and destruction.
 
-#### 5. **反应器模式（Reactor Pattern）**
-    - **用途**：通过将事件处理逻辑与事件分发机制分离，实现高性能的事件驱动处理。
+#### 5. **Reactor Pattern**
+    - **Purpose**: Separate event-handling logic from event demultiplexing for high-performance event-driven processing.
 
-#### 6. **主动器模式（Proactor Pattern）**
-    - **用途**：基于操作系统的异步 I/O 机制，在异步操作完成后由完成事件触发回调处理，适合高并发 I/O 场景。
+#### 6. **Proactor Pattern**
+    - **Purpose**: Built on the OS's asynchronous I/O mechanism; a completion event triggers callback handling after the async operation finishes, suited to high-concurrency I/O.
 
-#### 7. **主动对象模式（Active Object Pattern）**
-    - **用途**：通过将方法调用封装为任务对象并排队执行，避免了直接的同步调用。
+#### 7. **Active Object Pattern**
+    - **Purpose**: Avoid direct synchronous calls by encapsulating method invocations as task objects that are queued and executed.
 
-#### 8. **Future 模式**
-    - **用途**：代表一个未来可能完成的异步任务的结果。
-    - **示例**：异步编程中的回调或 Promise。
+#### 8. **Future Pattern**
+    - **Purpose**: Represent the result of an asynchronous task that will complete in the future.
+    - **Example**: Callbacks or promises in async programming.
 
-#### 9. **信号量模式（Semaphore Pattern）**
-    - **用途**：控制对多个资源的访问，用于资源数有限的场景。
-    - **示例**：数据库连接池。
+#### 9. **Semaphore Pattern**
+    - **Purpose**: Control access to multiple resources where the resource count is limited.
+    - **Example**: A database connection pool.
 
-#### 10. **事件循环模式（Event Loop Pattern）**
-    - **用途**：用于处理和分发事件或消息，常见于异步编程模型。
-    - **示例**：Node.js 事件循环。
+#### 10. **Event Loop Pattern**
+    - **Purpose**: Process and dispatch events or messages; common in asynchronous programming models.
+    - **Example**: The Node.js event loop.
 
-#### 11. **双重检查锁定模式（Double-checked Locking Pattern）**
-    - **用途**：减少锁的开销，确保在多线程环境下安全的初始化。
-    - **示例**：单例模式的线程安全实现。
+#### 11. **Double-Checked Locking Pattern**
+    - **Purpose**: Reduce lock overhead and ensure safe initialization in multithreaded environments.
+    - **Example**: A thread-safe singleton implementation.
 
-## 特定领域模式（Domain-Specific Patterns）
+## Domain-Specific Patterns
 
-这些模式专门用于特定的应用领域或技术领域。
+These patterns target specific application or technology domains.
 
-#### 1. **MVC 模式（Model-View-Controller Pattern）**
-    - **用途**：用于分离应用的内部表示、用户界面和控制逻辑。
+#### 1. **MVC Pattern (Model-View-Controller)**
+    - **Purpose**: Separate an application's internal representation, user interface, and control logic.
 
-#### 2. **MVVM 模式（Model-View-ViewModel Pattern）**
-    - **用途**：主要用于 WPF 和 Silverlight 应用程序中，分离视图和业务逻辑。
+#### 2. **MVVM Pattern (Model-View-ViewModel)**
+    - **Purpose**: Mainly used in WPF and Silverlight applications to separate the view from business logic.
 
-#### 3. **对象-关系映射（ORM）模式**
-    - **用途**：在面向对象编程与关系数据库系统之间创建一个映射，使对象可以映射到数据库表。
-    - **示例**：Hibernate, Entity Framework。
+#### 3. **ORM Pattern (Object-Relational Mapping)**
+    - **Purpose**: Create a mapping between object-oriented programming and relational database systems, so objects map to database tables.
+    - **Example**: Hibernate, Entity Framework.
 
-#### 4. **事务脚本模式（Transaction Script Pattern）**
-    - **用途**：用于实现简单的业务逻辑，通过一系列命令和脚本处理事务。
+#### 4. **Transaction Script Pattern**
+    - **Purpose**: Implement simple business logic, handling transactions with a series of commands and scripts.
 
-#### 5. **事件溯源（Event Sourcing）**
-    - **用途**：通过记录对应用状态的所有更改事件来确保应用状态的可追溯性和一致性。
+#### 5. **Event Sourcing**
+    - **Purpose**: Record all change events to application state, making state traceable and consistent.
 
-#### 6. **仓储与单元工作（Repository and Unit of Work）**
-    - **用途**：给领域层一个集合式的持久化接口，接口在领域层、实现在基础设施层；单元工作把一次业务事务的整批改动包成一个数据库事务。
+#### 6. **Repository and Unit of Work**
+    - **Purpose**: Give the domain layer a collection-like persistence interface — the interface lives in the domain layer, the implementation in infrastructure; the unit of work wraps a business transaction's whole batch of changes into one database transaction.
 
 ---
 
-## 反模式、现代演进与集成模式
+## Anti-Patterns, Modern Evolution, and Integration Patterns
 
-除上面这些模式，站内另设三个分区：
+Beyond the patterns above, the site has three more sections:
 
-- **反模式**（[概览](/anti-patterns/overview)）：记录写歪了会长成什么样子，收录神对象、大泥球、金锤子、意面代码、贫血模型五篇。
-- **现代演进**（[概览](/evolution/overview)）：GoF 之后仍在演化、工程上已有共识的内容，收录组合式设计、SOLID 与依赖规则，以及熔断器、隔舱、超时、重试四篇稳定性模式。
-- **集成模式**（[概览](/integration/overview)）：跨进程消息传递的组件词汇，收录消息通道、消息路由、消息转换、发布订阅四篇。
+- **Anti-Patterns** ([overview](/anti-patterns/overview)): records what code grows into when written wrong, covering God Object, Big Ball of Mud, Golden Hammer, Spaghetti Code, and Anemic Domain Model.
+- **Modern Evolution** ([overview](/evolution/overview)): content that kept evolving after GoF and has engineering consensus — composition over inheritance, SOLID and dependency rules, plus four stability patterns: Circuit Breaker, Bulkhead, Timeout, and Retry.
+- **Integration Patterns** ([overview](/integration/overview)): the component vocabulary for cross-process messaging, covering Message Channel, Message Router, Message Translator, and Publish-Subscribe.
 
-以上分类与站内篇目的核对过程、来源与差异表，记在[调研总览](/research/overview)与[覆盖核对与差异表](/research/coverage)里。
+The verification process for these categories against the site's pages, the sources, and the difference table are recorded in the [research overview](/research/overview) and [coverage and differences](/research/coverage).
 
-## 来源
+## Sources
 
-- [S1] GoF 目录是「23 个模式」这一基准线的出处。
+- [S1] The GoF catalog is the source of the "23 patterns" baseline.
 - [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
 - [Refactoring.Guru · Design Patterns](https://refactoring.guru/design-patterns)
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related pages
 
 - [reference](reference.md)
 - [books](/research/books.md)

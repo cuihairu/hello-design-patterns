@@ -1,499 +1,499 @@
-# 术语表
+# Glossary
 
-站内模式术语的中英对照与一句话定义。出处编号 `[S1]`–`[28]` 沿用[调研总览的来源清单](/research/overview#来源清单)，书目细节以该清单为准，本表只给可点开的在线出处；条目末尾的相关页直达站内正文。
+English-Chinese term pairs and one-sentence definitions for pattern terms on this site. Source IDs `[S1]`–`[S28]` follow the [source list in the research overview](/research/overview#source-list); bibliography details are in that list — this table only gives clickable online sources. The "related pages" at the end of each entry link directly to the on-site article.
 
-## 创建型模式
+## Creational Patterns
 
-### 单例模式（Singleton pattern）
+### Singleton pattern (单例模式)
 
-保证一个类只有一个实例，并提供全局访问点。
+Guarantees a class has only one instance and provides a global point of access.
 
-**出处**：[S1]；[Wikipedia · Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern)
+**Sources**: [S1]; [Wikipedia · Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern)
 
-**相关页**：[单例模式](/creational/singleton)、[双重检查锁定模式](/concurrency/double-checked-locking)
+**Related pages**: [Singleton](/creational/singleton), [Double-Checked Locking](/concurrency/double-checked-locking)
 
-### 工厂方法模式（Factory method pattern）
+### Factory method pattern (工厂方法模式)
 
-把对象创建推迟到子类，由子类决定实例化哪个具体产品。
+Defers object creation to a subclass, which decides which concrete product to instantiate.
 
-**出处**：[S1]；[Wikipedia · Factory method pattern](https://en.wikipedia.org/wiki/Factory_method_pattern)
+**Sources**: [S1]; [Wikipedia · Factory method pattern](https://en.wikipedia.org/wiki/Factory_method_pattern)
 
-**相关页**：[工厂方法模式](/creational/factory-method)、[抽象工厂模式](/creational/abstract-factory)
+**Related pages**: [Factory Method](/creational/factory-method), [Abstract Factory](/creational/abstract-factory)
 
-### 抽象工厂模式（Abstract factory pattern）
+### Abstract factory pattern (抽象工厂模式)
 
-创建一族相关产品对象而不指明具体类。
+Creates families of related products without specifying concrete classes.
 
-**出处**：[S1]；[Wikipedia · Abstract factory pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern)
+**Sources**: [S1]; [Wikipedia · Abstract factory pattern](https://en.wikipedia.org/wiki/Abstract_factory_pattern)
 
-**相关页**：[抽象工厂模式](/creational/abstract-factory)、[工厂方法模式](/creational/factory-method)
+**Related pages**: [Abstract Factory](/creational/abstract-factory), [Factory Method](/creational/factory-method)
 
-### 建造者模式（Builder pattern）
+### Builder pattern (建造者模式)
 
-分步构造复杂对象，同一构造过程可产出不同表示。
+Constructs complex objects step by step; the same construction process can produce different representations.
 
-**出处**：[S1]；[Wikipedia · Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern)
+**Sources**: [S1]; [Wikipedia · Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern)
 
-**相关页**：[建造者模式](/creational/builder)
+**Related pages**: [Builder](/creational/builder)
 
-### 原型模式（Prototype pattern）
+### Prototype pattern (原型模式)
 
-以克隆既有实例的方式创建新对象，绕开逐字段初始化。
+Creates new objects by cloning an existing instance, bypassing field-by-field initialization.
 
-**出处**：[S1]；[Wikipedia · Prototype pattern](https://en.wikipedia.org/wiki/Prototype_pattern)
+**Sources**: [S1]; [Wikipedia · Prototype pattern](https://en.wikipedia.org/wiki/Prototype_pattern)
 
-**相关页**：[原型模式](/creational/prototype)
+**Related pages**: [Prototype](/creational/prototype)
 
-### 多例模式（Multiton pattern）
+### Multiton pattern (多例模式)
 
-单例的推广：按 key 管理有限个实例，每个 key 至多一个实例。
+A generalization of Singleton: manages a finite number of instances keyed, at most one per key.
 
-**出处**：[Wikipedia · Multiton pattern](https://en.wikipedia.org/wiki/Multiton_pattern)（未入 [S1] 目录）
+**Sources**: [Wikipedia · Multiton pattern](https://en.wikipedia.org/wiki/Multiton_pattern) (not in the [S1] catalog)
 
-**相关页**：[多例模式](/creational/multiton)、[单例模式](/creational/singleton)
+**Related pages**: [Multiton](/creational/multiton), [Singleton](/creational/singleton)
 
-### 对象池模式（Object pool pattern）
+### Object pool pattern (对象池模式)
 
-复用创建代价高的对象，以借还协议避免反复构造销毁。
+Reuses expensive-to-create objects via a borrow/return protocol, avoiding repeated construction and destruction.
 
-**出处**：[Wikipedia · Object pool pattern](https://en.wikipedia.org/wiki/Object_pool_pattern)；[Apache Commons Pool](https://commons.apache.org/proper/commons-pool/)
+**Sources**: [Wikipedia · Object pool pattern](https://en.wikipedia.org/wiki/Object_pool_pattern); [Apache Commons Pool](https://commons.apache.org/proper/commons-pool/)
 
-**相关页**：[对象池模式](/creational/object-pool)、[线程池模式](/concurrency/thread-pool)
+**Related pages**: [Object Pool](/creational/object-pool), [Thread Pool](/concurrency/thread-pool)
 
-### 服务定位器模式（Service locator pattern）
+### Service locator pattern (服务定位器模式)
 
-集中注册、按名取依赖；与依赖注入的取舍 Fowler 有专文评述。
+Centralized registration, dependencies fetched by name; Fowler has a dedicated article comparing it to DI.
 
-**出处**：[Wikipedia · Service locator pattern](https://en.wikipedia.org/wiki/Service_locator_pattern)；[Fowler · Inversion of Control](https://martinfowler.com/articles/injection.html)
+**Sources**: [Wikipedia · Service locator pattern](https://en.wikipedia.org/wiki/Service_locator_pattern); [Fowler · Inversion of Control](https://martinfowler.com/articles/injection.html)
 
-**相关页**：[服务定位器模式](/creational/service-locator)、[依赖注入模式](/structural/dependency-injection)
+**Related pages**: [Service Locator](/creational/service-locator), [Dependency Injection](/structural/dependency-injection)
 
-## 结构型模式
+## Structural Patterns
 
-### 适配器模式（Adapter pattern）
+### Adapter pattern (适配器模式)
 
-转换已有接口使其满足客户端期望，令不兼容双方协同。
+Converts an existing interface to meet a client's expectations, letting incompatible sides work together.
 
-**出处**：[S1]；[Wikipedia · Adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern)
+**Sources**: [S1]; [Wikipedia · Adapter pattern](https://en.wikipedia.org/wiki/Adapter_pattern)
 
-**相关页**：[适配器模式](/structural/adapter)、[外观模式](/structural/facade)
+**Related pages**: [Adapter](/structural/adapter), [Facade](/structural/facade)
 
-### 装饰模式（Decorator pattern）
+### Decorator pattern (装饰模式)
 
-动态给对象叠加职责，比继承更灵活的包装方案。
+Dynamically wraps an object with extra responsibilities — a more flexible alternative to inheritance.
 
-**出处**：[S1]；[Wikipedia · Decorator pattern](https://en.wikipedia.org/wiki/Decorator_pattern)
+**Sources**: [S1]; [Wikipedia · Decorator pattern](https://en.wikipedia.org/wiki/Decorator_pattern)
 
-**相关页**：[装饰模式](/structural/decorator)、[代理模式](/structural/proxy)
+**Related pages**: [Decorator](/structural/decorator), [Proxy](/structural/proxy)
 
-### 代理模式（Proxy pattern）
+### Proxy pattern (代理模式)
 
-控制对对象的访问；按用途分虚拟、保护、远程、动态等变体。
+Controls access to an object; variants by purpose include virtual, protection, remote, and dynamic.
 
-**出处**：[S1]；[Wikipedia · Proxy pattern](https://en.wikipedia.org/wiki/Proxy_pattern)
+**Sources**: [S1]; [Wikipedia · Proxy pattern](https://en.wikipedia.org/wiki/Proxy_pattern)
 
-**相关页**：[代理模式](/structural/proxy)、[虚拟代理](/structural/virtual-proxy)、[保护代理](/structural/protection-proxy)、[远程代理](/structural/remote-proxy)、[动态代理](/structural/dynamic-proxy)
+**Related pages**: [Proxy](/structural/proxy), [Virtual Proxy](/structural/virtual-proxy), [Protection Proxy](/structural/protection-proxy), [Remote Proxy](/structural/remote-proxy), [Dynamic Proxy](/structural/dynamic-proxy)
 
-### 外观模式（Facade pattern）
+### Facade pattern (外观模式)
 
-为子系统给一个统一的高层接口，降低调用方耦合面。
+Provides a unified high-level interface to a subsystem, reducing the coupling surface for callers.
 
-**出处**：[S1]；[Wikipedia · Facade pattern](https://en.wikipedia.org/wiki/Facade_pattern)
+**Sources**: [S1]; [Wikipedia · Facade pattern](https://en.wikipedia.org/wiki/Facade_pattern)
 
-**相关页**：[外观模式](/structural/facade)
+**Related pages**: [Facade](/structural/facade)
 
-### 桥接模式（Bridge pattern）
+### Bridge pattern (桥接模式)
 
-把抽象与实现拆到两条继承轴上，各自独立变化。
+Splits abstraction and implementation onto two inheritance axes so they can vary independently.
 
-**出处**：[S1]；[Wikipedia · Bridge pattern](https://en.wikipedia.org/wiki/Bridge_pattern)
+**Sources**: [S1]; [Wikipedia · Bridge pattern](https://en.wikipedia.org/wiki/Bridge_pattern)
 
-**相关页**：[桥接模式](/structural/bridge)、[双向桥接模式](/structural/bidirectional-bridge)
+**Related pages**: [Bridge](/structural/bridge), [Bidirectional Bridge](/structural/bidirectional-bridge)
 
-### 组合模式（Composite pattern）
+### Composite pattern (组合模式)
 
-以树形结构统一处理部分与整体，叶与容器同接口。
+Handles parts and wholes uniformly in a tree; leaves and containers share the same interface.
 
-**出处**：[S1]；[Wikipedia · Composite pattern](https://en.wikipedia.org/wiki/Composite_pattern)
+**Sources**: [S1]; [Wikipedia · Composite pattern](https://en.wikipedia.org/wiki/Composite_pattern)
 
-**相关页**：[组合模式](/structural/composite)、[迭代器模式](/behavioral/iterator)
+**Related pages**: [Composite](/structural/composite), [Iterator](/behavioral/iterator)
 
-### 享元模式（Flyweight pattern）
+### Flyweight pattern (享元模式)
 
-共享细粒度实例，把公共状态外置以省内存。
+Shares fine-grained instances, externalizing common state to save memory.
 
-**出处**：[S1]；[Wikipedia · Flyweight pattern](https://en.wikipedia.org/wiki/Flyweight_pattern)
+**Sources**: [S1]; [Wikipedia · Flyweight pattern](https://en.wikipedia.org/wiki/Flyweight_pattern)
 
-**相关页**：[享元模式](/structural/flyweight)、[对象池模式](/creational/object-pool)
+**Related pages**: [Flyweight](/structural/flyweight), [Object Pool](/creational/object-pool)
 
-### 依赖注入（Dependency injection）
+### Dependency injection (依赖注入)
 
-依赖由外部注入而非对象自建，反转的是依赖的获取方向。
+Dependencies are injected externally rather than self-constructed; what's inverted is the direction of dependency acquisition.
 
-**出处**：[Wikipedia · Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection)；[Fowler · Inversion of Control](https://martinfowler.com/articles/injection.html)
+**Sources**: [Wikipedia · Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection); [Fowler · Inversion of Control](https://martinfowler.com/articles/injection.html)
 
-**相关页**：[依赖注入模式](/structural/dependency-injection)、[服务定位器模式](/creational/service-locator)
+**Related pages**: [Dependency Injection](/structural/dependency-injection), [Service Locator](/creational/service-locator)
 
-### 智能指针（Smart pointer）
+### Smart pointer (智能指针)
 
-以 RAII 托管资源生命周期的指针对象，析构即释放。
+A pointer object managing resource lifetime via RAII; destruction releases the resource.
 
-**出处**：[Wikipedia · Smart pointer](https://en.wikipedia.org/wiki/Smart_pointer)；[cppreference · Memory management library](https://en.cppreference.com/w/cpp/memory)
+**Sources**: [Wikipedia · Smart pointer](https://en.wikipedia.org/wiki/Smart_pointer); [cppreference · Memory management library](https://en.cppreference.com/w/cpp/memory)
 
-**相关页**：[智能指针模式](/structural/smart-pointer)
+**Related pages**: [Smart Pointer](/structural/smart-pointer)
 
-## 行为型模式
+## Behavioral Patterns
 
-### 策略模式（Strategy pattern）
+### Strategy pattern (策略模式)
 
-封装一族可互换算法，运行时按需替换；「空行为」也是合法策略（空对象）。
+Encapsulates a family of interchangeable algorithms, substitutable at runtime; "no-op behavior" is also a legal strategy (null object).
 
-**出处**：[S1]；[Wikipedia · Strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern)；[Wikipedia · Null object pattern](https://en.wikipedia.org/wiki/Null_object_pattern)
+**Sources**: [S1]; [Wikipedia · Strategy pattern](https://en.wikipedia.org/wiki/Strategy_pattern); [Wikipedia · Null object pattern](https://en.wikipedia.org/wiki/Null_object_pattern)
 
-**相关页**：[策略模式](/behavioral/strategy)、[状态模式](/behavioral/state)
+**Related pages**: [Strategy](/behavioral/strategy), [State](/behavioral/state)
 
-### 观察者模式（Observer pattern）
+### Observer pattern (观察者模式)
 
-目标状态变化时自动通知所有订阅者，双向解耦。
+Notifies all subscribers automatically when the subject's state changes, decoupling both sides.
 
-**出处**：[S1]；[Wikipedia · Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
+**Sources**: [S1]; [Wikipedia · Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)
 
-**相关页**：[观察者模式](/behavioral/observer)、[发布订阅模式](/integration/publish-subscribe)
+**Related pages**: [Observer](/behavioral/observer), [Publish-Subscribe](/integration/publish-subscribe)
 
-### 命令模式（Command pattern）
+### Command pattern (命令模式)
 
-把请求封装成对象，使请求可排队、撤销、记录。
+Encapsulates a request as an object, making it queueable, undoable, and loggable.
 
-**出处**：[S1]；[Wikipedia · Command pattern](https://en.wikipedia.org/wiki/Command_pattern)
+**Sources**: [S1]; [Wikipedia · Command pattern](https://en.wikipedia.org/wiki/Command_pattern)
 
-**相关页**：[命令模式](/behavioral/command)、[备忘录模式](/behavioral/memento)
+**Related pages**: [Command](/behavioral/command), [Memento](/behavioral/memento)
 
-### 责任链模式（Chain of responsibility pattern）
+### Chain of responsibility pattern (责任链模式)
 
-请求沿处理者链依次传递，直到有人处理或落空。
+A request travels down a chain of handlers until one handles it or falls through.
 
-**出处**：[S1]；[Wikipedia · Chain-of-responsibility pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)
+**Sources**: [S1]; [Wikipedia · Chain-of-responsibility pattern](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)
 
-**相关页**：[责任链模式](/behavioral/chain-of-responsibility)、[中介者模式](/behavioral/mediator)
+**Related pages**: [Chain of Responsibility](/behavioral/chain-of-responsibility), [Mediator](/behavioral/mediator)
 
-### 中介者模式（Mediator pattern）
+### Mediator pattern (中介者模式)
 
-把同事对象间的多对多交互收进一个中介对象集中管理。
+A mediator object centralizes the many-to-many interaction among colleague objects.
 
-**出处**：[S1]；[Wikipedia · Mediator pattern](https://en.wikipedia.org/wiki/Mediator_pattern)
+**Sources**: [S1]; [Wikipedia · Mediator pattern](https://en.wikipedia.org/wiki/Mediator_pattern)
 
-**相关页**：[中介者模式](/behavioral/mediator)、[观察者模式](/behavioral/observer)
+**Related pages**: [Mediator](/behavioral/mediator), [Observer](/behavioral/observer)
 
-### 迭代器模式（Iterator pattern)
+### Iterator pattern (迭代器模式)
 
-顺序遍历聚合内容而不暴露内部表示。
+Traverses aggregate contents in order without exposing the internal representation.
 
-**出处**：[S1]；[Wikipedia · Iterator pattern](https://en.wikipedia.org/wiki/Iterator_pattern)
+**Sources**: [S1]; [Wikipedia · Iterator pattern](https://en.wikipedia.org/wiki/Iterator_pattern)
 
-**相关页**：[迭代器模式](/behavioral/iterator)、[组合模式](/structural/composite)
+**Related pages**: [Iterator](/behavioral/iterator), [Composite](/structural/composite)
 
-### 模板方法模式（Template method pattern）
+### Template method pattern (模板方法模式)
 
-固定算法骨架，把可变步骤留给子类实现。
+Fixes the algorithm skeleton; variable steps are left for subclasses to implement.
 
-**出处**：[S1]；[Wikipedia · Template method pattern](https://en.wikipedia.org/wiki/Template_method_pattern)
+**Sources**: [S1]; [Wikipedia · Template method pattern](https://en.wikipedia.org/wiki/Template_method_pattern)
 
-**相关页**：[模板方法模式](/behavioral/template-method)、[策略模式](/behavioral/strategy)
+**Related pages**: [Template Method](/behavioral/template-method), [Strategy](/behavioral/strategy)
 
-### 状态模式（State pattern）
+### State pattern (状态模式)
 
-行为随内部状态切换而整体变化，状态即对象。
+Behavior changes wholesale as internal state switches; state is an object.
 
-**出处**：[S1]；[Wikipedia · State pattern](https://en.wikipedia.org/wiki/State_pattern)
+**Sources**: [S1]; [Wikipedia · State pattern](https://en.wikipedia.org/wiki/State_pattern)
 
-**相关页**：[状态模式](/behavioral/state)、[策略模式](/behavioral/strategy)
+**Related pages**: [State](/behavioral/state), [Strategy](/behavioral/strategy)
 
-### 备忘录模式（Memento pattern）
+### Memento pattern (备忘录模式)
 
-保存并恢复对象先前状态而不破坏封装；快照（snapshot）是同一模式的不同叫法。
+Saves and restores a prior object state without breaking encapsulation; "snapshot" is an alias for the same pattern.
 
-**出处**：[S1]；[Wikipedia · Memento pattern](https://en.wikipedia.org/wiki/Memento_pattern)
+**Sources**: [S1]; [Wikipedia · Memento pattern](https://en.wikipedia.org/wiki/Memento_pattern)
 
-**相关页**：[备忘录模式](/behavioral/memento)、[快照模式](/behavioral/snapshot)
+**Related pages**: [Memento](/behavioral/memento), [Snapshot](/behavioral/snapshot)
 
-### 解释器模式（Interpreter pattern）
+### Interpreter pattern (解释器模式)
 
-为一种文法定义解释器，按语法规则求值。
+Defines an interpreter for a grammar and evaluates according to its rules.
 
-**出处**：[S1]；[Wikipedia · Interpreter pattern](https://en.wikipedia.org/wiki/Interpreter_pattern)
+**Sources**: [S1]; [Wikipedia · Interpreter pattern](https://en.wikipedia.org/wiki/Interpreter_pattern)
 
-**相关页**：[解释器模式](/behavioral/interpreter)、[领域特定语言模式](/behavioral/dsl)
+**Related pages**: [Interpreter](/behavioral/interpreter), [DSL](/behavioral/dsl)
 
-### 访问者模式（Visitor pattern)
+### Visitor pattern (访问者模式)
 
-在不改动元素类的前提下为其加新操作，双分派落地。
+Adds new operations to element classes without modifying them, via double dispatch.
 
-**出处**：[S1]；[Wikipedia · Visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern)
+**Sources**: [S1]; [Wikipedia · Visitor pattern](https://en.wikipedia.org/wiki/Visitor_pattern)
 
-**相关页**：[访问者模式](/behavioral/visitor)
+**Related pages**: [Visitor](/behavioral/visitor)
 
-### 回调（Callback）
+### Callback (回调)
 
-把函数交给对方在其时机回呼，控制反转的最小形态。
+Hand a function to a callee to invoke at its own time — the minimal form of inversion of control.
 
-**出处**：[Wikipedia · Callback](https://en.wikipedia.org/wiki/Callback_%28computer_programming%29)；[MDN · Callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
+**Sources**: [Wikipedia · Callback](https://en.wikipedia.org/wiki/Callback_%28computer_programming%29); [MDN · Callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 
-**相关页**：[回调模式](/behavioral/callback)、[观察者模式](/behavioral/observer)
+**Related pages**: [Callback](/behavioral/callback), [Observer](/behavioral/observer)
 
-### 领域特定语言（Domain-specific language, DSL）
+### Domain-specific language, DSL (领域特定语言)
 
-面向窄域的小语言，与通用语言相对；解释器模式是其一种实现载体。
+A small language for a narrow domain, in contrast to a general-purpose language; the Interpreter pattern is one of its implementation vehicles.
 
-**出处**：[Wikipedia · Domain-specific language](https://en.wikipedia.org/wiki/Domain-specific_language)；[Fowler · DSL 书页](https://martinfowler.com/books/dsl.html)
+**Sources**: [Wikipedia · Domain-specific language](https://en.wikipedia.org/wiki/Domain-specific_language); [Fowler · DSL book page](https://martinfowler.com/books/dsl.html)
 
-**相关页**：[领域特定语言模式](/behavioral/dsl)、[解释器模式](/behavioral/interpreter)
+**Related pages**: [DSL](/behavioral/dsl), [Interpreter](/behavioral/interpreter)
 
-## 并发模式
+## Concurrency Patterns
 
-### 生产者-消费者（Producer–consumer）
+### Producer-consumer (生产者-消费者)
 
-以缓冲队列解耦生产与消费的速率差，阻塞队列是其标准库形态。
+A buffered queue decouples the rate difference between production and consumption; blocking queues are the standard-library form.
 
-**出处**：[Wikipedia · Producer–consumer problem](https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem)；[Java · BlockingQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html)
+**Sources**: [Wikipedia · Producer-consumer problem](https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem); [Java · BlockingQueue](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/BlockingQueue.html)
 
-**相关页**：[生产者消费者模式](/concurrency/producer-consumer)、[消息通道模式](/integration/message-channel)
+**Related pages**: [Producer-Consumer](/concurrency/producer-consumer), [Message Channel](/integration/message-channel)
 
-### 反应器模式（Reactor pattern）
+### Reactor pattern (反应器模式)
 
-单（少）线程同步等待多路事件源，就绪即分发给处理器。
+A single (or few) threads wait synchronously on many event sources and dispatch to handlers as soon as one is ready.
 
-**出处**：[Wikipedia · Reactor pattern](https://en.wikipedia.org/wiki/Reactor_pattern)；[S9]
+**Sources**: [Wikipedia · Reactor pattern](https://en.wikipedia.org/wiki/Reactor_pattern); [S9]
 
-**相关页**：[反应堆模式](/concurrency/reactor)、[主动器模式](/concurrency/proactor)、[事件循环模式](/concurrency/event-loop)
+**Related pages**: [Reactor](/concurrency/reactor), [Proactor](/concurrency/proactor), [Event Loop](/concurrency/event-loop)
 
-### 主动器模式（Proactor pattern）
+### Proactor pattern (主动器模式)
 
-以异步 I/O 完成事件驱动，Windows IOCP 为代表实现。
+Async-I/O-driven completions trigger the pattern; Windows IOCP is the representative implementation.
 
-**出处**：[Wikipedia · Proactor pattern](https://en.wikipedia.org/wiki/Proactor_pattern)；[Microsoft · I/O completion ports](https://learn.microsoft.com/en-us/windows/win32/fileio/i-o-completion-ports)
+**Sources**: [Wikipedia · Proactor pattern](https://en.wikipedia.org/wiki/Proactor_pattern); [Microsoft · I/O completion ports](https://learn.microsoft.com/en-us/windows/win32/fileio/i-o-completion-ports)
 
-**相关页**：[主动器模式](/concurrency/proactor)、[反应堆模式](/concurrency/reactor)
+**Related pages**: [Proactor](/concurrency/proactor), [Reactor](/concurrency/reactor)
 
 ### Future / Promise
 
-异步结果的占位凭证，先回票据后取值。
+A placeholder receipt for an async result — hand back the ticket, retrieve the value later.
 
-**出处**：[Wikipedia · Futures and promises](https://en.wikipedia.org/wiki/Futures_and_promises)；[Java · CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)
+**Sources**: [Wikipedia · Futures and promises](https://en.wikipedia.org/wiki/Futures_and_promises); [Java · CompletableFuture](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html)
 
-**相关页**：[Future 模式](/concurrency/future)
+**Related pages**: [Future](/concurrency/future)
 
-### 信号量（Semaphore）
+### Semaphore (信号量)
 
-以计数授权控制同时进入临界区的任务数。
+A counting permit that controls how many tasks can enter a critical section at once.
 
-**出处**：[Wikipedia · Semaphore](https://en.wikipedia.org/wiki/Semaphore_%28programming%29)；[man7 · sem_overview](https://man7.org/linux/man-pages/man7/sem_overview.7.html)
+**Sources**: [Wikipedia · Semaphore](https://en.wikipedia.org/wiki/Semaphore_%28programming%29); [man7 · sem_overview](https://man7.org/linux/man-pages/man7/sem_overview.7.html)
 
-**相关页**：[信号量模式](/concurrency/semaphore)、[读写锁模式](/concurrency/read-write-lock)
+**Related pages**: [Semaphore](/concurrency/semaphore), [Read-Write Lock](/concurrency/read-write-lock)
 
-### 事件循环（Event loop）
+### Event loop (事件循环)
 
-单线程轮询就绪事件并分发回调，Node.js/浏览器的主干。
+A single thread polls ready events and dispatches callbacks; the backbone of Node.js and browsers.
 
-**出处**：[Wikipedia · Event loop](https://en.wikipedia.org/wiki/Event_loop)；[libuv · Design overview](https://docs.libuv.org/en/v1.x/design.html)
+**Sources**: [Wikipedia · Event loop](https://en.wikipedia.org/wiki/Event_loop); [libuv · Design overview](https://docs.libuv.org/en/v1.x/design.html)
 
-**相关页**：[事件循环模式](/concurrency/event-loop)、[反应堆模式](/concurrency/reactor)
+**Related pages**: [Event Loop](/concurrency/event-loop), [Reactor](/concurrency/reactor)
 
-### 双重检查锁定（Double-checked locking）
+### Double-checked locking (双重检查锁定)
 
-延迟初始化的加锁优化：先无锁查、命中才不加锁；Java 内存模型下有著名的失败宣言。
+A locking optimization for lazy initialization: check without a lock first, lock only on miss; under the Java Memory Model there is a famous failure statement.
 
-**出处**：[Wikipedia · Double-checked locking](https://en.wikipedia.org/wiki/Double-checked_locking)；[Pugh · Double-Checked Locking is Broken](https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html)
+**Sources**: [Wikipedia · Double-checked locking](https://en.wikipedia.org/wiki/Double-checked_locking); [Pugh · Double-Checked Locking is Broken](https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html)
 
-**相关页**：[双重检查锁定模式](/concurrency/double-checked-locking)、[单例模式](/creational/singleton)
+**Related pages**: [Double-Checked Locking](/concurrency/double-checked-locking), [Singleton](/creational/singleton)
 
-### 主动对象（Active object）
+### Active object (主动对象)
 
-把方法调用与执行解耦：调用变请求入队，独立线程依序执行。
+Decouples method invocation from execution: calls become queued requests, executed in order by an independent thread.
 
-**出处**：[Wikipedia · Active object](https://en.wikipedia.org/wiki/Active_object)；[S9]
+**Sources**: [Wikipedia · Active object](https://en.wikipedia.org/wiki/Active_object); [S9]
 
-**相关页**：[主动对象模式](/concurrency/active-object)、[生产者消费者模式](/concurrency/producer-consumer)
+**Related pages**: [Active Object](/concurrency/active-object), [Producer-Consumer](/concurrency/producer-consumer)
 
-### 读写锁（Readers–writer lock）
+### Readers-writer lock (读写锁)
 
-读共享、写独占的锁策略，读多写少场景吞吐更高。
+A lock strategy with shared reads and exclusive writes; higher throughput in read-heavy, write-light workloads.
 
-**出处**：[Wikipedia · Readers–writer lock](https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock)
+**Sources**: [Wikipedia · Readers-writer lock](https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock)
 
-**相关页**：[读写锁模式](/concurrency/read-write-lock)
+**Related pages**: [Read-Write Lock](/concurrency/read-write-lock)
 
-### 线程池（Thread pool）
+### Thread pool (线程池)
 
-预建一组线程复用执行任务，省去逐任务建撤开销。
+Pre-builds a set of threads to execute tasks, saving per-task create/destroy overhead.
 
-**出处**：[Wikipedia · Thread pool](https://en.wikipedia.org/wiki/Thread_pool)；[Java · java.util.concurrent](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html)
+**Sources**: [Wikipedia · Thread pool](https://en.wikipedia.org/wiki/Thread_pool); [Java · java.util.concurrent](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html)
 
-**相关页**：[线程池模式](/concurrency/thread-pool)、[对象池模式](/creational/object-pool)
+**Related pages**: [Thread Pool](/concurrency/thread-pool), [Object Pool](/creational/object-pool)
 
-### 工作窃取（Work stealing）
+### Work stealing (工作窃取)
 
-空闲线程从忙线程的队列尾部取任务，负载自均衡。
+An idle thread pulls tasks from the tail of a busy thread's queue, balancing load automatically.
 
-**出处**：[Wikipedia · Work stealing](https://en.wikipedia.org/wiki/Work_stealing)
+**Sources**: [Wikipedia · Work stealing](https://en.wikipedia.org/wiki/Work_stealing)
 
-**相关页**：[工作窃取模式](/concurrency/work-stealing)、[线程池模式](/concurrency/thread-pool)
+**Related pages**: [Work Stealing](/concurrency/work-stealing), [Thread Pool](/concurrency/thread-pool)
 
-## 集成与演进模式
+## Integration and Evolution Patterns
 
-### 消息通道（Message channel）
+### Message channel (消息通道)
 
-集成模式的第一公民：端点通过通道传消息，而非点对点直连。
+The first-class citizen of integration patterns: endpoints send messages via a channel rather than peer-to-peer.
 
-**出处**：[S10]；[Enterprise Integration Patterns 站点](https://www.enterpriseintegrationpatterns.com/)
+**Sources**: [S10]; [Enterprise Integration Patterns site](https://www.enterpriseintegrationpatterns.com/)
 
-**相关页**：[消息通道模式](/integration/message-channel)、[集成模式概览](/integration/overview)
+**Related pages**: [Message Channel](/integration/message-channel), [Integration Overview](/integration/overview)
 
-### 发布-订阅（Publish–subscribe）
+### Publish-subscribe (发布-订阅)
 
-发布者按主题广播，订阅者按订阅收，通道之外再加一层路由解耦。
+Publishers broadcast by topic; subscribers receive by subscription — a routing layer beyond the channel for decoupling.
 
-**出处**：[Wikipedia · Publish–subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)；[S10]
+**Sources**: [Wikipedia · Publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern); [S10]
 
-**相关页**：[发布订阅模式](/integration/publish-subscribe)、[观察者模式](/behavioral/observer)
+**Related pages**: [Publish-Subscribe](/integration/publish-subscribe), [Observer](/behavioral/observer)
 
-### 熔断器（Circuit breaker）
+### Circuit breaker (熔断器)
 
-失败率超阈值即断闸快速失败，防止故障级联；恢复期半开试探。
+Trips to fast-fail when the failure rate exceeds a threshold, preventing cascading faults; half-open probes during recovery.
 
-**出处**：[S12]；[Wikipedia · Circuit breaker pattern](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern)；[Azure · Circuit Breaker pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker)
+**Sources**: [S12]; [Wikipedia · Circuit breaker pattern](https://en.wikipedia.org/wiki/Circuit_breaker_design_pattern); [Azure · Circuit Breaker pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker)
 
-**相关页**：[熔断器模式](/evolution/circuit-breaker)、[重试模式](/evolution/retry)
+**Related pages**: [Circuit Breaker](/evolution/circuit-breaker), [Retry](/evolution/retry)
 
-### 隔舱（Bulkhead）
+### Bulkhead (隔舱)
 
-按用途分区资源上限，一舱进水不沉全船。
+Partitions resource ceilings by purpose, so a breach in one compartment doesn't sink the ship.
 
-**出处**：[S12]；[Azure · Bulkhead pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead)
+**Sources**: [S12]; [Azure · Bulkhead pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead)
 
-**相关页**：[隔舱模式](/evolution/bulkhead)
+**Related pages**: [Bulkhead](/evolution/bulkhead)
 
-### 超时（Timeout）
+### Timeout (超时)
 
-给单次调用设时限，防止无限等待拖垮上游。
+Sets a limit on a single call so an endless wait doesn't drag down upstream.
 
-**出处**：[S12]
+**Sources**: [S12]
 
-**相关页**：[超时模式](/evolution/timeout)、[熔断器模式](/evolution/circuit-breaker)
+**Related pages**: [Timeout](/evolution/timeout), [Circuit Breaker](/evolution/circuit-breaker)
 
-### 重试（Retry）
+### Retry (重试)
 
-瞬时故障按退避策略重发；非幂等操作须先解决幂等再谈重试。
+Retries transient failures with a backoff strategy; non-idempotent operations need idempotency solved before retrying.
 
-**出处**：[S12]；[Azure · Retry pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/retry)
+**Sources**: [S12]; [Azure · Retry pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/retry)
 
-**相关页**：[重试模式](/evolution/retry)、[超时模式](/evolution/timeout)
+**Related pages**: [Retry](/evolution/retry), [Timeout](/evolution/timeout)
 
-## 其他模式
+## Other Patterns
 
-### MVC（Model–view–controller）
+### MVC (Model-view-controller)
 
-模型-视图-控制器三分，界面与应用逻辑的最早分离方案。
+Model-view-controller three-way split — the earliest separation of the UI from application logic.
 
-**出处**：[Wikipedia · Model–view–controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)；[Fowler · GUI Architectures](https://martinfowler.com/eaaDev/uiArchs.html)
+**Sources**: [Wikipedia · Model-view-controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller); [Fowler · GUI Architectures](https://martinfowler.com/eaaDev/uiArchs.html)
 
-**相关页**：[MVC 模式](/other/mvc)、[MVVM 模式](/other/mvvm)
+**Related pages**: [MVC](/other/mvc), [MVVM](/other/mvvm)
 
-### MVVM（Model–view–viewmodel）
+### MVVM (Model-view-viewmodel)
 
-视图模型以数据绑定连接视图与模型，WPF 前端的经典分层。
+A view model connects view and model via data binding — the classic WPF front-end layering.
 
-**出处**：[Wikipedia · Model–view–viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)
+**Sources**: [Wikipedia · Model-view-viewmodel](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel)
 
-**相关页**：[MVVM 模式](/other/mvvm)、[MVC 模式](/other/mvc)
+**Related pages**: [MVVM](/other/mvvm), [MVC](/other/mvc)
 
-### 对象关系映射（Object–relational mapping, ORM）
+### Object-relational mapping, ORM (对象关系映射)
 
-以对象层映射关系表，省去手写 SQL 的样板。
+Maps relational tables through an object layer, eliminating hand-written SQL boilerplate.
 
-**出处**：[Wikipedia · Object–relational mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping)；[Fowler · ORM Hate](https://martinfowler.com/bliki/OrmHate.html)
+**Sources**: [Wikipedia · Object-relational mapping](https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping); [Fowler · ORM Hate](https://martinfowler.com/bliki/OrmHate.html)
 
-**相关页**：[ORM 模式](/other/orm)、[仓储与单元工作](/other/repository)
+**Related pages**: [ORM](/other/orm), [Repository and Unit of Work](/other/repository)
 
-### 事件溯源（Event sourcing）
+### Event sourcing (事件溯源)
 
-以不可变事件序列为唯一事实源，状态由回放派生。
+An immutable event sequence is the single source of truth; state is derived by replay.
 
-**出处**：[Fowler · Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html)（Wikipedia 暂无独立词条）
+**Sources**: [Fowler · Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) (no independent Wikipedia article yet)
 
-**相关页**：[事件溯源模式](/other/event-sourcing)、[发布订阅模式](/integration/publish-subscribe)
+**Related pages**: [Event Sourcing](/other/event-sourcing), [Publish-Subscribe](/integration/publish-subscribe)
 
-### 仓储（Repository）
+### Repository (仓储)
 
-以集合式接口封装领域对象的存取，屏蔽持久化细节。
+A collection-like interface encapsulates domain-object persistence, hiding storage details.
 
-**出处**：[S5]；[Fowler · Repository](https://martinfowler.com/eaaCatalog/repository.html)
+**Sources**: [S5]; [Fowler · Repository](https://martinfowler.com/eaaCatalog/repository.html)
 
-**相关页**：[仓储与单元工作](/other/repository)、[ORM 模式](/other/orm)
+**Related pages**: [Repository and Unit of Work](/other/repository), [ORM](/other/orm)
 
-### 事务脚本（Transaction script）
+### Transaction script (事务脚本)
 
-一个用例一个过程式脚本，最直白的业务逻辑组织方式。
+One use case, one procedural script — the most direct way to organize business logic.
 
-**出处**：[S5]；[Fowler · Transaction Script](https://martinfowler.com/eaaCatalog/transactionScript.html)
+**Sources**: [S5]; [Fowler · Transaction Script](https://martinfowler.com/eaaCatalog/transactionScript.html)
 
-**相关页**：[事务脚本模式](/other/transaction-script)
+**Related pages**: [Transaction Script](/other/transaction-script)
 
-## 反模式
+## Anti-Patterns
 
-### 反模式（Anti-pattern）
+### Anti-pattern (反模式)
 
-经常被采用、后果却弊大于利的解法；与坏味道、模式构成三层关系。
+A frequently adopted solution whose consequences are worse than its benefits; forms a three-tier relationship with code smells and patterns.
 
-**出处**：[S7]；[Wikipedia · Anti-pattern](https://en.wikipedia.org/wiki/Anti-pattern)
+**Sources**: [S7]; [Wikipedia · Anti-pattern](https://en.wikipedia.org/wiki/Anti-pattern)
 
-**相关页**：[反模式概览](/anti-patterns/overview)
+**Related pages**: [Anti-Patterns Overview](/anti-patterns/overview)
 
-### 神对象（God object）
+### God object (神对象)
 
-过多职责聚集到一个对象，牵一发动全身。
+Too many responsibilities gathered in one object; changing one thing ripples everywhere.
 
-**出处**：[Wikipedia · God object](https://en.wikipedia.org/wiki/God_object)
+**Sources**: [Wikipedia · God object](https://en.wikipedia.org/wiki/God_object)
 
-**相关页**：[神对象](/anti-patterns/god-object)、[大泥球](/anti-patterns/big-ball-of-mud)
+**Related pages**: [God Object](/anti-patterns/god-object), [Big Ball of Mud](/anti-patterns/big-ball-of-mud)
 
-### 大泥球（Big ball of mud）
+### Big ball of mud (大泥球)
 
-无清晰架构的纠缠系统，遗留代码的常见形态。
+An entangled system with no clear architecture — the common shape of legacy code.
 
-**出处**：[S8]；[Wikipedia · Big ball of mud](https://en.wikipedia.org/wiki/Big_ball_of_mud)
+**Sources**: [S8]; [Wikipedia · Big ball of mud](https://en.wikipedia.org/wiki/Big_ball_of_mud)
 
-**相关页**：[大泥球](/anti-patterns/big-ball-of-mud)
+**Related pages**: [Big Ball of Mud](/anti-patterns/big-ball-of-mud)
 
-### 金锤子（Golden hammer）
+### Golden hammer (金锤子)
 
-拿着熟悉的工具硬套一切问题，Law of the Instrument 的工程版。
+Forcing a familiar tool onto every problem — the engineering version of the Law of the Instrument.
 
-**出处**：[Wikipedia · Law of the instrument](https://en.wikipedia.org/wiki/Law_of_the_instrument)
+**Sources**: [Wikipedia · Law of the instrument](https://en.wikipedia.org/wiki/Law_of_the_instrument)
 
-**相关页**：[金锤子](/anti-patterns/golden-hammer)
+**Related pages**: [Golden Hammer](/anti-patterns/golden-hammer)
 
-### 意面代码（Spaghetti code）
+### Spaghetti code (意面代码)
 
-控制流纠缠如面，可读性与可维护性双失。
+Control flow entangled like pasta; readability and maintainability both collapse.
 
-**出处**：[Wikipedia · Spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code)
+**Sources**: [Wikipedia · Spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code)
 
-**相关页**：[意面代码](/anti-patterns/spaghetti-code)
+**Related pages**: [Spaghetti Code](/anti-patterns/spaghetti-code)
 
-### 贫血模型（Anemic domain model）
+### Anemic domain model (贫血模型)
 
-领域对象只剩数据字段没有行为，逻辑散落服务层。
+Domain objects keep only data fields with no behavior; logic scatters into service layers.
 
-**出处**：[Fowler · AnemicDomainModel](https://martinfowler.com/bliki/AnemicDomainModel.html)
+**Sources**: [Fowler · AnemicDomainModel](https://martinfowler.com/bliki/AnemicDomainModel.html)
 
-**相关页**：[贫血模型](/anti-patterns/anemic-domain-model)、[仓储与单元工作](/other/repository)
+**Related pages**: [Anemic Domain Model](/anti-patterns/anemic-domain-model), [Repository and Unit of Work](/other/repository)
 
 ---
 
-**维护口径**：新增条目必须给出可点的权威出处；查不到就写「未找到权威出处（待核）」，不得凭印象编造链接。出处编号 `[S#]` 的书目明细见[调研总览的来源清单](/research/overview#来源清单)。
+**Maintenance rule**: New entries must give a clickable authoritative source; if none is found, write "no authoritative source found (to verify)" — never fabricate a link from memory. Bibliography details for source IDs `[S#]` are in the [source list in the research overview](/research/overview#source-list).
 
 <!-- BACKLINKS-AUTO -->
-## 相关页面
+## Related pages
 
 - [knowledge](knowledge.md)
 - [reference](reference.md)

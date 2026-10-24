@@ -1,0 +1,43 @@
+# 并发模式（Concurrent Patterns）
+
+并发模式（Concurrent Patterns）主要解决在多线程或多进程环境中如何有效、安全地协调和管理并发任务的问题。它们帮助开发者编写在并发情况下能够正确运行、性能高效且易于维护的程序。具体来说，并发模式解决以下几个核心问题：
+
+1. **线程安全**：确保在多线程环境中共享资源的安全访问，避免竞态条件（Race Conditions）、死锁（Deadlocks）等问题。
+2. **任务分配与协调**：有效分配和调度并发任务，确保系统资源的最佳利用，同时保证任务的正确执行顺序。
+3. **性能优化**：通过并发执行提高系统的吞吐量和响应速度，尽量减少锁争用和上下文切换开销。
+4. **可维护性与可扩展性**：通过抽象和封装并发处理逻辑，提高代码的可维护性和可扩展性，减少错误。
+5. **常见模式**：围绕上述问题，逐步发展出一组可在实践中复用的并发模式，本目录逐一给出详解。
+
+### 本目录包含的模式
+
+- [生产者-消费者模式](/zh/concurrency/producer-consumer)：用缓冲区解耦生产者与消费者线程，平衡速度差异。
+- [信号量模式](/zh/concurrency/semaphore)：用计数器控制对有限资源的并发访问数量。
+- [Future 模式](/zh/concurrency/future)：用一个占位对象表示异步任务将来的结果，按需获取。
+- [主动对象模式](/zh/concurrency/active-object)：把方法调用转为任务在独立线程中执行，调用与执行分离。
+- [双重检查锁定模式](/zh/concurrency/double-checked-locking)：首次检查后进入同步块再检查一次，兼顾惰性初始化与性能。
+- [事件循环模式](/zh/concurrency/event-loop)：单线程循环地等待并处理事件，避免多线程上下文切换开销。
+- [反应器模式](/zh/concurrency/reactor)：用同步事件多路复用器分发 I/O 事件，把分发与处理解耦。
+- [主动器模式](/zh/concurrency/proactor)：基于异步 I/O 的完成通知触发处理回调，与反应器相对应。
+- [线程池模式](/zh/concurrency/thread-pool)：固定一组工作线程从队列取任务，把创建开销与并发度一起管住。
+- [读写锁模式](/zh/concurrency/read-write-lock)：读锁共享、写锁独占，读多写少时把吞吐拉起来。
+- [工作窃取模式](/zh/concurrency/work-stealing)：每个线程一个本地队列，空闲线程去别人的队尾偷任务。
+
+### 选用建议
+
+- 多个线程写共享状态时，按读写比例选互斥锁或[读写锁](/zh/concurrency/read-write-lock)；只有计数与标志位用原子变量更划算。
+- 任务多且到达快时用[线程池](/zh/concurrency/thread-pool)，记得队列要有界；CPU 密集分片交给[工作窃取](/zh/concurrency/work-stealing)。
+- 只需要延迟保存创建结果时用 Future；需要把整个方法调用异步化时用主动对象。
+- 单线程事件驱动的服务端用事件循环或反应器；底层支持异步完成通知时用主动器。
+- 惰性初始化务必配合正确的同步原语（volatile/atomic、互斥锁、sync.Once）避免数据竞争。
+
+## 来源
+
+- [S9] POSA 卷 2《Patterns for Concurrent and Networked Objects》，并发模式的系统目录。
+- [Java · java.util.concurrent](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html)（标准库实现，[S19]）。
+- [Wikipedia · Software design pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
+
+<!-- BACKLINKS-AUTO -->
+## 相关页面
+
+- [reference](/zh/reference.md)
+- [coverage](/zh/research/coverage.md)

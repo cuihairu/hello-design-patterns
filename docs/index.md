@@ -2,37 +2,37 @@
 layout: home
 
 hero:
-  name: 设计模式笔记
-  text: 个人心得与经验：从游戏开发者视角看设计模式
-  tagline: 收录创建型、结构型、行为型、并发等主题，以及 C++、Java、Go 示例。
+  name: Design Patterns Notes
+  text: Personal notes and lessons from a game developer's view of design patterns
+  tagline: Covers creational, structural, behavioral, concurrency and more, with C++, Java, and Go examples.
   image:
     src: /logo.svg
-    alt: 设计模式笔记
+    alt: Design Patterns Notes
   actions:
     - theme: brand
-      text: 查看笔记
+      text: Read the notes
       link: /introduction
     - theme: alt
-      text: GitHub 仓库
+      text: GitHub repo
       link: https://github.com/cuihairu/hello-design-patterns
 
 features:
-  - title: 创建型模式
-    details: 单例、工厂方法、抽象工厂、建造者、原型、多例、对象池、服务定位器
-  - title: 结构型模式
-    details: 适配器、装饰、代理（动态/保护/远程/虚拟）、外观、远程外观与 DTO、桥接、组合、享元、依赖注入
-  - title: 行为型模式
-    details: 策略、观察者、命令、责任链、中介者、迭代器、模板方法、状态、访问者、回调、DSL
-  - title: 并发模式
-    details: 生产者消费者、反应堆、主动器、Future、信号量、事件循环、线程池、读写锁、工作窃取、双重检查锁定
-  - title: 集成与稳定性
-    details: 消息通道、消息路由、消息转换、发布订阅，以及熔断器、隔舱、超时、重试
-  - title: 反模式与演进
-    details: 神对象、大泥球、金锤子、意面代码、贫血模型，以及 SOLID、组合式设计
-  - title: 其他模式
-    details: ORM、MVC、MVVM、事件溯源、事务脚本、仓储与单元工作
-  - title: 多语言实现
-    details: C++、Java、Go 三语言对照，兼顾 Python、C#，对比语言特性对模式实现的影响
+  - title: Creational Patterns
+    details: Singleton, Factory Method, Abstract Factory, Builder, Prototype, Multiton, Object Pool, Service Locator
+  - title: Structural Patterns
+    details: Adapter, Decorator, Proxy (dynamic/protection/remote/virtual), Facade, Remote Facade and DTO, Bridge, Composite, Flyweight, Dependency Injection
+  - title: Behavioral Patterns
+    details: Strategy, Observer, Command, Chain of Responsibility, Mediator, Iterator, Template Method, State, Visitor, Callback, DSL
+  - title: Concurrency Patterns
+    details: Producer-Consumer, Reactor, Proactor, Future, Semaphore, Event Loop, Thread Pool, Read-Write Lock, Work Stealing, Double-Checked Locking
+  - title: Integration and Stability
+    details: Message Channel, Message Router, Message Translator, Publish-Subscribe, plus Circuit Breaker, Bulkhead, Timeout, Retry
+  - title: Anti-Patterns and Evolution
+    details: God Object, Big Ball of Mud, Golden Hammer, Spaghetti Code, Anemic Domain Model, plus SOLID and composition over inheritance
+  - title: Other Patterns
+    details: ORM, MVC, MVVM, Event Sourcing, Transaction Script, Repository and Unit of Work
+  - title: Multi-Language Implementations
+    details: Side-by-side C++, Java, and Go examples, with notes on Python and C#, comparing how language features shape each implementation
 ---
 
 <style>
