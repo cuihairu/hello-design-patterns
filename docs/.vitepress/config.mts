@@ -312,8 +312,6 @@ export default defineConfig({
   // GitHub Pages project page deploys under a sub-path; missing base causes all static assets to 404
   base,
   cleanUrls: true,
-  // Transitional: root locale pages are being translated incrementally; dead links are expected until all pages exist
-  ignoreDeadLinks: true,
 
   // Icons in <head> are bare HTML and don't go through withBase; must carry base prefix
   head: [

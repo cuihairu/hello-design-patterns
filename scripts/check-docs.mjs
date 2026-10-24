@@ -30,21 +30,18 @@ const errors = []
 
 const config = readFileSync(join(docs, '.vitepress/config.mts'), 'utf8')
 
-// 1. 侧栏链接 ↔ 实际文件
-// 中文侧严格；英文侧翻译中的死链跳过(骨架期增量翻译)。
+// 1. 侧栏链接 ↔ 实际文件（双语均严格）
 const homeLinks = new Set(['/', '/zh/'])
 for (const [, link] of config.matchAll(/link: '(\/[^']*)'/g)) {
   if (homeLinks.has(link)) continue
   const normalized = link.replace(/\/$/, '')
   if (!allPages.has(normalized)) {
-    if (!link.startsWith('/zh/')) continue
     errors.push(`sidebar link not on disk: ${link}`)
   }
 }
 
-// 2. 站内绝对链接可达
-// 中文侧严格；英文侧骨架期跳过。
-for (const f of zhFiles) {
+// 2. 站内绝对链接可达（双语均严格）
+for (const f of [...rootFiles, ...zhFiles]) {
   const text = readFileSync(f, 'utf8')
   for (const [, target] of text.matchAll(/\]\((\/[a-z0-9\-/]+)(?:#[^)]*)?\)/gi)) {
     const t = target.replace(/\/$/, '')
@@ -67,48 +64,51 @@ for (const f of [...rootFiles, ...zhFiles]) {
   if (!readFileSync(f, 'utf8').startsWith('# ')) errors.push(`${relative(root, f)}: missing H1`)
 }
 
-// 4. 各分区导读与参考索引覆盖该分区全部页面（快照跳转页豁免）— 中文侧
-const coverageExempt = new Set(['/zh/behavioral/snapshot'])
-const zhGroups = new Map()
-for (const p of zhPages) {
-  const dir = dirname(p)
-  if (dir === '.' || dir === '/' || dir === '/zh') continue
-  if (!zhGroups.has(dir)) zhGroups.set(dir, [])
-  zhGroups.get(dir).push(p)
-}
-const zhIndexes = [
-  [
-    'docs/zh/reference.md',
-    readFileSync(join(zhBase, 'reference.md'), 'utf8'),
-    [...zhPages]
-  ],
-  ...[...zhGroups.entries()].map(([dir, list]) => {
-    const ov = join(zhBase, dir.replace(/^\/zh/, ''), 'overview.md')
-    if (!existsSync(ov)) errors.push(`missing overview: docs/zh/${dir.replace(/^\/zh/, '')}/overview.md`)
-    return [
-      `docs/zh/${dir.replace(/^\/zh/, '')}/overview.md`,
-      existsSync(ov) ? readFileSync(ov, 'utf8') : '',
-      list
-    ]
-  })
-]
-for (const [name, text, list] of zhIndexes) {
-  const own = '/' + name.replace(/^docs\//, '').replace(/\.md$/, '').replace(/\/overview$/, '/overview')
-  const linked = new Set(
-    [...text.matchAll(/\]\((\/[a-z0-9\-/]+)(?:#[^)]*)?\)/gi)].map((m) => m[1].replace(/\/$/, ''))
-  )
-  for (const p of list) {
-    if (
-      coverageExempt.has(p) ||
-      p.endsWith('/overview') ||
-      p === '/zh/research/coverage' ||
-      p === '/zh/index' ||
-      p === own
+// 4. 各分区导读与参考索引覆盖该分区全部页面（快照跳转页豁免）— 双语
+function checkCoverage(pages, base, coverageExempt, extraExempt) {
+  const groups = new Map()
+  for (const p of pages) {
+    const dir = dirname(p)
+    if (dir === '.' || dir === '/' || dir === '/zh') continue
+    if (!groups.has(dir)) groups.set(dir, [])
+    groups.get(dir).push(p)
+  }
+  const indexes = [
+    [
+      `docs/${base}reference.md`,
+      readFileSync(join(docs, base, 'reference.md'), 'utf8'),
+      [...pages]
+    ],
+    ...[...groups.entries()].map(([dir, list]) => {
+      const relDir = dir.replace(/^\//, '').replace(/^zh\//, '')
+      const ov = join(docs, base, relDir, 'overview.md')
+      if (!existsSync(ov)) errors.push(`missing overview: docs/${base}${relDir}/overview.md`)
+      return [
+        `docs/${base}${relDir}/overview.md`,
+        existsSync(ov) ? readFileSync(ov, 'utf8') : '',
+        list
+      ]
+    })
+  ]
+  for (const [name, text, list] of indexes) {
+    const own = '/' + name.replace(/^docs\//, '').replace(/\.md$/, '').replace(/\/overview$/, '/overview')
+    const linked = new Set(
+      [...text.matchAll(/\]\((\/[a-z0-9\-/]+)(?:#[^)]*)?\)/gi)].map((m) => m[1].replace(/\/$/, ''))
     )
-      continue
-    if (!linked.has(p)) errors.push(`${name}: does not list ${p}`)
+    for (const p of list) {
+      if (
+        coverageExempt.has(p) ||
+        p.endsWith('/overview') ||
+        extraExempt.has(p) ||
+        p === own
+      )
+        continue
+      if (!linked.has(p)) errors.push(`${name}: does not list ${p}`)
+    }
   }
 }
+checkCoverage(rootPages, '', new Set(['/behavioral/snapshot']), new Set(['/index', '/research/coverage']))
+checkCoverage(zhPages, 'zh/', new Set(['/zh/behavioral/snapshot']), new Set(['/zh/index', '/zh/research/coverage']))
 
 // 5. coverage 页声明的计数与实际文件一致 — 中文侧
 const cov = readFileSync(join(zhBase, 'research/coverage.md'), 'utf8')
@@ -119,7 +119,7 @@ const zhBodyPages = [...zhPages].filter((p) => {
     dir !== '.' &&
     dir !== '/' &&
     dir !== '/zh' &&
-    !coverageExempt.has(p) &&
+    p !== '/zh/behavioral/snapshot' &&
     !p.startsWith('/zh/research/') &&
     !p.endsWith('/overview')
   )
@@ -147,14 +147,18 @@ if (rows2b < 0) {
   errors.push(`docs/zh/knowledge.md: declares 2b rows ${declared2b[1]}, coverage has ${rows2b}`)
 }
 
-// 7. 侧栏反向覆盖：中文侧每页都要在侧栏里；英文侧骨架期跳过
+// 7. 侧栏反向覆盖：双语每页都要在侧栏里（首页与快照跳转页豁免）
 const sidebarLinks = new Set(
   [...config.matchAll(/link: '(\/[^']*)'/g)].map((m) => m[1].replace(/\/$/, ''))
 )
-const zhSidebarExempt = new Set(['/zh/index', '/zh/behavioral/snapshot'])
-for (const p of zhPages) {
-  if (zhSidebarExempt.has(p)) continue
-  if (!sidebarLinks.has(p)) errors.push(`zh page missing from sidebar: ${p}`)
+for (const [pages, exempt, label] of [
+  [rootPages, new Set(['/index', '/behavioral/snapshot']), 'en'],
+  [zhPages, new Set(['/zh/index', '/zh/behavioral/snapshot']), 'zh']
+]) {
+  for (const p of pages) {
+    if (exempt.has(p)) continue
+    if (!sidebarLinks.has(p)) errors.push(`${label} page missing from sidebar: ${p}`)
+  }
 }
 
 // 8. 来源编号：用到的 [Sn] 都要登记在调研总览的来源清单里 — 中文侧
