@@ -345,7 +345,11 @@ export default defineConfig({
         sidebarMenuLabel: 'Menu',
         darkModeSwitchLabel: 'Theme',
         lightModeSwitchTitle: 'Switch to light mode',
-        darkModeSwitchTitle: 'Switch to dark mode'
+        darkModeSwitchTitle: 'Switch to dark mode',
+        footer: {
+          message: 'Built with VitePress',
+          copyright: 'Copyright © 2024-present cuihairu'
+        }
       }
     },
     zh: {
@@ -372,7 +376,11 @@ export default defineConfig({
         sidebarMenuLabel: '菜单',
         darkModeSwitchLabel: '外观',
         lightModeSwitchTitle: '切换到浅色模式',
-        darkModeSwitchTitle: '切换到深色模式'
+        darkModeSwitchTitle: '切换到深色模式',
+        footer: {
+          message: '基于 VitePress 构建',
+          copyright: 'Copyright © 2024-present cuihairu'
+        }
       }
     }
   },
@@ -383,10 +391,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/cuihairu/hello-design-patterns' }
     ],
-    lastUpdated: true,
-    footer: {
-      copyright: 'Copyright © 2024-present cuihairu'
-    }
+    lastUpdated: true
   },
 
   markdown: {
